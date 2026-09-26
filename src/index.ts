@@ -1,8 +1,8 @@
 import './tokens/tokens.css';
 
 // Tokens
-export { colors, sizes, cssVar } from './tokens/tokens';
-export type { Size, Tone } from './tokens/tokens';
+export { colors, darkColors, lightColors, themes, sizes, cssVar } from './tokens/tokens';
+export type { Size, Tone, ThemeName } from './tokens/tokens';
 
 // Utilitários
 export { cx } from './utils/cx';
@@ -22,6 +22,7 @@ export type { MaskPreset } from './utils/masks';
 export type { IconProp } from './utils/renderIcon';
 
 // Componentes
+export * from './components/ThemeProvider';
 export * from './components/Icon';
 export * from './components/Typography';
 export * from './components/Button';

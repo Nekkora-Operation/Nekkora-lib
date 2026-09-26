@@ -6,7 +6,11 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
-  colors,
+  darkColors,
+  lightColors,
+  ThemeProvider,
+  useTheme,
+  type ThemePreference,
   Container,
   Fieldset,
   Grid,
@@ -31,7 +35,7 @@ import {
 } from 'nekkora-lib';
 
 const SECTIONS = [
-  ['tokens', 'Cores & Tokens', 'layers'],
+  ['tokens', 'Cores & Temas', 'layers'],
   ['font', 'Tipografia', 'file'],
   ['icons', 'Ícones', 'sakura'],
   ['buttons', 'Buttons', 'box'],
@@ -107,6 +111,67 @@ const COLUMNS: TableColumn<Execucao>[] = [
   },
 ];
 
+function ThemeSwitcher() {
+  const { theme, setTheme } = useTheme();
+  return (
+    <Select
+      aria-label="Tema"
+      size="sm"
+      leftIcon={theme === 'light' ? 'sun' : theme === 'dark' ? 'moon' : 'monitor'}
+      value={theme}
+      onChange={(e) => setTheme(e.target.value as ThemePreference)}
+      options={[
+        { value: 'dark', label: 'Tema escuro' },
+        { value: 'light', label: 'Tema claro' },
+        { value: 'system', label: 'Seguir o sistema' },
+      ]}
+    />
+  );
+}
+
+function Palette({ title, palette }: { title: string; palette: Record<string, string> }) {
+  return (
+    <>
+      <Text variant="h4">{title}</Text>
+      <div className="pg-row pg-row--top">
+        {Object.entries(palette).map(([name, hex]) => (
+          <div key={name} className="pg-swatch">
+            <div className="pg-swatch__color" style={{ background: hex }} />
+            <Text variant="caption" weight="medium">{name}</Text>
+            <Text variant="caption" color="secondary">{hex}</Text>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+}
+
+function ThemePreview() {
+  return (
+    <Stack gap={4}>
+      <Stack direction="row" gap={3} align="center" wrap>
+        <Button leftIcon="plus">Nova automação</Button>
+        <Button variant="secondary">Secondary</Button>
+        <Button variant="outline">Outline</Button>
+        <Link href="#tokens" arrow>Ver todas</Link>
+      </Stack>
+      <Stack direction="row" gap={2} wrap>
+        <Badge tone="success">Concluído</Badge>
+        <Badge tone="info">Em execução</Badge>
+        <Badge tone="danger">Falhou</Badge>
+        <Badge tone="warning">Pausada</Badge>
+      </Stack>
+      <Grid columns={2} gap={3}>
+        <Input label="CPF" mask="cpf" defaultValue="12345678909" leftIcon="id-card" />
+        <Select label="Período" leftIcon="calendar" options={[{ value: 7, label: 'Últimos 7 dias' }]} />
+      </Grid>
+      <Card padding="sm">
+        <CardHeader icon="chart" title="Taxa de sucesso" subtitle="98,1% · ↑ 2% vs. mês anterior" />
+      </Card>
+    </Stack>
+  );
+}
+
 export function App() {
   const [phone, setPhone] = useState({ masked: '', raw: '' });
   const [emptyTable, setEmptyTable] = useState(false);
@@ -136,22 +201,33 @@ export function App() {
 
       <main className="pg-main">
         <div className="pg-hero">
+          <div>
           <Text variant="overline" color="accent">Automation meets clarity</Text>
           <Text variant="h1" gradient style={{ marginTop: 8 }}>nekkora-lib</Text>
           <Text color="secondary" style={{ marginTop: 6 }}>
-            Componentes React do tema dark Nekkora — sofisticado, imersivo e focado em produtividade.
+            Componentes React Nekkora — temas escuro e claro, sofisticados e focados em produtividade.
           </Text>
+          </div>
+          <ThemeSwitcher />
         </div>
 
-        <Section id="tokens" title="Cores & Tokens" description="Paleta principal (dark) + cores de acento e status. Tudo exposto como CSS vars --nk-*.">
-          <div className="pg-row pg-row--top">
-            {Object.entries(colors).map(([name, hex]) => (
-              <div key={name} className="pg-swatch">
-                <div className="pg-swatch__color" style={{ background: hex }} />
-                <Text variant="caption" weight="medium">{name}</Text>
-                <Text variant="caption" color="secondary">{hex}</Text>
-              </div>
-            ))}
+        <Section
+          id="tokens"
+          title="Cores & Temas"
+          description='Dois temas com a mesma identidade. Use <ThemeProvider theme="dark | light | system"> ou data-nk-theme em qualquer elemento — temas podem ser aninhados.'
+        >
+          <div className="pg-palettes">
+            <div className="pg-palette" data-nk-theme="dark">
+              <Palette title="Tema escuro (principal)" palette={darkColors} />
+            </div>
+            <div className="pg-palette" data-nk-theme="light">
+              <Palette title="Tema claro" palette={lightColors} />
+            </div>
+          </div>
+          <Heading level={4}>Lado a lado (temas aninhados)</Heading>
+          <div className="pg-compare">
+            <ThemeProvider theme="dark"><ThemePreview /></ThemeProvider>
+            <ThemeProvider theme="light"><ThemePreview /></ThemeProvider>
           </div>
         </Section>
 
@@ -185,14 +261,14 @@ export function App() {
           <div className="pg-row">
             <Demo label='size="xs|sm|md|lg|xl"'>
               <div className="pg-row">
-                {(['xs', 'sm', 'md', 'lg', 'xl'] as const).map((s) => <Icon key={s} name="sakura" size={s} color={colors.accent} />)}
+                {(['xs', 'sm', 'md', 'lg', 'xl'] as const).map((s) => <Icon key={s} name="sakura" size={s} color="var(--nk-color-accent)" />)}
               </div>
             </Demo>
             <Demo label="spin / color / strokeWidth">
               <div className="pg-row">
                 <Icon name="loader" spin />
-                <Icon name="check-circle" color={colors.success} />
-                <Icon name="alert" color={colors.warning} strokeWidth={2.5} />
+                <Icon name="check-circle" color="var(--nk-color-success)" />
+                <Icon name="alert" color="var(--nk-color-warning)" strokeWidth={2.5} />
               </div>
             </Demo>
           </div>
@@ -394,7 +470,7 @@ export function App() {
               </Card>
               <Card variant="glow" padding="sm">
                 <Stack direction="row" gap={3} align="center">
-                  <Icon name="home" color={colors.accent} />
+                  <Icon name="home" color="var(--nk-color-accent)" />
                   <Text weight="medium">variant="glow"</Text>
                 </Stack>
               </Card>

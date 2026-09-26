@@ -12,7 +12,8 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "resolveJsonModule": true,
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+    "paths": { "nekkora-lib": ["./src/index.ts"] }
   },
   "include": ["src", "playground/src", "vitest.setup.ts"]
 }

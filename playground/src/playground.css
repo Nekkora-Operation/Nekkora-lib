@@ -4,7 +4,7 @@ body { margin: 0; min-height: 100vh; }
 .pg-sidebar {
   position: sticky; top: 0; height: 100vh; overflow: auto;
   padding: 24px 16px; border-right: 1px solid var(--nk-color-border);
-  background: var(--nk-color-surface-sunken);
+  background: var(--nk-color-surface);
 }
 .pg-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 28px; padding: 0 8px; color: var(--nk-color-accent); }
 .pg-nav { display: flex; flex-direction: column; gap: 2px; }
@@ -34,16 +34,17 @@ body { margin: 0; min-height: 100vh; }
 
 .pg-hero {
   padding: 28px; border-radius: var(--nk-radius-lg); border: 1px solid var(--nk-color-border);
-  background: radial-gradient(circle at 85% 0%, rgba(242,155,178,.18), transparent 45%), linear-gradient(90deg, #211222, #2a1628);
+  background: radial-gradient(circle at 85% 0%, var(--nk-color-accent-soft), transparent 45%), var(--nk-card-raised-bg);
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap;
 }
 
 .pg-stat-icon {
   display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px;
-  border-radius: var(--nk-radius-md); background: rgba(96,60,82,.55); color: var(--nk-color-accent);
+  border-radius: var(--nk-radius-md); background: var(--nk-color-icon-bg); color: var(--nk-color-accent);
 }
 .pg-row-icon {
   display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px;
-  border-radius: 5px; background: rgba(242,155,178,.18); color: var(--nk-color-accent); margin-right: 10px; vertical-align: middle;
+  border-radius: 5px; background: var(--nk-color-icon-bg); color: var(--nk-color-accent); margin-right: 10px; vertical-align: middle;
 }
 
 @media (max-width: 900px) {
@@ -51,3 +52,11 @@ body { margin: 0; min-height: 100vh; }
   .pg-sidebar { display: none; }
   .pg-main { padding: 24px 16px 64px; }
 }
+
+.pg-palettes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 16px; }
+.pg-palette { padding: 20px; border-radius: var(--nk-radius-lg); border: 1px solid var(--nk-color-border); background: var(--nk-color-bg); color: var(--nk-color-text); }
+.pg-palette .pg-row { margin-top: 12px; }
+.pg-palette .pg-swatch { width: 84px; }
+.pg-palette .pg-swatch__color { height: 48px; }
+.pg-compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 16px; }
+.pg-compare > [data-nk-theme] { padding: 20px; border-radius: var(--nk-radius-lg); border: 1px solid var(--nk-color-border); }

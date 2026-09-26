@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Nekkora — Design tokens (Tema principal: Dark)
+   Nekkora — Design tokens (Tema principal: Dark · Tema claro: Light)
    "Sofisticado, imersivo e focado em produtividade."
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
@@ -40,6 +40,26 @@
   --nk-color-warning-soft: rgba(245, 168, 106, 0.18);
   --nk-color-danger: #f0506e;
   --nk-color-danger-soft: rgba(240, 80, 110, 0.16);
+  --nk-color-danger-border: rgba(240, 80, 110, 0.35);
+  --nk-color-danger-text: #ff7d95;
+  --nk-color-info-text: #a9aaff;
+  --nk-color-neutral-soft: rgba(148, 163, 184, 0.14);
+
+  /* Semânticos de componentes */
+  --nk-color-accent-border: rgba(242, 155, 178, 0.45);
+  --nk-color-accent-border-soft: rgba(242, 155, 178, 0.35);
+  --nk-color-icon-bg: rgba(96, 60, 82, 0.55);
+  --nk-color-stripe: rgba(250, 220, 213, 0.025);
+  --nk-skeleton-base: rgba(250, 220, 213, 0.05);
+  --nk-skeleton-shine: rgba(250, 220, 213, 0.12);
+  --nk-button-secondary-bg: var(--nk-color-primary);
+  --nk-button-secondary-bg-hover: var(--nk-color-secondary);
+  --nk-button-secondary-fg: var(--nk-color-text);
+  --nk-button-secondary-border: rgba(250, 220, 213, 0.12);
+  --nk-card-raised-bg: linear-gradient(180deg, rgba(72, 33, 59, 0.55) 0%, rgba(32, 18, 31, 0.9) 100%);
+  --nk-card-raised-border: rgba(250, 220, 213, 0.1);
+  --nk-card-glow-bg: linear-gradient(90deg, rgba(118, 80, 103, 0.55), rgba(72, 33, 59, 0.35));
+  --nk-card-glow-border: rgba(242, 155, 178, 0.5);
 
   /* Tipografia */
   --nk-font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
@@ -82,7 +102,9 @@
   --nk-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
   --nk-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
   --nk-shadow-glow: 0 0 0 1px rgba(242, 155, 178, 0.35), 0 8px 24px rgba(242, 155, 178, 0.12);
+  --nk-shadow-accent: 0 6px 18px rgba(242, 155, 178, 0.22);
   --nk-focus-ring: 0 0 0 3px rgba(242, 155, 178, 0.35);
+  --nk-focus-ring-danger: 0 0 0 3px rgba(240, 80, 110, 0.3);
 
   /* Controles (altura por tamanho) */
   --nk-control-sm: 32px;
@@ -94,14 +116,87 @@
   color-scheme: dark;
 }
 
+/* ==========================================================================
+   Tema claro — mesma identidade (ameixa + rosa sakura) sobre fundos claros.
+   Ative com data-nk-theme="light" em qualquer elemento (ou via <ThemeProvider>).
+   ========================================================================== */
+[data-nk-theme='light'] {
+  /* Paleta base */
+  --nk-color-bg: #f8f3f5;          /* Fundo */
+  --nk-color-surface: #ffffff;     /* Superfície */
+  --nk-color-card: #f6e9ee;        /* Card */
+  --nk-color-primary: #603c52;     /* Primário (marca) */
+  --nk-color-secondary: #765067;   /* Secundário (marca) */
+  --nk-color-highlight: #48213b;   /* Destaque */
+  --nk-color-text: #2a1a28;        /* Texto */
+  --nk-color-text-secondary: #64566a; /* Texto secundário */
+
+  /* Derivados */
+  --nk-color-surface-raised: #ffffff;
+  --nk-color-surface-sunken: #ffffff;
+  --nk-color-surface-hover: rgba(96, 60, 82, 0.06);
+  --nk-color-border: rgba(72, 33, 59, 0.1);
+  --nk-color-border-strong: rgba(72, 33, 59, 0.2);
+  --nk-color-text-muted: #9a8b97;
+  --nk-color-text-inverse: #ffffff;
+
+  /* Acento — rosa mais profundo para contraste AA sobre branco */
+  --nk-color-accent: #c2466d;
+  --nk-color-accent-hover: #ad3a5f;
+  --nk-color-accent-active: #983252;
+  --nk-color-accent-soft: rgba(194, 70, 109, 0.1);
+
+  /* Status */
+  --nk-color-success: #15803d;
+  --nk-color-success-soft: rgba(21, 128, 61, 0.1);
+  --nk-color-info: #5b5bd6;
+  --nk-color-info-soft: rgba(91, 91, 214, 0.1);
+  --nk-color-warning: #b45309;
+  --nk-color-warning-soft: rgba(217, 119, 6, 0.12);
+  --nk-color-danger: #d02c50;
+  --nk-color-danger-soft: rgba(208, 44, 80, 0.09);
+  --nk-color-danger-border: rgba(208, 44, 80, 0.35);
+  --nk-color-danger-text: #c0264a;
+  --nk-color-info-text: #4b4bc4;
+  --nk-color-neutral-soft: rgba(100, 86, 106, 0.1);
+
+  /* Semânticos de componentes */
+  --nk-color-accent-border: rgba(194, 70, 109, 0.45);
+  --nk-color-accent-border-soft: rgba(194, 70, 109, 0.35);
+  --nk-color-icon-bg: rgba(194, 70, 109, 0.1);
+  --nk-color-stripe: rgba(96, 60, 82, 0.03);
+  --nk-skeleton-base: rgba(96, 60, 82, 0.06);
+  --nk-skeleton-shine: rgba(96, 60, 82, 0.14);
+  --nk-button-secondary-bg: #f3e6ec;
+  --nk-button-secondary-bg-hover: #ead5df;
+  --nk-button-secondary-fg: #48213b;
+  --nk-button-secondary-border: rgba(72, 33, 59, 0.12);
+  --nk-card-raised-bg: linear-gradient(180deg, #fbeff3 0%, #ffffff 100%);
+  --nk-card-raised-border: rgba(194, 70, 109, 0.16);
+  --nk-card-glow-bg: linear-gradient(90deg, rgba(194, 70, 109, 0.12), rgba(194, 70, 109, 0.04));
+  --nk-card-glow-border: rgba(194, 70, 109, 0.45);
+
+  /* Sombras / foco */
+  --nk-shadow-sm: 0 1px 2px rgba(72, 33, 59, 0.08);
+  --nk-shadow-md: 0 8px 24px rgba(72, 33, 59, 0.08);
+  --nk-shadow-glow: 0 0 0 1px rgba(194, 70, 109, 0.25), 0 8px 24px rgba(194, 70, 109, 0.1);
+  --nk-shadow-accent: 0 6px 16px rgba(194, 70, 109, 0.22);
+  --nk-focus-ring: 0 0 0 3px rgba(194, 70, 109, 0.25);
+  --nk-focus-ring-danger: 0 0 0 3px rgba(208, 44, 80, 0.2);
+
+  color-scheme: light;
+}
+
 /* Reset leve aplicado apenas dentro de .nk-root (ou body, se o app optar) */
-.nk-root {
+.nk-root,
+[data-nk-theme] {
   font-family: var(--nk-font-family);
   font-size: var(--nk-font-size-md);
   line-height: var(--nk-line-height-normal);
   color: var(--nk-color-text);
   background: var(--nk-color-bg);
   -webkit-font-smoothing: antialiased;
+  transition: background-color var(--nk-transition), color var(--nk-transition);
 }
 
 .nk-root *,

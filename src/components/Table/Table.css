@@ -52,7 +52,7 @@
 .nk-table__cell--center { text-align: center; }
 .nk-table__cell--right { text-align: right; }
 
-.nk-table--striped .nk-table__body .nk-table__row:nth-child(even) > .nk-table__td { background: rgba(250, 220, 213, 0.025); }
+.nk-table--striped .nk-table__body .nk-table__row:nth-child(even) > .nk-table__td { background: var(--nk-color-stripe); }
 .nk-table--hoverable .nk-table__body .nk-table__row:hover > .nk-table__td { background: var(--nk-color-surface-hover); }
 .nk-table__row--clickable { cursor: pointer; }
 .nk-table__row--selected > .nk-table__td { background: var(--nk-color-accent-soft) !important; }
@@ -69,7 +69,7 @@
   height: 10px;
   width: 70%;
   border-radius: var(--nk-radius-full);
-  background: linear-gradient(90deg, rgba(250, 220, 213, 0.05), rgba(250, 220, 213, 0.12), rgba(250, 220, 213, 0.05));
+  background: linear-gradient(90deg, var(--nk-skeleton-base), var(--nk-skeleton-shine), var(--nk-skeleton-base));
   background-size: 200% 100%;
   animation: nk-shimmer 1.4s ease-in-out infinite;
 }

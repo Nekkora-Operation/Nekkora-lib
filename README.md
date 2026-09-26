@@ -1,19 +1,21 @@
 # nekkora-lib
 
-Design system do **Nekkora** em React — tema dark *"Sofisticado, imersivo e focado em produtividade"*.
+Design system do **Nekkora** em React — tema dark *"Sofisticado, imersivo e focado em produtividade"* e um tema claro com a mesma identidade.
 Foco em componentes visuais configuráveis por props: tamanho, variante, ícones, máscaras, estados.
 
-| Token | Cor | Uso |
-|---|---|---|
-| `--nk-color-bg` | `#180C1A` | Fundo |
-| `--nk-color-surface` | `#20222F` | Superfície |
-| `--nk-color-card` | `#48213B` | Card |
-| `--nk-color-primary` | `#603C52` | Primário |
-| `--nk-color-secondary` | `#765067` | Secundário |
-| `--nk-color-highlight` | `#FADCD5` | Destaque |
-| `--nk-color-text` | `#E8E2E7` | Texto |
-| `--nk-color-text-secondary` | `#94A3B8` | Texto secundário |
-| `--nk-color-accent` | `#F29BB2` | CTA / gráficos |
+| Token | Dark (principal) | Light | Uso |
+|---|---|---|---|
+| `--nk-color-bg` | `#180C1A` | `#F8F3F5` | Fundo |
+| `--nk-color-surface` | `#20222F` | `#FFFFFF` | Superfície |
+| `--nk-color-card` | `#48213B` | `#F6E9EE` | Card |
+| `--nk-color-primary` | `#603C52` | `#603C52` | Primário |
+| `--nk-color-secondary` | `#765067` | `#765067` | Secundário |
+| `--nk-color-highlight` | `#FADCD5` | `#48213B` | Destaque |
+| `--nk-color-text` | `#E8E2E7` | `#2A1A28` | Texto |
+| `--nk-color-text-secondary` | `#94A3B8` | `#64566A` | Texto secundário |
+| `--nk-color-accent` | `#F29BB2` | `#C2466D` | CTA / gráficos |
+
+No tema claro o acento rosa é mais profundo para manter contraste AA sobre fundo branco.
 
 Também há tokens de status (`success`, `info`, `warning`, `danger`), tipografia (Inter), espaçamento (base 4px), raios, sombras e alturas de controle — todos em `src/tokens/tokens.css`.
 
@@ -32,11 +34,33 @@ import { Button, Input } from 'nekkora-lib';
 <Button leftIcon="plus">Nova automação</Button>
 ```
 
+## Temas (dark / light)
+
+Os componentes leem apenas CSS vars; trocar o tema é só mudar `data-nk-theme` — nenhum componente precisa de prop.
+
+```tsx
+import { ThemeProvider, useTheme } from 'nekkora-lib';
+
+// Aplica no <html>, lembra a escolha no localStorage e aceita "system" (prefers-color-scheme)
+<ThemeProvider target="document" defaultTheme="dark" storageKey="nk-theme">
+  <App />
+</ThemeProvider>
+
+// Alternar em qualquer lugar
+const { theme, resolvedTheme, setTheme, toggleTheme } = useTheme();
+<Button variant="ghost" icon={resolvedTheme === 'dark' ? 'sun' : 'moon'} onClick={toggleTheme} aria-label="Alternar tema" />
+
+// Temas aninhados: uma área clara dentro do app escuro
+<ThemeProvider theme="light"><Card>...</Card></ThemeProvider>
+```
+
+Sem React: `<html data-nk-theme="light" class="nk-root">`. Os hex de cada tema também estão em JS: `darkColors`, `lightColors`, `themes`.
+
 ## Desenvolvimento
 
 ```bash
 npm install
-npm run dev              # playground com todos os componentes (http://localhost:5173)
+npm run dev              # playground com todos os componentes e seletor de tema (http://localhost:5173)
 npm test                 # testes (vitest)
 npm run typecheck
 npm run build            # gera dist/ (ESM + CJS + CSS + tipos)
@@ -153,9 +177,9 @@ As funções também estão disponíveis avulsas: `formatWithMask`, `formatCPF`,
 
 ```
 src/
-  tokens/        tokens.css (CSS vars) e tokens.ts
+  tokens/        tokens.css (CSS vars dos temas dark e light) e tokens.ts
   utils/         máscaras, cx, renderIcon
-  components/    Icon, Typography, Button, Link, Badge, Field, Input, Select,
+  components/    ThemeProvider, Icon, Typography, Button, Link, Badge, Field, Input, Select,
                  Container, Card, Layout (Stack/Grid), Fieldset, Table
 playground/      app Vite que demonstra todos os componentes e props
 ```

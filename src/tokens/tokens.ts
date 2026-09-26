@@ -1,5 +1,5 @@
 /** Tokens do tema dark Nekkora, espelhando as CSS custom properties de tokens.css. */
-export const colors = {
+export const darkColors = {
   bg: '#180C1A',
   surface: '#20222F',
   card: '#48213B',
@@ -14,6 +14,32 @@ export const colors = {
   warning: '#F5A86A',
   danger: '#F0506E',
 } as const;
+
+/** Tokens do tema claro (data-nk-theme="light"). */
+export const lightColors = {
+  bg: '#F8F3F5',
+  surface: '#FFFFFF',
+  card: '#F6E9EE',
+  primary: '#603C52',
+  secondary: '#765067',
+  highlight: '#48213B',
+  text: '#2A1A28',
+  textSecondary: '#64566A',
+  accent: '#C2466D',
+  success: '#15803D',
+  info: '#5B5BD6',
+  warning: '#B45309',
+  danger: '#D02C50',
+} as const;
+
+/** Alias do tema principal (dark). */
+export const colors = darkColors;
+
+export type ThemeName = 'dark' | 'light';
+export const themes: Record<ThemeName, Record<keyof typeof darkColors, string>> = {
+  dark: darkColors,
+  light: lightColors,
+};
 
 export const sizes = ['sm', 'md', 'lg'] as const;
 export type Size = (typeof sizes)[number];

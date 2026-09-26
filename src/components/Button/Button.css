@@ -38,22 +38,22 @@
 .nk-button--primary {
   background: var(--nk-color-accent);
   color: var(--nk-color-text-inverse);
-  box-shadow: 0 6px 18px rgba(242, 155, 178, 0.22);
+  box-shadow: var(--nk-shadow-accent);
 }
 .nk-button--primary:hover:not(:disabled) { background: var(--nk-color-accent-hover); }
 .nk-button--primary:active:not(:disabled) { background: var(--nk-color-accent-active); }
 
 .nk-button--secondary {
-  background: var(--nk-color-primary);
-  color: var(--nk-color-text);
-  border-color: rgba(250, 220, 213, 0.12);
+  background: var(--nk-button-secondary-bg);
+  color: var(--nk-button-secondary-fg);
+  border-color: var(--nk-button-secondary-border);
 }
-.nk-button--secondary:hover:not(:disabled) { background: var(--nk-color-secondary); }
+.nk-button--secondary:hover:not(:disabled) { background: var(--nk-button-secondary-bg-hover); }
 
 .nk-button--outline {
   background: transparent;
   color: var(--nk-color-accent);
-  border-color: rgba(242, 155, 178, 0.45);
+  border-color: var(--nk-color-accent-border);
 }
 .nk-button--outline:hover:not(:disabled) { background: var(--nk-color-accent-soft); border-color: var(--nk-color-accent); }
 
@@ -66,6 +66,6 @@
 .nk-button--danger {
   background: var(--nk-color-danger-soft);
   color: var(--nk-color-danger);
-  border-color: rgba(240, 80, 110, 0.35);
+  border-color: var(--nk-color-danger-border);
 }
-.nk-button--danger:hover:not(:disabled) { background: var(--nk-color-danger); color: #fff; }
+.nk-button--danger:hover:not(:disabled) { background: var(--nk-color-danger); color: #fff; border-color: var(--nk-color-danger); }

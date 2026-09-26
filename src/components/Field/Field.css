@@ -18,7 +18,7 @@
   font-size: var(--nk-font-size-xs);
   color: var(--nk-color-text-secondary);
 }
-.nk-field__message--error { color: #ff7d95; }
+.nk-field__message--error { color: var(--nk-color-danger-text); }
 
 /* ---- Casca visual compartilhada de controles (input/select) ---- */
 .nk-control {
@@ -38,7 +38,7 @@
   color: var(--nk-color-text-secondary);
   transition: border-color var(--nk-transition), box-shadow var(--nk-transition), background var(--nk-transition);
 }
-.nk-control:hover { border-color: rgba(242, 155, 178, 0.35); }
+.nk-control:hover { border-color: var(--nk-color-accent-border-soft); }
 .nk-control:focus-within {
   border-color: var(--nk-color-accent);
   box-shadow: var(--nk-focus-ring);
@@ -54,7 +54,7 @@
 
 .nk-control--invalid,
 .nk-control--invalid:hover { border-color: var(--nk-color-danger); }
-.nk-control--invalid:focus-within { box-shadow: 0 0 0 3px rgba(240, 80, 110, 0.3); border-color: var(--nk-color-danger); }
+.nk-control--invalid:focus-within { box-shadow: var(--nk-focus-ring-danger); border-color: var(--nk-color-danger); }
 
 .nk-control--disabled {
   opacity: 0.5;

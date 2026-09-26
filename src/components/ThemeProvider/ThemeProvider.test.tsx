@@ -1,0 +1,44 @@
+import { fireEvent, render, screen } from '@testing-library/react';
+import { afterEach, describe, expect, it } from 'vitest';
+import { ThemeProvider, useTheme } from './ThemeProvider';
+
+function Toggle() {
+  const { resolvedTheme, toggleTheme } = useTheme();
+  return <button onClick={toggleTheme}>{resolvedTheme}</button>;
+}
+
+afterEach(() => localStorage.clear());
+
+describe('ThemeProvider', () => {
+  it('aplica o tema no wrapper e alterna', () => {
+    const { container } = render(
+      <ThemeProvider defaultTheme="light">
+        <Toggle />
+      </ThemeProvider>,
+    );
+    const root = container.firstElementChild!;
+    expect(root).toHaveAttribute('data-nk-theme', 'light');
+    expect(root).toHaveClass('nk-root');
+    fireEvent.click(screen.getByRole('button'));
+    expect(root).toHaveAttribute('data-nk-theme', 'dark');
+  });
+
+  it('aplica no <html> com target="document" e persiste no storage', () => {
+    const { unmount } = render(
+      <ThemeProvider target="document" defaultTheme="dark" storageKey="nk-theme">
+        <Toggle />
+      </ThemeProvider>,
+    );
+    expect(document.documentElement).toHaveAttribute('data-nk-theme', 'dark');
+    fireEvent.click(screen.getByRole('button'));
+    expect(document.documentElement).toHaveAttribute('data-nk-theme', 'light');
+    expect(localStorage.getItem('nk-theme')).toBe('light');
+    unmount();
+    expect(document.documentElement).not.toHaveAttribute('data-nk-theme');
+  });
+
+  it('respeita o tema controlado', () => {
+    const { container } = render(<ThemeProvider theme="light" />);
+    expect(container.firstElementChild).toHaveAttribute('data-nk-theme', 'light');
+  });
+});

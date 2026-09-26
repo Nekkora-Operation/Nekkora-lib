@@ -34,7 +34,7 @@
   height: 32px;
   flex-shrink: 0;
   border-radius: var(--nk-radius-md);
-  background: rgba(96, 60, 82, 0.55);
+  background: var(--nk-color-icon-bg);
   color: var(--nk-color-accent);
 }
 .nk-fieldset__heading { flex: 1; min-width: 0; }
