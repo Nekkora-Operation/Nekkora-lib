@@ -158,7 +158,22 @@ Lista completa em `iconNames`. Todas as props `leftIcon`/`rightIcon`/`icon` acei
 ```
 As funções também estão disponíveis avulsas: `formatWithMask`, `formatCPF`, `formatCNPJ`, `formatPhone`, `applyMask`, `unmask`.
 
-### Select / Option / OptionGroup
+### SelectMenu (lista de opções customizada)
+Lista 100% estilizada — ícones, descrições, badges, grupos, busca e múltipla seleção, com navegação por teclado.
+```tsx
+<SelectMenu label="Agente" optionIcon="box" searchable clearable
+  options={[
+    { value: 'agt-01', label: 'AGT-01', description: 'Windows Server 2022', icon: 'monitor',
+      meta: <Badge tone="success" variant="solid" size="sm" dot>Online</Badge> },
+    { label: 'Offline', options: [{ value: 'agt-04', label: 'AGT-04', disabled: true }] },
+  ]}
+  onChange={(value, option) => {}} />
+
+<SelectMenu multiple label="Agentes" value={ids} onChange={setIds} maxChips={3} options={...} />
+```
+
+### Select / Option / OptionGroup (nativo)
+Usa a lista do sistema operacional — ideal para formulários simples e celular.
 ```tsx
 <Select label="Período" leftIcon="calendar" size="sm|md|lg" placeholder="Selecione"
         options={[{ value: '7', label: 'Últimos 7 dias' }, { label: 'Grupo', options: [...] }]} />
@@ -224,7 +239,7 @@ As funções também estão disponíveis avulsas: `formatWithMask`, `formatCPF`,
 src/
   tokens/        foundation.css (tipografia, espaço, raios), themes.css (modos + paletas) e tokens.ts (registro dos temas)
   utils/         máscaras, cx, renderIcon
-  components/    ThemeProvider, Icon, IconBox, Typography, Button, Link, Badge, Field, Input, Select,
+  components/    ThemeProvider, Icon, IconBox, Typography, Button, Link, Badge, Field, Input, Select, SelectMenu,
                  Container, Card, Layout (Stack/Grid), Fieldset, Table
 docs/            site de documentação (páginas, exemplos ao vivo e código)
 .github/         workflow que publica a documentação no GitHub Pages

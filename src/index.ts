@@ -43,6 +43,7 @@ export * from './components/Link';
 export * from './components/Badge';
 export * from './components/Input';
 export * from './components/Select';
+export * from './components/SelectMenu';
 export * from './components/Container';
 export * from './components/Card';
 export * from './components/Layout';

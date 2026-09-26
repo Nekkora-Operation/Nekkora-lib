@@ -47,7 +47,9 @@ body { margin: 0; min-height: 100vh; }
 /* ---------- Example ---------- */
 .doc-example { display: flex; flex-direction: column; gap: 12px; }
 .doc-example__head { display: flex; flex-direction: column; gap: 4px; }
-.doc-example__box { border: 1px solid var(--nk-color-border); border-radius: var(--nk-radius-lg); overflow: hidden; background: var(--nk-color-surface-raised); }
+.doc-example__box { border: 1px solid var(--nk-color-border); border-radius: var(--nk-radius-lg); background: var(--nk-color-surface-raised); }
+.doc-example__box > :first-child { border-radius: var(--nk-radius-lg) var(--nk-radius-lg) 0 0; }
+.doc-example__box > :last-child { border-radius: 0 0 var(--nk-radius-lg) var(--nk-radius-lg); overflow: hidden; }
 .doc-example__preview {
   padding: 28px;
   background:

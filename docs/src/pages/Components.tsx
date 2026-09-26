@@ -231,10 +231,63 @@ export function MasksPage() {
 export function SelectPage() {
   return (
     <>
-      <PageHeader title="Select & Options" description="Seleção com o mesmo visual do Input. Opções via prop options (com grupos) ou via children." />
-      <Example name="select/Options" title="Prop options" />
-      <Example name="select/Children" title="Option e OptionGroup" />
-      <Example name="select/States" title="Tamanhos e estados" />
+      <PageHeader
+        title="Select & Options"
+        description="SelectMenu tem a lista de opções inteiramente estilizada: ícones, descrições, badges, grupos, busca e seleção múltipla. O Select nativo usa a lista do sistema operacional e continua disponível para formulários simples e celular."
+      />
+      <Section title="SelectMenu — modelos de opções">
+        <Example name="selectmenu/Basic" title="Simples" description="Lista com a opção selecionada marcada e opção desabilitada." />
+        <Example name="selectmenu/Icons" title="Com ícones" />
+        <Example name="selectmenu/Rich" title="Com IconBox, descrição e badge" description='optionIcon="box", description e meta.' />
+        <Example name="selectmenu/Groups" title="Grupos e busca" description="searchable filtra enquanto digita; clearable limpa a seleção." />
+        <Example name="selectmenu/Multiple" title="Seleção múltipla" description="Os selecionados aparecem como chips preenchidos; clique no × para remover." />
+        <Example name="selectmenu/States" title="Tamanhos e estados" />
+      </Section>
+      <PropsTable
+        title="SelectMenu"
+        rows={[
+          ['options', 'Array<SelectMenuOption | { label, options }>', '', 'Opções ou grupos.'],
+          ['value / defaultValue', 'string | null · string[] (multiple)', '', 'Valor controlado ou inicial.'],
+          ['onChange', '(value, option) => void', '', 'Recebe o valor e a(s) opção(ões) selecionada(s).'],
+          ['multiple', 'boolean', 'false', 'Seleção múltipla com chips.'],
+          ['searchable', 'boolean', 'false', 'Campo de busca no topo da lista.'],
+          ['optionIcon', "'plain' | 'box'", "'plain'", 'Ícone simples ou dentro de IconBox.'],
+          ['clearable', 'boolean', 'false', 'Botão para limpar a seleção.'],
+          ['placeholder', 'string', "'Selecione'", 'Texto sem seleção.'],
+          ['label / hint / error', 'ReactNode', '', 'Como no Input.'],
+          [...SIZE],
+          ['variant', "'default' | 'filled' | 'ghost'", "'default'", 'Estilo do gatilho.'],
+          ['leftIcon', ICON_PROP, '', 'Ícone fixo no gatilho.'],
+          ['maxHeight', 'number', '280', 'Altura máxima da lista (px).'],
+          ['maxChips', 'number', '3', 'Chips visíveis antes de "+N" (multiple).'],
+          ['name', 'string', '', 'Gera input hidden para envio em <form>.'],
+          ['emptyMessage', 'ReactNode', "'Nenhuma opção encontrada.'", 'Texto quando a busca não encontra nada.'],
+        ]}
+      />
+      <PropsTable
+        title="SelectMenuOption"
+        rows={[
+          ['value', 'string', '', 'Valor da opção.'],
+          ['label', 'string', '', 'Texto principal (usado na busca).'],
+          ['description', 'ReactNode', '', 'Texto secundário.'],
+          ['icon', ICON_PROP, '', 'Ícone à esquerda.'],
+          ['iconTone', 'Tone', "'accent'", 'Cor do IconBox (optionIcon="box").'],
+          ['meta', 'ReactNode', '', 'Conteúdo à direita (badge, contagem...).'],
+          ['disabled', 'boolean', 'false', 'Desabilita a opção.'],
+        ]}
+      />
+      <Section title="Teclado">
+        <Text color="secondary" variant="body-sm">
+          ↑ ↓ navegam · Enter/Espaço selecionam · Home/End vão ao início/fim · Esc fecha · digitar uma letra pula para a
+          opção correspondente.
+        </Text>
+      </Section>
+
+      <Section title="Select nativo">
+        <Example name="select/Options" title="Prop options" />
+        <Example name="select/Children" title="Option e OptionGroup" />
+        <Example name="select/States" title="Tamanhos e estados" />
+      </Section>
       <PropsTable
         title="Select"
         rows={[
