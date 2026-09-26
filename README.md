@@ -1,6 +1,6 @@
 # nekkora-lib
 
-Design system do **Nekkora** em React — tema dark *"Sofisticado, imersivo e focado em produtividade"* e um tema claro com a mesma identidade.
+Design system do **Nekkora** em React — tema dark *"Sofisticado, imersivo e focado em produtividade"* com tema claro e templates de cor (Sakura Dark, Midnight Blue, Porcelain Light, Sage Light).
 Foco em componentes visuais configuráveis por props: tamanho, variante, ícones, máscaras, estados.
 
 | Token | Dark (principal) | Light | Uso |
@@ -17,7 +17,7 @@ Foco em componentes visuais configuráveis por props: tamanho, variante, ícones
 
 No tema claro o acento rosa é mais profundo para manter contraste AA sobre fundo branco.
 
-Também há tokens de status (`success`, `info`, `warning`, `danger`), tipografia (Inter), espaçamento (base 4px), raios, sombras e alturas de controle — todos em `src/tokens/tokens.css`.
+Também há tokens de status (`success`, `info`, `warning`, `danger`), tipografia (Inter), espaçamento (base 4px), raios, sombras e alturas de controle — em `src/tokens/`. Veja também os templates de cor em [Temas](#temas-e-templates-de-cor).
 
 ## Instalação e uso
 
@@ -34,27 +34,48 @@ import { Button, Input } from 'nekkora-lib';
 <Button leftIcon="plus">Nova automação</Button>
 ```
 
-## Temas (dark / light)
+## Temas e templates de cor
 
-Os componentes leem apenas CSS vars; trocar o tema é só mudar `data-nk-theme` — nenhum componente precisa de prop.
+| Tema (`data-nk-theme`) | Modo | Perfil | bg · surface · card | primary · secondary | highlight · text | accent |
+|---|---|---|---|---|---|---|
+| `dark` (padrão) | escuro | Nekkora — principal | `#180C1A` `#20222F` `#48213B` | `#603C52` `#765067` | `#FADCD5` `#E8E2E7` | `#F29BB2` |
+| `light` | claro | Nekkora sobre fundo claro | `#F8F3F5` `#FFFFFF` `#F6E9EE` | `#603C52` `#765067` | `#48213B` `#2A1A28` | `#C2466D` |
+| `sakura-dark` | escuro | Identidade/autoral, rosa elegante | `#1B0C1A` `#2D222F` `#4B2138` | `#6D3C52` `#765D67` | `#FADCD5` `#F8F2F7` | `#F0A3B8` |
+| `midnight-blue` | escuro | Técnico/profissional | `#0D1117` `#161B22` `#212936` | `#526D9E` `#7189B5` | `#AFC8F2` `#F2F5F8` | `#8FB0EA` |
+| `porcelain-light` | claro | Neutro/institucional | `#F7F6F4` `#FFFFFF` `#ECEAE6` | `#4E5D78` `#76839A` | `#D7CBBF` `#24262B` | `#4E5D78` |
+| `sage-light` | claro | Calmo/diferente | `#F4F6F1` `#FFFFFF` `#E6EAE2` | `#506B62` `#80958D` | `#C7D6CE` `#202724` | `#506B62` |
+
+Os componentes leem apenas CSS vars, então trocar de tema não exige nenhuma prop. Cada tema declara só a
+**paleta**; os tokens semânticos (bordas, hover, sombras, foco, badges, cards, texto secundário...) são
+derivados dela pelo **modo** (escuro/claro) com `color-mix()`. As cores de status (sucesso, info, alerta, erro)
+são as mesmas em todos os temas de um mesmo modo.
 
 ```tsx
-import { ThemeProvider, useTheme } from 'nekkora-lib';
+import { ThemeProvider, useTheme, themeList } from 'nekkora-lib';
 
-// Aplica no <html>, lembra a escolha no localStorage e aceita "system" (prefers-color-scheme)
-<ThemeProvider target="document" defaultTheme="dark" storageKey="nk-theme">
+// Aplica no <html>, lembra a escolha no localStorage
+<ThemeProvider target="document" defaultTheme="sakura-dark" storageKey="nk-theme">
   <App />
 </ThemeProvider>
 
-// Alternar em qualquer lugar
-const { theme, resolvedTheme, setTheme, toggleTheme } = useTheme();
-<Button variant="ghost" icon={resolvedTheme === 'dark' ? 'sun' : 'moon'} onClick={toggleTheme} aria-label="Alternar tema" />
+// "system" segue o SO usando o par escolhido; toggleTheme() alterna dentro do par
+<ThemeProvider theme="system" pair={{ dark: 'midnight-blue', light: 'porcelain-light' }}>...</ThemeProvider>
 
-// Temas aninhados: uma área clara dentro do app escuro
-<ThemeProvider theme="light"><Card>...</Card></ThemeProvider>
+const { theme, resolvedTheme, mode, setTheme, toggleTheme } = useTheme();
+setTheme('sage-light');
+
+// Montar um seletor
+themeList.map((t) => ({ value: t.name, label: t.label, mode: t.mode, palette: t.palette }));
+
+// Temas aninhados: uma área com outro tema dentro do app
+<ThemeProvider theme="porcelain-light"><Card>...</Card></ThemeProvider>
 ```
 
-Sem React: `<html data-nk-theme="light" class="nk-root">`. Os hex de cada tema também estão em JS: `darkColors`, `lightColors`, `themes`.
+Sem React: `<html data-nk-theme="midnight-blue" class="nk-root">`.
+
+**Criar um tema novo:** em `src/tokens/themes.css`, adicione o seletor `[data-nk-theme='meu-tema']` à lista do
+modo (escuro ou claro) e declare a paleta (`--nk-color-bg`, `surface`, `card`, `primary`, `secondary`,
+`highlight`, `text`, `accent`, `accent-hover`, `accent-active`). Depois registre o tema em `themes` (`src/tokens/tokens.ts`).
 
 ## Desenvolvimento
 
@@ -177,7 +198,7 @@ As funções também estão disponíveis avulsas: `formatWithMask`, `formatCPF`,
 
 ```
 src/
-  tokens/        tokens.css (CSS vars dos temas dark e light) e tokens.ts
+  tokens/        foundation.css (tipografia, espaço, raios), themes.css (modos + paletas) e tokens.ts (registro dos temas)
   utils/         máscaras, cx, renderIcon
   components/    ThemeProvider, Icon, Typography, Button, Link, Badge, Field, Input, Select,
                  Container, Card, Layout (Stack/Grid), Fieldset, Table

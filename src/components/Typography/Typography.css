@@ -32,7 +32,7 @@
 .nk-text--color-secondary { color: var(--nk-color-text-secondary); }
 .nk-text--color-muted { color: var(--nk-color-text-muted); }
 .nk-text--color-accent { color: var(--nk-color-accent); }
-.nk-text--color-highlight { color: var(--nk-color-highlight); }
+.nk-text--color-highlight { color: var(--nk-color-highlight-text); }
 .nk-text--color-success { color: var(--nk-color-success); }
 .nk-text--color-info { color: var(--nk-color-info); }
 .nk-text--color-warning { color: var(--nk-color-warning); }
@@ -55,7 +55,7 @@
 }
 
 .nk-text--gradient {
-  background: linear-gradient(90deg, var(--nk-color-accent) 0%, var(--nk-color-highlight) 100%);
+  background: linear-gradient(90deg, var(--nk-color-accent) 0%, var(--nk-color-highlight-text) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

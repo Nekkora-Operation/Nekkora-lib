@@ -6,8 +6,8 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
-  darkColors,
-  lightColors,
+  themeList,
+  type ThemeDefinition,
   ThemeProvider,
   useTheme,
   type ThemePreference,
@@ -112,37 +112,58 @@ const COLUMNS: TableColumn<Execucao>[] = [
 ];
 
 function ThemeSwitcher() {
-  const { theme, setTheme } = useTheme();
+  const { theme, mode, setTheme } = useTheme();
   return (
     <Select
       aria-label="Tema"
       size="sm"
-      leftIcon={theme === 'light' ? 'sun' : theme === 'dark' ? 'moon' : 'monitor'}
+      leftIcon={theme === 'system' ? 'monitor' : mode === 'light' ? 'sun' : 'moon'}
       value={theme}
       onChange={(e) => setTheme(e.target.value as ThemePreference)}
       options={[
-        { value: 'dark', label: 'Tema escuro' },
-        { value: 'light', label: 'Tema claro' },
-        { value: 'system', label: 'Seguir o sistema' },
+        { label: 'Escuros', options: themeList.filter((t) => t.mode === 'dark').map((t) => ({ value: t.name, label: t.label })) },
+        { label: 'Claros', options: themeList.filter((t) => t.mode === 'light').map((t) => ({ value: t.name, label: t.label })) },
+        { label: 'Automático', options: [{ value: 'system', label: 'Seguir o sistema' }] },
       ]}
     />
   );
 }
 
-function Palette({ title, palette }: { title: string; palette: Record<string, string> }) {
+function ThemeCard({ theme }: { theme: ThemeDefinition }) {
+  const { resolvedTheme, setTheme } = useTheme();
+  const active = resolvedTheme === theme.name;
   return (
-    <>
-      <Text variant="h4">{title}</Text>
-      <div className="pg-row pg-row--top">
-        {Object.entries(palette).map(([name, hex]) => (
-          <div key={name} className="pg-swatch">
-            <div className="pg-swatch__color" style={{ background: hex }} />
-            <Text variant="caption" weight="medium">{name}</Text>
-            <Text variant="caption" color="secondary">{hex}</Text>
+    <ThemeProvider theme={theme.name} className="pg-theme-card">
+      <Stack gap={4}>
+        <Stack direction="row" justify="space-between" align="flex-start" gap={3}>
+          <div>
+            <Stack direction="row" gap={2} align="center">
+              <Text variant="h4" as="h3">{theme.label}</Text>
+              <Badge size="sm" tone="neutral">{theme.mode === 'dark' ? 'escuro' : 'claro'}</Badge>
+            </Stack>
+            <Text variant="body-sm" color="secondary" style={{ marginTop: 4 }}>{theme.description}</Text>
           </div>
-        ))}
-      </div>
-    </>
+          <Button
+            size="sm"
+            variant={active ? 'primary' : 'outline'}
+            leftIcon={active ? 'check' : undefined}
+            onClick={() => setTheme(theme.name)}
+          >
+            {active ? 'Em uso' : 'Usar'}
+          </Button>
+        </Stack>
+        <div className="pg-theme-swatches">
+          {Object.entries(theme.palette).map(([name, hex]) => (
+            <div key={name} className="pg-theme-swatch" title={`${name} ${hex}`}>
+              <div style={{ background: hex }} />
+              <Text variant="caption" color="secondary">{name}</Text>
+              <Text variant="caption" weight="medium">{hex}</Text>
+            </div>
+          ))}
+        </div>
+        <ThemePreview />
+      </Stack>
+    </ThemeProvider>
   );
 }
 
@@ -214,20 +235,12 @@ export function App() {
         <Section
           id="tokens"
           title="Cores & Temas"
-          description='Dois temas com a mesma identidade. Use <ThemeProvider theme="dark | light | system"> ou data-nk-theme em qualquer elemento — temas podem ser aninhados.'
+          description='6 templates de cor. Cada tema declara só a paleta; bordas, sombras, hovers e status são derivados pelo modo (escuro/claro). Use <ThemeProvider theme="…"> ou data-nk-theme="…" — temas podem ser aninhados.'
         >
-          <div className="pg-palettes">
-            <div className="pg-palette" data-nk-theme="dark">
-              <Palette title="Tema escuro (principal)" palette={darkColors} />
-            </div>
-            <div className="pg-palette" data-nk-theme="light">
-              <Palette title="Tema claro" palette={lightColors} />
-            </div>
-          </div>
-          <Heading level={4}>Lado a lado (temas aninhados)</Heading>
-          <div className="pg-compare">
-            <ThemeProvider theme="dark"><ThemePreview /></ThemeProvider>
-            <ThemeProvider theme="light"><ThemePreview /></ThemeProvider>
+          <div className="pg-themes">
+            {themeList.map((t) => (
+              <ThemeCard key={t.name} theme={t} />
+            ))}
           </div>
         </Section>
 

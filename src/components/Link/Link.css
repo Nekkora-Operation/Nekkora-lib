@@ -19,7 +19,7 @@
 .nk-link--accent { color: var(--nk-color-accent); }
 .nk-link--accent:hover { color: var(--nk-color-accent-hover); }
 .nk-link--default { color: var(--nk-color-text); }
-.nk-link--default:hover { color: var(--nk-color-highlight); }
+.nk-link--default:hover { color: var(--nk-color-highlight-text); }
 .nk-link--subtle { color: var(--nk-color-text-secondary); }
 .nk-link--subtle:hover { color: var(--nk-color-text); }
 

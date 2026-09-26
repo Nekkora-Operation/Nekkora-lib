@@ -9,25 +9,35 @@ import {
   type ReactNode,
 } from 'react';
 import { cx } from '../../utils/cx';
-import type { ThemeName } from '../../tokens/tokens';
+import { isThemeName, themes, type ThemeMode, type ThemeName } from '../../tokens/tokens';
 
 /** "system" segue a preferência do sistema operacional (prefers-color-scheme). */
 export type ThemePreference = ThemeName | 'system';
+
+/** Tema usado para cada modo quando a preferência é "system" e no toggleTheme(). */
+export interface ThemePair {
+  dark: ThemeName;
+  light: ThemeName;
+}
 
 interface ThemeContextValue {
   /** Preferência escolhida (pode ser "system"). */
   theme: ThemePreference;
   /** Tema efetivamente aplicado. */
   resolvedTheme: ThemeName;
+  /** Modo (dark/light) do tema aplicado. */
+  mode: ThemeMode;
   setTheme: (theme: ThemePreference) => void;
+  /** Alterna entre os temas de `pair` (padrão: dark ↔ light). */
   toggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 const DARK_QUERY = '(prefers-color-scheme: dark)';
+const DEFAULT_PAIR: ThemePair = { dark: 'dark', light: 'light' };
 
-function getSystemTheme(): ThemeName {
+function getSystemMode(): ThemeMode {
   if (typeof window === 'undefined' || !window.matchMedia) return 'dark';
   return window.matchMedia(DARK_QUERY).matches ? 'dark' : 'light';
 }
@@ -36,7 +46,7 @@ function readStorage(key?: string): ThemePreference | null {
   if (!key || typeof window === 'undefined') return null;
   try {
     const v = window.localStorage.getItem(key);
-    return v === 'dark' || v === 'light' || v === 'system' ? v : null;
+    return v === 'system' || isThemeName(v) ? v : null;
   } catch {
     return null;
   }
@@ -48,6 +58,11 @@ export interface ThemeProviderProps extends Omit<HTMLAttributes<HTMLDivElement>,
   /** Tema inicial no modo não controlado. Padrão: "dark". */
   defaultTheme?: ThemePreference;
   onThemeChange?: (theme: ThemePreference) => void;
+  /**
+   * Par de temas escuro/claro usado por "system" e por toggleTheme().
+   * Ex.: { dark: 'midnight-blue', light: 'porcelain-light' }. Padrão: { dark: 'dark', light: 'light' }.
+   */
+  pair?: ThemePair;
   /** Persiste a escolha no localStorage com esta chave (ex.: "nk-theme"). */
   storageKey?: string;
   /**
@@ -59,26 +74,28 @@ export interface ThemeProviderProps extends Omit<HTMLAttributes<HTMLDivElement>,
   children?: ReactNode;
 }
 
-/** Aplica o tema Nekkora (dark/light/system) e expõe useTheme() para os filhos. */
+/** Aplica um tema Nekkora (qualquer tema embutido ou "system") e expõe useTheme() para os filhos. */
 export function ThemeProvider({
   theme: controlled,
   defaultTheme = 'dark',
   onThemeChange,
   storageKey,
+  pair = DEFAULT_PAIR,
   target = 'wrapper',
   className,
   children,
   ...rest
 }: ThemeProviderProps) {
   const [uncontrolled, setUncontrolled] = useState<ThemePreference>(() => readStorage(storageKey) ?? defaultTheme);
-  const [systemTheme, setSystemTheme] = useState<ThemeName>(getSystemTheme);
+  const [systemMode, setSystemMode] = useState<ThemeMode>(getSystemMode);
   const theme = controlled ?? uncontrolled;
-  const resolvedTheme = theme === 'system' ? systemTheme : theme;
+  const resolvedTheme: ThemeName = theme === 'system' ? pair[systemMode] : theme;
+  const mode = themes[resolvedTheme].mode;
 
   useEffect(() => {
     if (theme !== 'system' || typeof window === 'undefined' || !window.matchMedia) return;
     const mql = window.matchMedia(DARK_QUERY);
-    const update = () => setSystemTheme(mql.matches ? 'dark' : 'light');
+    const update = () => setSystemMode(mql.matches ? 'dark' : 'light');
     update();
     mql.addEventListener('change', update);
     return () => mql.removeEventListener('change', update);
@@ -88,12 +105,14 @@ export function ThemeProvider({
     if (target !== 'document' || typeof document === 'undefined') return;
     const html = document.documentElement;
     html.setAttribute('data-nk-theme', resolvedTheme);
+    html.setAttribute('data-nk-mode', mode);
     html.classList.add('nk-root');
     return () => {
       html.removeAttribute('data-nk-theme');
+      html.removeAttribute('data-nk-mode');
       html.classList.remove('nk-root');
     };
-  }, [target, resolvedTheme]);
+  }, [target, resolvedTheme, mode]);
 
   const setTheme = useCallback(
     (next: ThemePreference) => {
@@ -111,13 +130,13 @@ export function ThemeProvider({
   );
 
   const toggleTheme = useCallback(
-    () => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark'),
-    [resolvedTheme, setTheme],
+    () => setTheme(mode === 'dark' ? pair.light : pair.dark),
+    [mode, pair.dark, pair.light, setTheme],
   );
 
   const value = useMemo(
-    () => ({ theme, resolvedTheme, setTheme, toggleTheme }),
-    [theme, resolvedTheme, setTheme, toggleTheme],
+    () => ({ theme, resolvedTheme, mode, setTheme, toggleTheme }),
+    [theme, resolvedTheme, mode, setTheme, toggleTheme],
   );
 
   return (
@@ -125,7 +144,7 @@ export function ThemeProvider({
       {target === 'document' ? (
         children
       ) : (
-        <div className={cx('nk-root', className)} data-nk-theme={resolvedTheme} {...rest}>
+        <div className={cx('nk-root', className)} data-nk-theme={resolvedTheme} data-nk-mode={mode} {...rest}>
           {children}
         </div>
       )}
