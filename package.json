@@ -30,7 +30,8 @@
     "test": "vitest run",
     "prepare": "npm run build",
     "build:docs": "vite build --config docs/vite.config.ts",
-    "preview:docs": "vite preview --config docs/vite.config.ts"
+    "preview:docs": "vite preview --config docs/vite.config.ts",
+    "check": "npm run typecheck && npm test && npm run build && npm run build:docs"
   },
   "peerDependencies": {
     "react": ">=18",

@@ -13,7 +13,11 @@ export function GettingStarted() {
       />
 
       <Section title="Instalação">
-        <CodeBlock title="terminal" code="npm i github:Nekkora-Operation/Nekkora-lib" />
+        <CodeBlock
+          title="terminal"
+          code={`# no projeto que vai usar a lib (pasta vizinha)
+npm i ../Nekkora-lib`}
+        />
         <Text color="secondary">
           O script <Text variant="code">prepare</Text> gera o <Text variant="code">dist/</Text> automaticamente na
           instalação. <Text variant="code">react</Text> e <Text variant="code">react-dom</Text> (18+) são peer dependencies.
@@ -76,6 +80,7 @@ export function App() {
           code={`npm install
 npm run dev          # esta documentação em http://localhost:5173
 npm test             # testes (vitest)
+npm run check        # tipos + testes + builds, antes de juntar uma branch
 npm run build        # dist/ (ESM + CJS + CSS + tipos)
 npm run build:docs   # documentação estática em docs/dist`}
         />

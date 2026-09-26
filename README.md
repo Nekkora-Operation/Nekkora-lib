@@ -47,8 +47,8 @@ npm run dev          # http://localhost:5173
 npm run build:docs   # site estático em docs/dist
 ```
 
-Publicação: o workflow `.github/workflows/docs.yml` gera e publica a documentação no **GitHub Pages** a cada push na `main`
-(ative em *Settings → Pages → Source: GitHub Actions*).
+A documentação roda só no ambiente local (não há publicação em nuvem). Para ver a versão de produção:
+`npm run build:docs && npm run preview:docs`.
 
 Cada exemplo é um arquivo em `docs/src/examples/<componente>/<Exemplo>.tsx`: o mesmo arquivo é renderizado e exibido
 como código, então o código da documentação é sempre o que está rodando. Para documentar algo novo, crie o arquivo e
@@ -56,8 +56,15 @@ referencie com `<Example name="componente/Exemplo" />` na página em `docs/src/p
 
 ## Instalação e uso
 
+Uso local, em outro projeto na mesma máquina (o script `prepare` gera o `dist/` na instalação):
+
 ```bash
-npm i github:Nekkora-Operation/Nekkora-lib   # o script prepare gera o dist/ na instalação
+# a partir da pasta do projeto que vai usar a lib
+npm i ../Nekkora-lib            # instala direto da pasta local
+
+# ou, para acompanhar alterações da lib sem reinstalar:
+cd ../Nekkora-lib && npm run build && npm link
+cd ../meu-projeto && npm link nekkora-lib
 ```
 
 ```tsx
@@ -120,6 +127,7 @@ npm run dev              # documentação com todos os componentes e seletor de 
 npm test                 # testes (vitest)
 npm run typecheck
 npm run build            # gera dist/ (ESM + CJS + CSS + tipos)
+npm run check            # validação completa antes de juntar uma branch: tipos, testes e builds
 ```
 
 ## Componentes
@@ -262,5 +270,4 @@ src/
                  Container, Card, Layout (Stack/Grid), Fieldset, Table
 brand/           SVGs da marca (símbolo, logotipo, assinatura, ícone de app)
 docs/            site de documentação (páginas, exemplos ao vivo e código)
-.github/         workflow que publica a documentação no GitHub Pages
 ```
