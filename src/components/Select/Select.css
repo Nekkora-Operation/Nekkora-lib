@@ -1,0 +1,28 @@
+.nk-select { cursor: pointer; }
+
+.nk-select__native {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  padding-right: 24px;
+  margin-right: -24px; /* área clicável sob o chevron */
+}
+.nk-select__native:invalid,
+.nk-select__native:has(option[value='']:checked) { color: var(--nk-color-text-muted); }
+
+.nk-select__chevron {
+  pointer-events: none;
+  color: var(--nk-color-text-secondary);
+  transition: transform var(--nk-transition);
+}
+.nk-select:focus-within .nk-select__chevron { color: var(--nk-color-accent); }
+
+.nk-option,
+.nk-optgroup,
+.nk-select__native option,
+.nk-select__native optgroup {
+  background: var(--nk-color-surface-raised);
+  color: var(--nk-color-text);
+}
+.nk-optgroup,
+.nk-select__native optgroup { color: var(--nk-color-text-secondary); font-weight: var(--nk-font-weight-semibold); }

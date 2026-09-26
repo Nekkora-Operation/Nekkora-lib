@@ -1,0 +1,71 @@
+.nk-button {
+  --nk-btn-h: var(--nk-control-md);
+  --nk-btn-px: var(--nk-space-4);
+  --nk-btn-fs: var(--nk-font-size-md);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nk-space-2);
+  height: var(--nk-btn-h);
+  padding: 0 var(--nk-btn-px);
+  border: 1px solid transparent;
+  border-radius: var(--nk-radius-md);
+  font-family: var(--nk-font-family);
+  font-size: var(--nk-btn-fs);
+  font-weight: var(--nk-font-weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--nk-transition), border-color var(--nk-transition),
+    color var(--nk-transition), box-shadow var(--nk-transition), transform var(--nk-transition);
+}
+
+.nk-button:focus-visible { outline: none; box-shadow: var(--nk-focus-ring); }
+.nk-button:active:not(:disabled) { transform: translateY(1px); }
+.nk-button:disabled { cursor: not-allowed; opacity: 0.45; }
+.nk-button--loading:disabled { opacity: 0.75; cursor: progress; }
+
+/* Tamanhos */
+.nk-button--sm { --nk-btn-h: var(--nk-control-sm); --nk-btn-px: var(--nk-space-3); --nk-btn-fs: var(--nk-font-size-sm); gap: 6px; }
+.nk-button--lg { --nk-btn-h: var(--nk-control-lg); --nk-btn-px: var(--nk-space-6); --nk-btn-fs: var(--nk-font-size-lg); }
+.nk-button--icon-only { width: var(--nk-btn-h); padding: 0; }
+.nk-button--full { width: 100%; }
+.nk-button--pill { border-radius: var(--nk-radius-full); }
+
+/* Variantes */
+.nk-button--primary {
+  background: var(--nk-color-accent);
+  color: var(--nk-color-text-inverse);
+  box-shadow: var(--nk-shadow-accent);
+}
+.nk-button--primary:hover:not(:disabled) { background: var(--nk-color-accent-hover); }
+.nk-button--primary:active:not(:disabled) { background: var(--nk-color-accent-active); }
+
+.nk-button--secondary {
+  background: var(--nk-button-secondary-bg);
+  color: var(--nk-button-secondary-fg);
+  border-color: var(--nk-button-secondary-border);
+}
+.nk-button--secondary:hover:not(:disabled) { background: var(--nk-button-secondary-bg-hover); }
+
+.nk-button--outline {
+  background: transparent;
+  color: var(--nk-color-accent);
+  border-color: var(--nk-color-accent-border);
+}
+.nk-button--outline:hover:not(:disabled) { background: var(--nk-color-accent-soft); border-color: var(--nk-color-accent); }
+
+.nk-button--ghost {
+  background: transparent;
+  color: var(--nk-color-text-secondary);
+}
+.nk-button--ghost:hover:not(:disabled) { background: var(--nk-color-surface-hover); color: var(--nk-color-text); }
+
+.nk-button--danger {
+  background: var(--nk-color-danger-soft);
+  color: var(--nk-color-danger);
+  border-color: var(--nk-color-danger-border);
+}
+.nk-button--danger:hover:not(:disabled) { background: var(--nk-color-danger); color: #fff; border-color: var(--nk-color-danger); }
