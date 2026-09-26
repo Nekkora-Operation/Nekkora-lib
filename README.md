@@ -19,6 +19,25 @@ No tema claro o acento rosa é mais profundo para manter contraste AA sobre fund
 
 Também há tokens de status (`success`, `info`, `warning`, `danger`), tipografia (Inter), espaçamento (base 4px), raios, sombras e alturas de controle — em `src/tokens/`. Veja também os templates de cor em [Temas](#temas-e-templates-de-cor).
 
+## Marca
+
+O símbolo **Cat-Eye** são óculos com orelhas de gato: *Neko* (猫, gato em japonês) + **O**bservability.
+No logotipo, o "o" é uma lente com pupila de gato. NEKKORA = **N**etworked · **E**xecution · **K**nowledge ·
+**K**ernel · **O**bservability · **R**eliability · **A**utomation.
+
+```tsx
+<Logo />                               // símbolo + nome, nas cores do tema
+<Logo variant="symbol" size={24} />    // só o gato de óculos
+<Logo variant="wordmark" />            // só o nome
+<Logo variant="app" size={48} />       // ícone de app (fundo preenchido)
+<Logo tone="inverse" />                // branco, para fundos preenchidos
+<Logo tone="mono" />                   // uma cor (currentColor)
+<Logo tagline />                       // AUTOMATE · OBSERVE · EVOLVE
+```
+
+SVGs para uso fora do React (fundo escuro e claro): `brand/nekkora-symbol-*.svg`, `brand/nekkora-wordmark-*.svg`,
+`brand/nekkora-lockup-*.svg` e `brand/nekkora-app-icon.svg`.
+
 ## Documentação
 
 A documentação mostra cada componente funcionando ao vivo, com o código aplicado ao lado e a tabela de props.
@@ -113,11 +132,18 @@ npm run build            # gera dist/ (ESM + CJS + CSS + tipos)
 <Heading level={2}>Execuções recentes</Heading>
 ```
 
-### Ícones — `Icon`
+### Ícones — `Icon` e `IconBox`
+Estilo **duotone** por padrão: traço + uma camada preenchida translúcida.
 ```tsx
 <Icon name="search" size="xs|sm|md|lg|xl" /> // ou size={28}
+<Icon name="home" variant="outline" />        // só o traço
+<Icon name="bell" secondaryColor="var(--nk-color-accent)" /> // duotone em 2 cores
 <Icon name="loader" spin />
 <Icon name="alert" color="var(--nk-color-warning)" strokeWidth={2} label="Atenção" />
+
+// Ícone numa tag preenchida (fundo colorido + ícone branco)
+<IconBox icon="chart" tone="accent|primary|neutral|success|info|warning|danger"
+         variant="solid|soft|outline" size="xs|sm|md|lg|xl" shape="rounded|circle|square" />
 ```
 Lista completa em `iconNames`. Todas as props `leftIcon`/`rightIcon`/`icon` aceitam o **nome** do ícone ou qualquer `ReactNode`.
 
@@ -151,7 +177,22 @@ Lista completa em `iconNames`. Todas as props `leftIcon`/`rightIcon`/`icon` acei
 ```
 As funções também estão disponíveis avulsas: `formatWithMask`, `formatCPF`, `formatCNPJ`, `formatPhone`, `applyMask`, `unmask`.
 
-### Select / Option / OptionGroup
+### SelectMenu (lista de opções customizada)
+Lista 100% estilizada — ícones, descrições, badges, grupos, busca e múltipla seleção, com navegação por teclado.
+```tsx
+<SelectMenu label="Agente" optionIcon="box" searchable clearable
+  options={[
+    { value: 'agt-01', label: 'AGT-01', description: 'Windows Server 2022', icon: 'monitor',
+      meta: <Badge tone="success" variant="solid" size="sm" dot>Online</Badge> },
+    { label: 'Offline', options: [{ value: 'agt-04', label: 'AGT-04', disabled: true }] },
+  ]}
+  onChange={(value, option) => {}} />
+
+<SelectMenu multiple label="Agentes" value={ids} onChange={setIds} maxChips={3} options={...} />
+```
+
+### Select / Option / OptionGroup (nativo)
+Usa a lista do sistema operacional — ideal para formulários simples e celular.
 ```tsx
 <Select label="Período" leftIcon="calendar" size="sm|md|lg" placeholder="Selecione"
         options={[{ value: '7', label: 'Últimos 7 dias' }, { label: 'Grupo', options: [...] }]} />
@@ -169,7 +210,7 @@ As funções também estão disponíveis avulsas: `formatWithMask`, `formatCPF`,
 <Container size="sm|md|lg|xl|fluid" padding="none|sm|md|lg">
   <Grid minColumnWidth="220px" gap={4}>           // ou columns={3} / columns="2fr 1fr"
     <Card variant="surface|raised|outlined|glow" padding="none|sm|md|lg" interactive>
-      <CardHeader icon="chart" title="Execuções" subtitle="Hoje" action={<Link arrow>Ver todas</Link>} divider />
+      <CardHeader icon="chart" iconVariant="solid" title="Execuções" subtitle="Hoje" action={<Link arrow>Ver todas</Link>} divider />
       <CardBody>...</CardBody>
       <CardFooter><Button>OK</Button></CardFooter>
     </Card>
@@ -207,7 +248,8 @@ As funções também estão disponíveis avulsas: `formatWithMask`, `formatCPF`,
 
 ### Badge (status)
 ```tsx
-<Badge tone="success|info|danger|warning|accent|neutral" variant="soft|solid|outline" size="sm|md" dot icon="star">Concluído</Badge>
+<Badge tone="success|info|danger|warning|accent|primary|neutral" variant="soft|solid|outline" size="sm|md" dot icon="star">Concluído</Badge>
+<Badge variant="solid" tone="success">Concluído</Badge>   // tag preenchida: fundo colorido + texto branco
 ```
 
 ## Estrutura
@@ -216,8 +258,9 @@ As funções também estão disponíveis avulsas: `formatWithMask`, `formatCPF`,
 src/
   tokens/        foundation.css (tipografia, espaço, raios), themes.css (modos + paletas) e tokens.ts (registro dos temas)
   utils/         máscaras, cx, renderIcon
-  components/    ThemeProvider, Icon, Typography, Button, Link, Badge, Field, Input, Select,
+  components/    ThemeProvider, Logo, Icon, IconBox, Typography, Button, Link, Badge, Field, Input, Select, SelectMenu,
                  Container, Card, Layout (Stack/Grid), Fieldset, Table
+brand/           SVGs da marca (símbolo, logotipo, assinatura, ícone de app)
 docs/            site de documentação (páginas, exemplos ao vivo e código)
 .github/         workflow que publica a documentação no GitHub Pages
 ```

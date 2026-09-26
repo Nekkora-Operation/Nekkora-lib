@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="14 31 100 67" role="img" aria-label="Nekkora">
+<title>Nekkora</title>
+<g transform="translate(0 -3.5)">
+  <g fill="#FFF4F7" stroke="#F29BB2" stroke-width="6.5" stroke-linejoin="round">
+    <path d="M38.26 55.58A20 20 0 1 1 20.3 72.03L19 40Z"/>
+    <path d="M89.74 55.58A20 20 0 1 0 107.7 72.03L109 40Z"/>
+  </g>
+  <g fill="#F29BB2" stroke="#F29BB2" stroke-width="2" stroke-linejoin="round">
+    <path d="M21.5 46L24 61L32.5 55.5Z"/>
+    <path d="M106.5 46L104 61L95.5 55.5Z"/>
+  </g>
+  <path d="M58.8 68.7Q64 63.5 69.2 68.7" fill="none" stroke="#F29BB2" stroke-width="6" stroke-linecap="round"/>
+  <ellipse cx="42.5" cy="76.5" rx="4.2" ry="9" fill="#180C1A"/>
+  <ellipse cx="90.5" cy="76.5" rx="4.2" ry="9" fill="#180C1A"/>
+  <circle cx="44.6" cy="71.5" r="1.9" fill="#FFFFFF"/>
+  <circle cx="92.6" cy="71.5" r="1.9" fill="#FFFFFF"/>
+  <path d="M60 91.5H68L64 96.5Z" fill="#F29BB2" stroke="#F29BB2" stroke-width="2.4" stroke-linejoin="round"/>
+</g>
+</svg>

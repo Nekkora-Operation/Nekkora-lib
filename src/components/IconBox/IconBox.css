@@ -1,0 +1,57 @@
+.nk-iconbox {
+  --nk-ib-size: 40px;
+  --nk-ib-solid: var(--nk-solid-accent);
+  --nk-ib-color: var(--nk-color-accent);
+  --nk-ib-soft: var(--nk-color-icon-bg);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--nk-ib-size);
+  height: var(--nk-ib-size);
+  border: 1px solid transparent;
+  border-radius: calc(var(--nk-ib-size) * 0.28);
+  isolation: isolate;
+}
+
+/* Tamanhos */
+.nk-iconbox--xs { --nk-ib-size: 24px; }
+.nk-iconbox--sm { --nk-ib-size: 32px; }
+.nk-iconbox--lg { --nk-ib-size: 48px; }
+.nk-iconbox--xl { --nk-ib-size: 56px; }
+
+/* Formas */
+.nk-iconbox--circle { border-radius: 50%; }
+.nk-iconbox--square { border-radius: calc(var(--nk-ib-size) * 0.14); }
+
+/* Tons */
+.nk-iconbox--primary { --nk-ib-solid: var(--nk-solid-primary); --nk-ib-color: var(--nk-color-highlight-text); --nk-ib-soft: color-mix(in srgb, var(--nk-color-primary) 30%, transparent); }
+.nk-iconbox--neutral { --nk-ib-solid: var(--nk-solid-neutral); --nk-ib-color: var(--nk-color-text-secondary); --nk-ib-soft: var(--nk-color-neutral-soft); }
+.nk-iconbox--success { --nk-ib-solid: var(--nk-solid-success); --nk-ib-color: var(--nk-color-success); --nk-ib-soft: var(--nk-color-success-soft); }
+.nk-iconbox--info { --nk-ib-solid: var(--nk-solid-info); --nk-ib-color: var(--nk-color-info-text); --nk-ib-soft: var(--nk-color-info-soft); }
+.nk-iconbox--warning { --nk-ib-solid: var(--nk-solid-warning); --nk-ib-color: var(--nk-color-warning); --nk-ib-soft: var(--nk-color-warning-soft); }
+.nk-iconbox--danger { --nk-ib-solid: var(--nk-solid-danger); --nk-ib-color: var(--nk-color-danger-text); --nk-ib-soft: var(--nk-color-danger-soft); }
+
+/* Variantes */
+.nk-iconbox--solid {
+  color: var(--nk-solid-on);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0) 55%),
+    var(--nk-ib-solid);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 4px 12px color-mix(in srgb, var(--nk-ib-solid) 35%, transparent);
+}
+.nk-iconbox--solid .nk-icon__duo { opacity: 0.32; }
+
+.nk-iconbox--soft {
+  color: var(--nk-ib-color);
+  background: var(--nk-ib-soft);
+}
+
+.nk-iconbox--outline {
+  color: var(--nk-ib-color);
+  border-color: color-mix(in srgb, var(--nk-ib-color) 45%, transparent);
+}

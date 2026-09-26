@@ -35,13 +35,16 @@ export type { IconProp } from './utils/renderIcon';
 
 // Componentes
 export * from './components/ThemeProvider';
+export * from './components/Logo';
 export * from './components/Icon';
+export * from './components/IconBox';
 export * from './components/Typography';
 export * from './components/Button';
 export * from './components/Link';
 export * from './components/Badge';
 export * from './components/Input';
 export * from './components/Select';
+export * from './components/SelectMenu';
 export * from './components/Container';
 export * from './components/Card';
 export * from './components/Layout';

@@ -44,10 +44,15 @@ export function IconsPage() {
     <>
       <PageHeader
         title="Ícones"
-        description={`${iconNames.length} ícones outline 24×24. Qualquer prop leftIcon/rightIcon/icon aceita o nome do ícone ou um ReactNode.`}
+        description={`${iconNames.length} ícones duotone 24×24. Qualquer prop leftIcon/rightIcon/icon aceita o nome do ícone ou um ReactNode. Para o ícone numa tag preenchida, use IconBox.`}
       />
       <Example name="icons/Sizes" title="Tamanhos" />
-      <Example name="icons/Styles" title="Cor, traço e animação" />
+      <Example
+        name="icons/Styles"
+        title="Duotone, outline e 2 cores"
+        description="O estilo padrão é duotone: traço + uma camada preenchida translúcida. secondaryColor pinta essa camada com outra cor."
+      />
+      <Example name="icons/Colors" title="Cor, traço e animação" />
       <Section title="Galeria">
         <div style={{ maxWidth: 360 }}>
           <Input placeholder="Filtrar ícones..." leftIcon="search" value={filter} clearable onValueChange={setFilter} />
@@ -66,11 +71,68 @@ export function IconsPage() {
         title="Icon"
         rows={[
           ['name', 'IconName', '', 'Nome do ícone (obrigatório).'],
+          ['variant', "'duotone' | 'outline'", "'duotone'", 'Traço + camada preenchida, ou só traço.'],
+          ['secondaryColor', 'string', 'cor do traço', 'Cor da camada preenchida do duotone.'],
           ['size', "'xs' | 'sm' | 'md' | 'lg' | 'xl' | number", "'md'", '12 · 16 · 20 · 24 · 32 px ou valor em px.'],
           ['color', 'string', "'currentColor'", 'Qualquer cor CSS (ex.: var(--nk-color-accent)).'],
           ['strokeWidth', 'number', '1.75', 'Espessura do traço.'],
           ['spin', 'boolean', 'false', 'Animação de rotação.'],
           ['label', 'string', '', 'Rótulo acessível; sem ele o ícone é decorativo.'],
+        ]}
+      />
+    </>
+  );
+}
+
+export function LogoPage() {
+  return (
+    <>
+      <PageHeader
+        title="Logo"
+        description="O símbolo Cat-Eye são óculos com orelhas de gato: Neko (猫) + Observability. No logotipo, o “o” é uma lente com pupila de gato. As cores seguem o tema."
+      />
+      <Example name="logo/Variants" title="Variantes" description="full (símbolo + nome), symbol, wordmark e app (ícone)." />
+      <Example name="logo/Tones" title="Tons" description="brand usa as cores do tema; inverse é branco, para fundos preenchidos; mono usa uma cor só." />
+      <Example name="logo/Themes" title="Nos 6 temas" />
+      <Example name="logo/Sizes" title="Tamanhos" description="O símbolo continua legível a 16 px." />
+      <PropsTable
+        rows={[
+          ['variant', "'full' | 'symbol' | 'wordmark' | 'app'", "'full'", 'O que mostrar.'],
+          ['size', 'number', '32', 'Altura do símbolo em px (o nome acompanha).'],
+          ['tone', "'brand' | 'mono' | 'inverse'", "'brand'", 'Cores do tema, uma cor (currentColor) ou branco.'],
+          ['tagline', 'boolean | ReactNode', '', 'Tagline abaixo do nome (full). true = AUTOMATE · OBSERVE · EVOLVE.'],
+          ['title', 'string', "'Nekkora'", 'Nome acessível.'],
+        ]}
+      />
+      <Section title="Arquivos da marca">
+        <Text color="secondary" variant="body-sm">
+          Para usar fora do React (apresentações, redes, e-mail), os SVGs estão em <Text variant="code">brand/</Text>:
+          símbolo, logotipo e assinatura (versões para fundo escuro e claro) e o ícone de app.
+        </Text>
+      </Section>
+    </>
+  );
+}
+
+export function IconBoxPage() {
+  return (
+    <>
+      <PageHeader
+        title="IconBox"
+        description="O ícone dentro de uma tag colorida. No estilo solid, o fundo é preenchido e o ícone fica branco."
+      />
+      <Example name="iconbox/Solid" title="Tag preenchida" />
+      <Example name="iconbox/Variants" title="Variantes" description="solid (padrão), soft e outline em cada tom." />
+      <Example name="iconbox/Sizes" title="Tamanhos e formas" />
+      <Example name="iconbox/List" title="Em uma lista" />
+      <PropsTable
+        rows={[
+          ['icon', ICON_PROP, '', 'Nome do ícone Nekkora ou ReactNode (obrigatório).'],
+          ['tone', "'accent' | 'primary' | 'neutral' | 'success' | 'info' | 'warning' | 'danger'", "'accent'", 'Cor da caixa.'],
+          ['variant', "'solid' | 'soft' | 'outline'", "'solid'", 'Preenchida com ícone branco, translúcida ou só borda.'],
+          ['size', "'xs' | 'sm' | 'md' | 'lg' | 'xl'", "'md'", '24 · 32 · 40 · 48 · 56 px.'],
+          ['shape', "'rounded' | 'circle' | 'square'", "'rounded'", 'Formato.'],
+          ['label', 'string', '', 'Rótulo acessível; sem ele a caixa é decorativa.'],
         ]}
       />
     </>
@@ -128,12 +190,13 @@ export function BadgePage() {
   return (
     <>
       <PageHeader title="Badge" description="Rótulos de status — usados nas tabelas de execuções e automações." />
-      <Example name="badge/Tones" title="Tons" />
-      <Example name="badge/Variants" title="Variantes, dot e ícone" />
+      <Example name="badge/Solid" title="Preenchido (solid)" description="Fundo colorido com texto branco. Os fundos sólidos são calibrados para contraste AA em todos os temas." />
+      <Example name="badge/Tones" title="Suave (soft)" description="Variante padrão, usada nas tabelas." />
+      <Example name="badge/Variants" title="Dot, ícone e outline" />
       <PropsTable
         rows={[
-          ['tone', "'neutral' | 'accent' | 'success' | 'info' | 'warning' | 'danger'", "'neutral'", 'Cor semântica.'],
-          ['variant', "'soft' | 'solid' | 'outline'", "'soft'", 'Preenchimento.'],
+          ['tone', "'neutral' | 'primary' | 'accent' | 'success' | 'info' | 'warning' | 'danger'", "'neutral'", 'Cor semântica.'],
+          ['variant', "'soft' | 'solid' | 'outline'", "'soft'", 'solid = fundo colorido e texto branco.'],
           ['size', "'sm' | 'md'", "'md'", 'Tamanho.'],
           ['dot', 'boolean', 'false', 'Ponto de status à esquerda.'],
           ['icon', ICON_PROP, '', 'Ícone à esquerda.'],
@@ -198,10 +261,63 @@ export function MasksPage() {
 export function SelectPage() {
   return (
     <>
-      <PageHeader title="Select & Options" description="Seleção com o mesmo visual do Input. Opções via prop options (com grupos) ou via children." />
-      <Example name="select/Options" title="Prop options" />
-      <Example name="select/Children" title="Option e OptionGroup" />
-      <Example name="select/States" title="Tamanhos e estados" />
+      <PageHeader
+        title="Select & Options"
+        description="SelectMenu tem a lista de opções inteiramente estilizada: ícones, descrições, badges, grupos, busca e seleção múltipla. O Select nativo usa a lista do sistema operacional e continua disponível para formulários simples e celular."
+      />
+      <Section title="SelectMenu — modelos de opções">
+        <Example name="selectmenu/Basic" title="Simples" description="Lista com a opção selecionada marcada e opção desabilitada." />
+        <Example name="selectmenu/Icons" title="Com ícones" />
+        <Example name="selectmenu/Rich" title="Com IconBox, descrição e badge" description='optionIcon="box", description e meta.' />
+        <Example name="selectmenu/Groups" title="Grupos e busca" description="searchable filtra enquanto digita; clearable limpa a seleção." />
+        <Example name="selectmenu/Multiple" title="Seleção múltipla" description="Os selecionados aparecem como chips preenchidos; clique no × para remover." />
+        <Example name="selectmenu/States" title="Tamanhos e estados" />
+      </Section>
+      <PropsTable
+        title="SelectMenu"
+        rows={[
+          ['options', 'Array<SelectMenuOption | { label, options }>', '', 'Opções ou grupos.'],
+          ['value / defaultValue', 'string | null · string[] (multiple)', '', 'Valor controlado ou inicial.'],
+          ['onChange', '(value, option) => void', '', 'Recebe o valor e a(s) opção(ões) selecionada(s).'],
+          ['multiple', 'boolean', 'false', 'Seleção múltipla com chips.'],
+          ['searchable', 'boolean', 'false', 'Campo de busca no topo da lista.'],
+          ['optionIcon', "'plain' | 'box'", "'plain'", 'Ícone simples ou dentro de IconBox.'],
+          ['clearable', 'boolean', 'false', 'Botão para limpar a seleção.'],
+          ['placeholder', 'string', "'Selecione'", 'Texto sem seleção.'],
+          ['label / hint / error', 'ReactNode', '', 'Como no Input.'],
+          [...SIZE],
+          ['variant', "'default' | 'filled' | 'ghost'", "'default'", 'Estilo do gatilho.'],
+          ['leftIcon', ICON_PROP, '', 'Ícone fixo no gatilho.'],
+          ['maxHeight', 'number', '280', 'Altura máxima da lista (px).'],
+          ['maxChips', 'number', '3', 'Chips visíveis antes de "+N" (multiple).'],
+          ['name', 'string', '', 'Gera input hidden para envio em <form>.'],
+          ['emptyMessage', 'ReactNode', "'Nenhuma opção encontrada.'", 'Texto quando a busca não encontra nada.'],
+        ]}
+      />
+      <PropsTable
+        title="SelectMenuOption"
+        rows={[
+          ['value', 'string', '', 'Valor da opção.'],
+          ['label', 'string', '', 'Texto principal (usado na busca).'],
+          ['description', 'ReactNode', '', 'Texto secundário.'],
+          ['icon', ICON_PROP, '', 'Ícone à esquerda.'],
+          ['iconTone', 'Tone', "'accent'", 'Cor do IconBox (optionIcon="box").'],
+          ['meta', 'ReactNode', '', 'Conteúdo à direita (badge, contagem...).'],
+          ['disabled', 'boolean', 'false', 'Desabilita a opção.'],
+        ]}
+      />
+      <Section title="Teclado">
+        <Text color="secondary" variant="body-sm">
+          ↑ ↓ navegam · Enter/Espaço selecionam · Home/End vão ao início/fim · Esc fecha · digitar uma letra pula para a
+          opção correspondente.
+        </Text>
+      </Section>
+
+      <Section title="Select nativo">
+        <Example name="select/Options" title="Prop options" />
+        <Example name="select/Children" title="Option e OptionGroup" />
+        <Example name="select/States" title="Tamanhos e estados" />
+      </Section>
       <PropsTable
         title="Select"
         rows={[
@@ -283,7 +399,9 @@ export function CardPage() {
         title="CardHeader"
         rows={[
           ['title / subtitle', 'ReactNode', '', 'Título e subtítulo.'],
-          ['icon', ICON_PROP, '', 'Ícone em destaque à esquerda.'],
+          ['icon', ICON_PROP, '', 'Ícone em destaque à esquerda (IconBox).'],
+          ['iconVariant', "'solid' | 'soft' | 'outline'", "'soft'", 'Estilo da caixa do ícone.'],
+          ['iconTone', 'Tone', "'accent'", 'Cor da caixa do ícone.'],
           ['action', 'ReactNode', '', 'Conteúdo à direita (link, select...).'],
           ['divider', 'boolean', 'false', 'Linha abaixo do cabeçalho.'],
         ]}

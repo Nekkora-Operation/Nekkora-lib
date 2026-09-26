@@ -1,10 +1,11 @@
-import { Card, CardHeader, Grid, Link, Stack, Text } from 'nekkora-lib';
+import { Card, CardHeader, Grid, Link, Logo, Stack, Text } from 'nekkora-lib';
 import { CodeBlock } from '../ui/CodeBlock';
 import { PageHeader, Section } from '../ui/Page';
 
 export function GettingStarted() {
   return (
     <>
+      <Logo size={56} tagline />
       <PageHeader
         title="nekkora-lib"
         tag="v0.1"

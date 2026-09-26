@@ -4,6 +4,8 @@ import './Field.css';
 
 export interface FieldProps {
   id: string;
+  /** id do elemento <label> (para aria-labelledby em controles que não são inputs nativos). */
+  labelId?: string;
   label?: ReactNode;
   /** Texto de ajuda abaixo do campo. */
   hint?: ReactNode;
@@ -16,12 +18,12 @@ export interface FieldProps {
 }
 
 /** Wrapper interno de label + hint/erro, compartilhado por Input e Select. */
-export function Field({ id, label, hint, error, required, fullWidth, className, children }: FieldProps) {
+export function Field({ id, labelId, label, hint, error, required, fullWidth, className, children }: FieldProps) {
   const message = error ?? hint;
   return (
     <div className={cx('nk-field', fullWidth && 'nk-field--full', className)}>
       {label != null && (
-        <label className="nk-field__label" htmlFor={id}>
+        <label id={labelId} className="nk-field__label" htmlFor={id}>
           {label}
           {required && (
             <span className="nk-field__required" aria-hidden>

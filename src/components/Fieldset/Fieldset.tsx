@@ -1,6 +1,7 @@
 import { forwardRef, useId, type FieldsetHTMLAttributes, type ReactNode } from 'react';
 import { cx } from '../../utils/cx';
-import { renderIcon, type IconProp } from '../../utils/renderIcon';
+import type { IconProp } from '../../utils/renderIcon';
+import { IconBox } from '../IconBox';
 import './Fieldset.css';
 
 export interface FieldsetProps extends Omit<FieldsetHTMLAttributes<HTMLFieldSetElement>, 'title'> {
@@ -33,7 +34,7 @@ export const Fieldset = forwardRef<HTMLFieldSetElement, FieldsetProps>(function 
       {legend != null && <legend className="nk-visually-hidden">{legend}</legend>}
       {(legend != null || description != null || action != null) && (
         <div className="nk-fieldset__header">
-          {icon != null && <span className="nk-fieldset__icon">{renderIcon(icon, 18)}</span>}
+          {icon != null && <IconBox icon={icon} variant="soft" size="sm" />}
           <div className="nk-fieldset__heading">
             {legend != null && <div className="nk-fieldset__legend" aria-hidden>
                 {legend}
