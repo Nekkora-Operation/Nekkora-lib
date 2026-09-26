@@ -5,6 +5,9 @@ import './Icon.css';
 
 export type IconSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
+/** duotone = traço + camada preenchida translúcida (padrão) · outline = só o traço. */
+export type IconVariant = 'duotone' | 'outline';
+
 const SIZE_PX: Record<IconSize, number> = { xs: 12, sm: 16, md: 20, lg: 24, xl: 32 };
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'ref' | 'name'> {
@@ -12,6 +15,10 @@ export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'ref' | 'name'>
   name: IconName;
   /** Tamanho: token (xs, sm, md, lg, xl) ou valor em px. */
   size?: IconSize | number;
+  /** Estilo: duotone (padrão) ou outline. */
+  variant?: IconVariant;
+  /** Cor da camada preenchida do duotone. Padrão: a mesma cor do traço. */
+  secondaryColor?: string;
   /** Espessura do traço. */
   strokeWidth?: number;
   /** Cor (qualquer valor CSS). Padrão: currentColor. */
@@ -23,7 +30,19 @@ export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'ref' | 'name'>
 }
 
 export const Icon = forwardRef<SVGSVGElement, IconProps>(function Icon(
-  { name, size = 'md', strokeWidth = 1.75, color = 'currentColor', label, spin, className, ...rest },
+  {
+    name,
+    size = 'md',
+    variant = 'duotone',
+    secondaryColor,
+    strokeWidth = 1.75,
+    color = 'currentColor',
+    label,
+    spin,
+    className,
+    style,
+    ...rest
+  },
   ref,
 ) {
   const px = typeof size === 'number' ? size : SIZE_PX[size];
@@ -39,7 +58,12 @@ export const Icon = forwardRef<SVGSVGElement, IconProps>(function Icon(
       strokeWidth={strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={cx('nk-icon', spin && 'nk-icon--spin', className)}
+      className={cx('nk-icon', `nk-icon--${variant}`, spin && 'nk-icon--spin', className)}
+      style={
+        secondaryColor
+          ? { ['--nk-icon-duo-color' as string]: secondaryColor, ['--nk-icon-duo-opacity' as string]: 0.5, ...style }
+          : style
+      }
       role={label ? 'img' : undefined}
       aria-label={label}
       aria-hidden={label ? undefined : true}

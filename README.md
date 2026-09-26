@@ -113,11 +113,18 @@ npm run build            # gera dist/ (ESM + CJS + CSS + tipos)
 <Heading level={2}>Execuções recentes</Heading>
 ```
 
-### Ícones — `Icon`
+### Ícones — `Icon` e `IconBox`
+Estilo **duotone** por padrão: traço + uma camada preenchida translúcida.
 ```tsx
 <Icon name="search" size="xs|sm|md|lg|xl" /> // ou size={28}
+<Icon name="home" variant="outline" />        // só o traço
+<Icon name="bell" secondaryColor="var(--nk-color-accent)" /> // duotone em 2 cores
 <Icon name="loader" spin />
 <Icon name="alert" color="var(--nk-color-warning)" strokeWidth={2} label="Atenção" />
+
+// Ícone numa tag preenchida (fundo colorido + ícone branco)
+<IconBox icon="chart" tone="accent|primary|neutral|success|info|warning|danger"
+         variant="solid|soft|outline" size="xs|sm|md|lg|xl" shape="rounded|circle|square" />
 ```
 Lista completa em `iconNames`. Todas as props `leftIcon`/`rightIcon`/`icon` aceitam o **nome** do ícone ou qualquer `ReactNode`.
 
@@ -169,7 +176,7 @@ As funções também estão disponíveis avulsas: `formatWithMask`, `formatCPF`,
 <Container size="sm|md|lg|xl|fluid" padding="none|sm|md|lg">
   <Grid minColumnWidth="220px" gap={4}>           // ou columns={3} / columns="2fr 1fr"
     <Card variant="surface|raised|outlined|glow" padding="none|sm|md|lg" interactive>
-      <CardHeader icon="chart" title="Execuções" subtitle="Hoje" action={<Link arrow>Ver todas</Link>} divider />
+      <CardHeader icon="chart" iconVariant="solid" title="Execuções" subtitle="Hoje" action={<Link arrow>Ver todas</Link>} divider />
       <CardBody>...</CardBody>
       <CardFooter><Button>OK</Button></CardFooter>
     </Card>
@@ -207,7 +214,8 @@ As funções também estão disponíveis avulsas: `formatWithMask`, `formatCPF`,
 
 ### Badge (status)
 ```tsx
-<Badge tone="success|info|danger|warning|accent|neutral" variant="soft|solid|outline" size="sm|md" dot icon="star">Concluído</Badge>
+<Badge tone="success|info|danger|warning|accent|primary|neutral" variant="soft|solid|outline" size="sm|md" dot icon="star">Concluído</Badge>
+<Badge variant="solid" tone="success">Concluído</Badge>   // tag preenchida: fundo colorido + texto branco
 ```
 
 ## Estrutura
@@ -216,7 +224,7 @@ As funções também estão disponíveis avulsas: `formatWithMask`, `formatCPF`,
 src/
   tokens/        foundation.css (tipografia, espaço, raios), themes.css (modos + paletas) e tokens.ts (registro dos temas)
   utils/         máscaras, cx, renderIcon
-  components/    ThemeProvider, Icon, Typography, Button, Link, Badge, Field, Input, Select,
+  components/    ThemeProvider, Icon, IconBox, Typography, Button, Link, Badge, Field, Input, Select,
                  Container, Card, Layout (Stack/Grid), Fieldset, Table
 docs/            site de documentação (páginas, exemplos ao vivo e código)
 .github/         workflow que publica a documentação no GitHub Pages

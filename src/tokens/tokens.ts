@@ -162,7 +162,7 @@ export const colors = darkColors;
 export const sizes = ['sm', 'md', 'lg'] as const;
 export type Size = (typeof sizes)[number];
 
-export type Tone = 'neutral' | 'accent' | 'success' | 'info' | 'warning' | 'danger';
+export type Tone = 'neutral' | 'primary' | 'accent' | 'success' | 'info' | 'warning' | 'danger';
 
 /** Retorna a CSS var de um token: cssVar('color-accent') -> 'var(--nk-color-accent)'. */
 export const cssVar = (token: string) => `var(--nk-${token})`;

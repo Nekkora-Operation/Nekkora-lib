@@ -1,13 +1,24 @@
-import { Icon, Stack } from 'nekkora-lib';
+import { Icon, Stack, Text } from 'nekkora-lib';
+
+const names = ['home', 'search', 'bell', 'calendar', 'robot', 'sakura'] as const;
 
 export default function IconStyles() {
   return (
-    <Stack direction="row" gap={4} align="center">
-      <Icon name="loader" spin />
-      <Icon name="check-circle" color="var(--nk-color-success)" />
-      <Icon name="alert" color="var(--nk-color-warning)" strokeWidth={2.5} />
-      <Icon name="x-circle" color="var(--nk-color-danger)" />
-      <Icon name="bell" label="Notificações" />
+    <Stack gap={4}>
+      <Stack direction="row" gap={5} align="center">
+        <Text variant="caption" color="secondary" style={{ width: 70 }}>duotone</Text>
+        {names.map((n) => <Icon key={n} name={n} size="lg" />)}
+      </Stack>
+      <Stack direction="row" gap={5} align="center">
+        <Text variant="caption" color="secondary" style={{ width: 70 }}>outline</Text>
+        {names.map((n) => <Icon key={n} name={n} size="lg" variant="outline" />)}
+      </Stack>
+      <Stack direction="row" gap={5} align="center">
+        <Text variant="caption" color="secondary" style={{ width: 70 }}>2 cores</Text>
+        {names.map((n) => (
+          <Icon key={n} name={n} size="lg" secondaryColor="var(--nk-color-accent)" />
+        ))}
+      </Stack>
     </Stack>
   );
 }

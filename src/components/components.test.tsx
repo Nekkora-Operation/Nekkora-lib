@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import { Button, Fieldset, Input, Select, Table } from '../index';
+import { Badge, Button, Fieldset, Icon, IconBox, Input, Select, Table } from '../index';
 
 describe('Input', () => {
   it('aplica máscara de CPF e informa o valor bruto', () => {
@@ -72,5 +72,34 @@ describe('Table', () => {
     expect(screen.getByText('Download de Faturas')).toBeInTheDocument();
     rerender(<Table columns={cols} data={[]} emptyMessage="Vazio" />);
     expect(screen.getByText('Vazio')).toBeInTheDocument();
+  });
+});
+
+describe('Icon', () => {
+  it('usa duotone por padrão e aceita outline', () => {
+    const { container, rerender } = render(<Icon name="home" />);
+    const svg = container.querySelector('svg')!;
+    expect(svg).toHaveClass('nk-icon--duotone');
+    expect(svg.querySelector('.nk-icon__duo')).not.toBeNull();
+    rerender(<Icon name="home" variant="outline" secondaryColor="red" />);
+    expect(container.querySelector('svg')).toHaveClass('nk-icon--outline');
+  });
+});
+
+describe('IconBox', () => {
+  it('renderiza tag preenchida decorativa ou com rótulo', () => {
+    const { container, rerender } = render(<IconBox icon="chart" tone="success" />);
+    const box = container.firstElementChild!;
+    expect(box).toHaveClass('nk-iconbox--solid', 'nk-iconbox--success', 'nk-iconbox--md');
+    expect(box).toHaveAttribute('aria-hidden', 'true');
+    rerender(<IconBox icon="chart" label="Relatórios" variant="soft" />);
+    expect(screen.getByRole('img', { name: 'Relatórios' })).toHaveClass('nk-iconbox--soft');
+  });
+});
+
+describe('Badge', () => {
+  it('aplica a variante solid', () => {
+    render(<Badge variant="solid" tone="primary">Financeiro</Badge>);
+    expect(screen.getByText('Financeiro')).toHaveClass('nk-badge--solid', 'nk-badge--primary');
   });
 });

@@ -43,17 +43,6 @@
 }
 .nk-card--pad-none > .nk-card__header { padding: var(--nk-space-5) var(--nk-space-5) 0; }
 
-.nk-card__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  flex-shrink: 0;
-  border-radius: var(--nk-radius-md);
-  background: var(--nk-color-icon-bg);
-  color: var(--nk-color-accent);
-}
 .nk-card__heading { flex: 1; min-width: 0; }
 .nk-card__title {
   margin: 0;

@@ -79,6 +79,16 @@
   --nk-focus-ring: 0 0 0 3px color-mix(in srgb, var(--nk-color-accent) 35%, transparent);
   --nk-focus-ring-danger: 0 0 0 3px rgba(240, 80, 110, 0.3);
 
+  /* Fundos "sólidos" (tag preenchida com texto/ícone branco — contraste AA) */
+  --nk-solid-on: #ffffff;
+  --nk-solid-primary: var(--nk-color-primary);
+  --nk-solid-accent: color-mix(in srgb, var(--nk-color-accent) 62%, #000);
+  --nk-solid-neutral: color-mix(in srgb, var(--nk-color-text) 32%, var(--nk-color-bg));
+  --nk-solid-success: #15803d;
+  --nk-solid-info: #5b5bd6;
+  --nk-solid-warning: #b45309;
+  --nk-solid-danger: #d02c50;
+
   color-scheme: dark;
 }
 
@@ -146,6 +156,16 @@
   --nk-focus-ring: 0 0 0 3px color-mix(in srgb, var(--nk-color-accent) 25%, transparent);
   --nk-focus-ring-danger: 0 0 0 3px rgba(208, 44, 80, 0.2);
 
+  /* Fundos "sólidos" (tag preenchida com texto/ícone branco — contraste AA) */
+  --nk-solid-on: #ffffff;
+  --nk-solid-primary: var(--nk-color-primary);
+  --nk-solid-accent: var(--nk-color-accent);
+  --nk-solid-neutral: color-mix(in srgb, var(--nk-color-text) 68%, var(--nk-color-bg));
+  --nk-solid-success: #15803d;
+  --nk-solid-info: #5b5bd6;
+  --nk-solid-warning: #b45309;
+  --nk-solid-danger: #d02c50;
+
   color-scheme: light;
 }
 
@@ -173,6 +193,7 @@
   --nk-color-surface-raised: #1f1420;
   --nk-color-surface-sunken: #140a16;
   --nk-color-neutral-soft: rgba(148, 163, 184, 0.14);
+  --nk-solid-accent: #c2466d; /* tag preenchida: branco com contraste AA */
 }
 
 /* Nekkora Light — mesma identidade sobre fundos claros */
@@ -211,6 +232,7 @@
   --nk-color-accent: #f0a3b8;
   --nk-color-accent-hover: #f5bacb;
   --nk-color-accent-active: #e48ca5;
+  --nk-solid-accent: #b8486f; /* tag preenchida: branco com contraste AA */
 }
 
 /* Midnight Blue — técnico/profissional, corporativo sem ser "SaaS genérico" */
@@ -225,6 +247,7 @@
   --nk-color-accent: #8fb0ea;
   --nk-color-accent-hover: #a8c3f1;
   --nk-color-accent-active: #7897d6;
+  --nk-solid-accent: #4a6fb5; /* tag preenchida: branco com contraste AA */
 }
 
 /* Porcelain Light — neutro/institucional */

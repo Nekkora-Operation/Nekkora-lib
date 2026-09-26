@@ -44,10 +44,15 @@ export function IconsPage() {
     <>
       <PageHeader
         title="Ícones"
-        description={`${iconNames.length} ícones outline 24×24. Qualquer prop leftIcon/rightIcon/icon aceita o nome do ícone ou um ReactNode.`}
+        description={`${iconNames.length} ícones duotone 24×24. Qualquer prop leftIcon/rightIcon/icon aceita o nome do ícone ou um ReactNode. Para o ícone numa tag preenchida, use IconBox.`}
       />
       <Example name="icons/Sizes" title="Tamanhos" />
-      <Example name="icons/Styles" title="Cor, traço e animação" />
+      <Example
+        name="icons/Styles"
+        title="Duotone, outline e 2 cores"
+        description="O estilo padrão é duotone: traço + uma camada preenchida translúcida. secondaryColor pinta essa camada com outra cor."
+      />
+      <Example name="icons/Colors" title="Cor, traço e animação" />
       <Section title="Galeria">
         <div style={{ maxWidth: 360 }}>
           <Input placeholder="Filtrar ícones..." leftIcon="search" value={filter} clearable onValueChange={setFilter} />
@@ -66,11 +71,38 @@ export function IconsPage() {
         title="Icon"
         rows={[
           ['name', 'IconName', '', 'Nome do ícone (obrigatório).'],
+          ['variant', "'duotone' | 'outline'", "'duotone'", 'Traço + camada preenchida, ou só traço.'],
+          ['secondaryColor', 'string', 'cor do traço', 'Cor da camada preenchida do duotone.'],
           ['size', "'xs' | 'sm' | 'md' | 'lg' | 'xl' | number", "'md'", '12 · 16 · 20 · 24 · 32 px ou valor em px.'],
           ['color', 'string', "'currentColor'", 'Qualquer cor CSS (ex.: var(--nk-color-accent)).'],
           ['strokeWidth', 'number', '1.75', 'Espessura do traço.'],
           ['spin', 'boolean', 'false', 'Animação de rotação.'],
           ['label', 'string', '', 'Rótulo acessível; sem ele o ícone é decorativo.'],
+        ]}
+      />
+    </>
+  );
+}
+
+export function IconBoxPage() {
+  return (
+    <>
+      <PageHeader
+        title="IconBox"
+        description="O ícone dentro de uma tag colorida. No estilo solid, o fundo é preenchido e o ícone fica branco."
+      />
+      <Example name="iconbox/Solid" title="Tag preenchida" />
+      <Example name="iconbox/Variants" title="Variantes" description="solid (padrão), soft e outline em cada tom." />
+      <Example name="iconbox/Sizes" title="Tamanhos e formas" />
+      <Example name="iconbox/List" title="Em uma lista" />
+      <PropsTable
+        rows={[
+          ['icon', ICON_PROP, '', 'Nome do ícone Nekkora ou ReactNode (obrigatório).'],
+          ['tone', "'accent' | 'primary' | 'neutral' | 'success' | 'info' | 'warning' | 'danger'", "'accent'", 'Cor da caixa.'],
+          ['variant', "'solid' | 'soft' | 'outline'", "'solid'", 'Preenchida com ícone branco, translúcida ou só borda.'],
+          ['size', "'xs' | 'sm' | 'md' | 'lg' | 'xl'", "'md'", '24 · 32 · 40 · 48 · 56 px.'],
+          ['shape', "'rounded' | 'circle' | 'square'", "'rounded'", 'Formato.'],
+          ['label', 'string', '', 'Rótulo acessível; sem ele a caixa é decorativa.'],
         ]}
       />
     </>
@@ -128,12 +160,13 @@ export function BadgePage() {
   return (
     <>
       <PageHeader title="Badge" description="Rótulos de status — usados nas tabelas de execuções e automações." />
-      <Example name="badge/Tones" title="Tons" />
-      <Example name="badge/Variants" title="Variantes, dot e ícone" />
+      <Example name="badge/Solid" title="Preenchido (solid)" description="Fundo colorido com texto branco. Os fundos sólidos são calibrados para contraste AA em todos os temas." />
+      <Example name="badge/Tones" title="Suave (soft)" description="Variante padrão, usada nas tabelas." />
+      <Example name="badge/Variants" title="Dot, ícone e outline" />
       <PropsTable
         rows={[
-          ['tone', "'neutral' | 'accent' | 'success' | 'info' | 'warning' | 'danger'", "'neutral'", 'Cor semântica.'],
-          ['variant', "'soft' | 'solid' | 'outline'", "'soft'", 'Preenchimento.'],
+          ['tone', "'neutral' | 'primary' | 'accent' | 'success' | 'info' | 'warning' | 'danger'", "'neutral'", 'Cor semântica.'],
+          ['variant', "'soft' | 'solid' | 'outline'", "'soft'", 'solid = fundo colorido e texto branco.'],
           ['size', "'sm' | 'md'", "'md'", 'Tamanho.'],
           ['dot', 'boolean', 'false', 'Ponto de status à esquerda.'],
           ['icon', ICON_PROP, '', 'Ícone à esquerda.'],
@@ -283,7 +316,9 @@ export function CardPage() {
         title="CardHeader"
         rows={[
           ['title / subtitle', 'ReactNode', '', 'Título e subtítulo.'],
-          ['icon', ICON_PROP, '', 'Ícone em destaque à esquerda.'],
+          ['icon', ICON_PROP, '', 'Ícone em destaque à esquerda (IconBox).'],
+          ['iconVariant', "'solid' | 'soft' | 'outline'", "'soft'", 'Estilo da caixa do ícone.'],
+          ['iconTone', 'Tone', "'accent'", 'Cor da caixa do ícone.'],
           ['action', 'ReactNode', '', 'Conteúdo à direita (link, select...).'],
           ['divider', 'boolean', 'false', 'Linha abaixo do cabeçalho.'],
         ]}

@@ -26,17 +26,7 @@
   gap: var(--nk-space-3);
   margin-bottom: var(--nk-space-4);
 }
-.nk-fieldset__icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  flex-shrink: 0;
-  border-radius: var(--nk-radius-md);
-  background: var(--nk-color-icon-bg);
-  color: var(--nk-color-accent);
-}
+
 .nk-fieldset__heading { flex: 1; min-width: 0; }
 .nk-fieldset__legend {
   font-size: var(--nk-font-size-lg);
