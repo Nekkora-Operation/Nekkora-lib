@@ -36,7 +36,8 @@ No logotipo, o "o" é uma lente com pupila de gato. NEKKORA = **N**etworked · *
 ```
 
 SVGs para uso fora do React (fundo escuro e claro): `brand/nekkora-symbol-*.svg`, `brand/nekkora-wordmark-*.svg`,
-`brand/nekkora-lockup-*.svg` e `brand/nekkora-app-icon.svg`.
+`brand/nekkora-lockup-*.svg` e `brand/nekkora-app-icon.svg`. PNGs em vários tamanhos e favicons prontos em
+`brand/export/` (veja o `LEIA-ME.md` da pasta).
 
 ## Documentação
 
