@@ -1,0 +1,9 @@
+.nk-icon {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.nk-icon--spin {
+  animation: nk-spin 0.8s linear infinite;
+}

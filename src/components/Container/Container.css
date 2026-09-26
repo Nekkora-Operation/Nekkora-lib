@@ -1,0 +1,18 @@
+.nk-container { width: 100%; }
+.nk-container--centered { margin-left: auto; margin-right: auto; }
+
+.nk-container--sm { max-width: 640px; }
+.nk-container--md { max-width: 960px; }
+.nk-container--lg { max-width: 1200px; }
+.nk-container--xl { max-width: 1440px; }
+.nk-container--fluid { max-width: none; }
+
+.nk-container--pad-none { padding: 0; }
+.nk-container--pad-sm { padding: var(--nk-space-3) var(--nk-space-4); }
+.nk-container--pad-md { padding: var(--nk-space-6) var(--nk-space-6); }
+.nk-container--pad-lg { padding: var(--nk-space-10) var(--nk-space-8); }
+
+@media (max-width: 640px) {
+  .nk-container--pad-md,
+  .nk-container--pad-lg { padding-left: var(--nk-space-4); padding-right: var(--nk-space-4); }
+}
