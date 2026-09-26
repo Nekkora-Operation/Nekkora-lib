@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
-import { Badge, Button, Fieldset, Icon, IconBox, Input, Select, Table } from '../index';
+import { Badge, Button, Fieldset, Icon, IconBox, Input, Logo, Select, Table } from '../index';
 
 describe('Input', () => {
   it('aplica máscara de CPF e informa o valor bruto', () => {
@@ -101,5 +101,19 @@ describe('Badge', () => {
   it('aplica a variante solid', () => {
     render(<Badge variant="solid" tone="primary">Financeiro</Badge>);
     expect(screen.getByText('Financeiro')).toHaveClass('nk-badge--solid', 'nk-badge--primary');
+  });
+});
+
+describe('Logo', () => {
+  it('renderiza variantes com nome acessível', () => {
+    const { container, rerender } = render(<Logo tagline />);
+    expect(screen.getByRole('img', { name: 'Nekkora' })).toHaveClass('nk-logo--full', 'nk-logo--brand');
+    expect(container.querySelectorAll('svg')).toHaveLength(2);
+    expect(screen.getByText('AUTOMATE · OBSERVE · EVOLVE')).toBeInTheDocument();
+    rerender(<Logo variant="symbol" tone="mono" title="Início" />);
+    expect(screen.getByRole('img', { name: 'Início' })).toHaveClass('nk-logo--symbol', 'nk-logo--mono');
+    expect(container.querySelectorAll('svg')).toHaveLength(1);
+    rerender(<Logo variant="app" size={48} />);
+    expect(container.querySelector('.nk-logo__app')).not.toBeNull();
   });
 });

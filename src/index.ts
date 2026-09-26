@@ -35,6 +35,7 @@ export type { IconProp } from './utils/renderIcon';
 
 // Componentes
 export * from './components/ThemeProvider';
+export * from './components/Logo';
 export * from './components/Icon';
 export * from './components/IconBox';
 export * from './components/Typography';

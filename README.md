@@ -19,6 +19,25 @@ No tema claro o acento rosa é mais profundo para manter contraste AA sobre fund
 
 Também há tokens de status (`success`, `info`, `warning`, `danger`), tipografia (Inter), espaçamento (base 4px), raios, sombras e alturas de controle — em `src/tokens/`. Veja também os templates de cor em [Temas](#temas-e-templates-de-cor).
 
+## Marca
+
+O símbolo **Cat-Eye** são óculos com orelhas de gato: *Neko* (猫, gato em japonês) + **O**bservability.
+No logotipo, o "o" é uma lente com pupila de gato. NEKKORA = **N**etworked · **E**xecution · **K**nowledge ·
+**K**ernel · **O**bservability · **R**eliability · **A**utomation.
+
+```tsx
+<Logo />                               // símbolo + nome, nas cores do tema
+<Logo variant="symbol" size={24} />    // só o gato de óculos
+<Logo variant="wordmark" />            // só o nome
+<Logo variant="app" size={48} />       // ícone de app (fundo preenchido)
+<Logo tone="inverse" />                // branco, para fundos preenchidos
+<Logo tone="mono" />                   // uma cor (currentColor)
+<Logo tagline />                       // AUTOMATE · OBSERVE · EVOLVE
+```
+
+SVGs para uso fora do React (fundo escuro e claro): `brand/nekkora-symbol-*.svg`, `brand/nekkora-wordmark-*.svg`,
+`brand/nekkora-lockup-*.svg` e `brand/nekkora-app-icon.svg`.
+
 ## Documentação
 
 A documentação mostra cada componente funcionando ao vivo, com o código aplicado ao lado e a tabela de props.
@@ -239,8 +258,9 @@ Usa a lista do sistema operacional — ideal para formulários simples e celular
 src/
   tokens/        foundation.css (tipografia, espaço, raios), themes.css (modos + paletas) e tokens.ts (registro dos temas)
   utils/         máscaras, cx, renderIcon
-  components/    ThemeProvider, Icon, IconBox, Typography, Button, Link, Badge, Field, Input, Select, SelectMenu,
+  components/    ThemeProvider, Logo, Icon, IconBox, Typography, Button, Link, Badge, Field, Input, Select, SelectMenu,
                  Container, Card, Layout (Stack/Grid), Fieldset, Table
+brand/           SVGs da marca (símbolo, logotipo, assinatura, ícone de app)
 docs/            site de documentação (páginas, exemplos ao vivo e código)
 .github/         workflow que publica a documentação no GitHub Pages
 ```

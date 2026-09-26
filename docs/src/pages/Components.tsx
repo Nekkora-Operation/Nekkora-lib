@@ -84,6 +84,36 @@ export function IconsPage() {
   );
 }
 
+export function LogoPage() {
+  return (
+    <>
+      <PageHeader
+        title="Logo"
+        description="O símbolo Cat-Eye são óculos com orelhas de gato: Neko (猫) + Observability. No logotipo, o “o” é uma lente com pupila de gato. As cores seguem o tema."
+      />
+      <Example name="logo/Variants" title="Variantes" description="full (símbolo + nome), symbol, wordmark e app (ícone)." />
+      <Example name="logo/Tones" title="Tons" description="brand usa as cores do tema; inverse é branco, para fundos preenchidos; mono usa uma cor só." />
+      <Example name="logo/Themes" title="Nos 6 temas" />
+      <Example name="logo/Sizes" title="Tamanhos" description="O símbolo continua legível a 16 px." />
+      <PropsTable
+        rows={[
+          ['variant', "'full' | 'symbol' | 'wordmark' | 'app'", "'full'", 'O que mostrar.'],
+          ['size', 'number', '32', 'Altura do símbolo em px (o nome acompanha).'],
+          ['tone', "'brand' | 'mono' | 'inverse'", "'brand'", 'Cores do tema, uma cor (currentColor) ou branco.'],
+          ['tagline', 'boolean | ReactNode', '', 'Tagline abaixo do nome (full). true = AUTOMATE · OBSERVE · EVOLVE.'],
+          ['title', 'string', "'Nekkora'", 'Nome acessível.'],
+        ]}
+      />
+      <Section title="Arquivos da marca">
+        <Text color="secondary" variant="body-sm">
+          Para usar fora do React (apresentações, redes, e-mail), os SVGs estão em <Text variant="code">brand/</Text>:
+          símbolo, logotipo e assinatura (versões para fundo escuro e claro) e o ícone de app.
+        </Text>
+      </Section>
+    </>
+  );
+}
+
 export function IconBoxPage() {
   return (
     <>

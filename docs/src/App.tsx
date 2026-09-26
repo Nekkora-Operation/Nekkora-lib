@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Button, Icon, Input, Link, Select, Text, themeList, useTheme, type ThemePreference } from 'nekkora-lib';
+import { Button, Icon, Input, Link, Logo, Select, Text, themeList, useTheme, type ThemePreference } from 'nekkora-lib';
 import { pages } from './pages';
 
 function useRoute() {
@@ -64,11 +64,8 @@ export function App() {
     <div className="doc-layout">
       <aside className={`doc-sidebar${menuOpen ? ' doc-sidebar--open' : ''}`}>
         <a href="#/inicio" className="doc-brand">
-          <Icon name="sakura" size={30} color="var(--nk-color-accent)" />
-          <div>
-            <Text variant="h4" as="div">Nekkora</Text>
-            <Text variant="overline" color="secondary" className="doc-brand__sub">Design System</Text>
-          </div>
+          <Logo size={28} />
+          <Text variant="overline" color="secondary" className="doc-brand__sub">Design System</Text>
         </a>
         <Input size="sm" placeholder="Buscar..." leftIcon="search" value={query} onValueChange={setQuery} clearable fullWidth />
         <nav className="doc-nav">

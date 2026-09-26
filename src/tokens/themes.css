@@ -89,6 +89,10 @@
   --nk-solid-warning: #b45309;
   --nk-solid-danger: #d02c50;
 
+  /* Logo */
+  --nk-logo-lens: color-mix(in srgb, var(--nk-color-highlight) 22%, #ffffff);
+  --nk-logo-pupil: var(--nk-color-bg);
+
   color-scheme: dark;
 }
 
@@ -165,6 +169,10 @@
   --nk-solid-info: #5b5bd6;
   --nk-solid-warning: #b45309;
   --nk-solid-danger: #d02c50;
+
+  /* Logo */
+  --nk-logo-lens: #ffffff;
+  --nk-logo-pupil: var(--nk-color-text);
 
   color-scheme: light;
 }

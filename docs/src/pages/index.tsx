@@ -8,6 +8,7 @@ import {
   CardPage,
   FieldsetPage,
   IconBoxPage,
+  LogoPage,
   IconsPage,
   InputPage,
   LayoutPage,
@@ -29,6 +30,7 @@ export interface DocPage {
 export const pages: DocPage[] = [
   { id: 'inicio', title: 'Introdução', group: 'Começando', icon: 'home', Component: GettingStarted },
   { id: 'temas', title: 'Temas', group: 'Começando', icon: 'sakura', Component: Themes },
+  { id: 'logo', title: 'Logo', group: 'Fundamentos', icon: 'eye', Component: LogoPage },
   { id: 'tipografia', title: 'Tipografia', group: 'Fundamentos', icon: 'file', Component: TypographyPage },
   { id: 'icones', title: 'Ícones', group: 'Fundamentos', icon: 'star', Component: IconsPage },
   { id: 'iconbox', title: 'IconBox', group: 'Fundamentos', icon: 'box', Component: IconBoxPage },
