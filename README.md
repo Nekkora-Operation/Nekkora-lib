@@ -19,6 +19,22 @@ No tema claro o acento rosa é mais profundo para manter contraste AA sobre fund
 
 Também há tokens de status (`success`, `info`, `warning`, `danger`), tipografia (Inter), espaçamento (base 4px), raios, sombras e alturas de controle — em `src/tokens/`. Veja também os templates de cor em [Temas](#temas-e-templates-de-cor).
 
+## Documentação
+
+A documentação mostra cada componente funcionando ao vivo, com o código aplicado ao lado e a tabela de props.
+
+```bash
+npm run dev          # http://localhost:5173
+npm run build:docs   # site estático em docs/dist
+```
+
+Publicação: o workflow `.github/workflows/docs.yml` gera e publica a documentação no **GitHub Pages** a cada push na `main`
+(ative em *Settings → Pages → Source: GitHub Actions*).
+
+Cada exemplo é um arquivo em `docs/src/examples/<componente>/<Exemplo>.tsx`: o mesmo arquivo é renderizado e exibido
+como código, então o código da documentação é sempre o que está rodando. Para documentar algo novo, crie o arquivo e
+referencie com `<Example name="componente/Exemplo" />` na página em `docs/src/pages/`.
+
 ## Instalação e uso
 
 ```bash
@@ -81,7 +97,7 @@ modo (escuro ou claro) e declare a paleta (`--nk-color-bg`, `surface`, `card`, `
 
 ```bash
 npm install
-npm run dev              # playground com todos os componentes e seletor de tema (http://localhost:5173)
+npm run dev              # documentação com todos os componentes e seletor de tema (http://localhost:5173)
 npm test                 # testes (vitest)
 npm run typecheck
 npm run build            # gera dist/ (ESM + CJS + CSS + tipos)
@@ -202,5 +218,6 @@ src/
   utils/         máscaras, cx, renderIcon
   components/    ThemeProvider, Icon, Typography, Button, Link, Badge, Field, Input, Select,
                  Container, Card, Layout (Stack/Grid), Fieldset, Table
-playground/      app Vite que demonstra todos os componentes e props
+docs/            site de documentação (páginas, exemplos ao vivo e código)
+.github/         workflow que publica a documentação no GitHub Pages
 ```

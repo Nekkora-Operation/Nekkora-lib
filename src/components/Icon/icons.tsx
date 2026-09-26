@@ -102,6 +102,13 @@ export const icons = {
       <path d="M10 11v6M14 11v6" />
     </>
   ),
+  copy: (
+    <>
+      <rect x="8" y="8" width="13" height="13" rx="2" />
+      <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" />
+    </>
+  ),
+  code: <path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16" />,
   download: <path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 19h16" />,
   upload: <path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M4 20h16" />,
   filter: <path d="M3 5h18l-7 8.5V20l-4-2v-4.5z" />,
