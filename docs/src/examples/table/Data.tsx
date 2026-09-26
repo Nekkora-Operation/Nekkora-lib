@@ -20,7 +20,7 @@ const data: Execucao[] = [
 
 const columns: TableColumn<Execucao>[] = [
   { key: 'processo', header: 'Processo' },
-  { key: 'status', header: 'Status', render: (r) => <Badge tone={TONE[r.status]} size="sm">{r.status}</Badge> },
+  { key: 'status', header: 'Status', render: (r) => <Badge tone={TONE[r.status]} variant="solid" size="sm">{r.status}</Badge> },
   { key: 'inicio', header: 'Início', muted: true },
   { key: 'duracao', header: 'Duração', muted: true },
   { key: 'agente', header: 'Agente' },

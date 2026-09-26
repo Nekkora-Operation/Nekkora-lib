@@ -190,8 +190,8 @@ export function BadgePage() {
   return (
     <>
       <PageHeader title="Badge" description="Rótulos de status — usados nas tabelas de execuções e automações." />
-      <Example name="badge/Solid" title="Preenchido (solid)" description="Fundo colorido com texto branco. Os fundos sólidos são calibrados para contraste AA em todos os temas." />
-      <Example name="badge/Tones" title="Suave (soft)" description="Variante padrão, usada nas tabelas." />
+      <Example name="badge/Solid" title="Preenchido (solid)" description="Fundo colorido com texto branco, contraste AA em todos os temas. Recomendado para a coluna de status das tabelas." />
+      <Example name="badge/Tones" title="Suave (soft)" description="Variante padrão: mais discreta, para rótulos secundários." />
       <Example name="badge/Variants" title="Dot, ícone e outline" />
       <PropsTable
         rows={[

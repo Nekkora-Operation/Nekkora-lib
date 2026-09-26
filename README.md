@@ -241,7 +241,7 @@ Usa a lista do sistema operacional — ideal para formulários simples e celular
 <Table
   columns={[
     { key: 'processo', header: 'Processo' },
-    { key: 'status', header: 'Status', render: (r) => <Badge tone="success">{r.status}</Badge> },
+    { key: 'status', header: 'Status', render: (r) => <Badge tone="success" variant="solid" size="sm">{r.status}</Badge> },
     { key: 'inicio', header: 'Início', muted: true, align: 'right', width: 100 },
   ]}
   data={rows} rowKey="id"
