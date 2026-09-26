@@ -4,6 +4,7 @@ import { GettingStarted } from './GettingStarted';
 import { Themes } from './Themes';
 import {
   BadgePage,
+  BlocksPage,
   ButtonPage,
   CardPage,
   FieldsetPage,
@@ -43,5 +44,6 @@ export const pages: DocPage[] = [
   { id: 'fieldset', title: 'Fieldset', group: 'Formulários', icon: 'workspace', Component: FieldsetPage },
   { id: 'layout', title: 'Container & Layout', group: 'Layout', icon: 'layers', Component: LayoutPage },
   { id: 'card', title: 'Card', group: 'Layout', icon: 'monitor', Component: CardPage },
+  { id: 'blocos', title: 'Blocos de página', group: 'Layout', icon: 'layers', Component: BlocksPage },
   { id: 'tabelas', title: 'Tabelas', group: 'Dados', icon: 'chart', Component: TablePage },
 ];

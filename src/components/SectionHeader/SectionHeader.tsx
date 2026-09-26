@@ -11,6 +11,8 @@ export interface SectionHeaderProps extends Omit<HTMLAttributes<HTMLDivElement>,
   /** Nível do título. Padrão: h2. */
   as?: ElementType;
   size?: 'md' | 'lg';
+  /** id do título (para aria-labelledby da seção). */
+  titleId?: string;
 }
 
 /** Cabeçalho de seção: eyebrow + título + descrição. */
@@ -21,13 +23,14 @@ export function SectionHeader({
   align = 'left',
   as: Tag = 'h2',
   size = 'md',
+  titleId,
   className,
   ...rest
 }: SectionHeaderProps) {
   return (
     <div className={cx('nk-section-header', `nk-section-header--${align}`, `nk-section-header--${size}`, className)} {...rest}>
       {eyebrow != null && <span className="nk-section-header__eyebrow">{eyebrow}</span>}
-      <Tag className="nk-section-header__title">{title}</Tag>
+      <Tag id={titleId} className="nk-section-header__title">{title}</Tag>
       {description != null && <p className="nk-section-header__description">{description}</p>}
     </div>
   );

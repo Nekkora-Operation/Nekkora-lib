@@ -255,6 +255,17 @@ Usa a lista do sistema operacional — ideal para formulários simples e celular
 </TableRoot>
 ```
 
+### Blocos de página — `Navbar`, `SectionHeader`, `Steps`, `FloatingButton`, `Textarea`
+```tsx
+<Navbar brand={<Logo />} links={[{ label: 'Studio', href: '#studio' }]} activeHref="#studio"
+        actions={<Button size="sm" href="https://wa.me/55...">Falar no WhatsApp</Button>} />
+<SectionHeader eyebrow="Monitoramento" title="Não basta executar." description="..." align="center" />
+<Steps items={[{ icon: 'studio', title: 'Estruturamos', description: '...' }]} orientation="horizontal" />
+<FloatingButton href="https://wa.me/55..." icon="whatsapp" label="Fale conosco" tone="whatsapp" pulse />
+<Textarea label="Mensagem" maxLength={500} showCount error="..." success="..." />
+<Button href="#contato">Contato</Button>   // Button vira link com o mesmo visual
+```
+
 ### Badge (status)
 ```tsx
 <Badge tone="success|info|danger|warning|accent|primary|neutral" variant="soft|solid|outline" size="sm|md" dot icon="star">Concluído</Badge>
@@ -267,7 +278,7 @@ Usa a lista do sistema operacional — ideal para formulários simples e celular
 src/
   tokens/        foundation.css (tipografia, espaço, raios), themes.css (modos + paletas) e tokens.ts (registro dos temas)
   utils/         máscaras, cx, renderIcon
-  components/    ThemeProvider, Logo, Icon, IconBox, Typography, Button, Link, Badge, Field, Input, Select, SelectMenu,
+  components/    ThemeProvider, Logo, Icon, IconBox, Navbar, SectionHeader, Steps, FloatingButton, Textarea, Typography, Button, Link, Badge, Field, Input, Select, SelectMenu,
                  Container, Card, Layout (Stack/Grid), Fieldset, Table
 brand/           SVGs da marca (símbolo, logotipo, assinatura, ícone de app)
 docs/            site de documentação (páginas, exemplos ao vivo e código)

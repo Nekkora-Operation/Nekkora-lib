@@ -464,3 +464,49 @@ export function TablePage() {
     </>
   );
 }
+
+export function BlocksPage() {
+  return (
+    <>
+      <PageHeader
+        title="Blocos de página"
+        description="Componentes para páginas comerciais e institucionais: navegação, cabeçalhos de seção, jornadas, formulários e botão flutuante."
+      />
+      <Example name="blocks/NavbarEx" title="Navbar" description="Âncoras, link ativo, ações e menu recolhível no mobile (abaixo de 960 px)." />
+      <Example name="blocks/SectionHeaderEx" title="SectionHeader" />
+      <Example name="blocks/StepsEx" title="Steps" description="Horizontal no desktop; vira vertical em telas estreitas." />
+      <Example name="blocks/FormEx" title="Textarea, sucesso e Button como link" />
+      <PropsTable
+        title="Navbar"
+        rows={[
+          ['brand / brandHref', 'ReactNode / string', "'#'", 'Marca à esquerda e seu link.'],
+          ['links', '{ label, href }[]', '[]', 'Itens de navegação (âncoras ou rotas).'],
+          ['activeHref', 'string', '', 'Link marcado como ativo.'],
+          ['actions', 'ReactNode', '', 'Ações à direita (no mobile, dentro do menu).'],
+          ['sticky / blur', 'boolean', 'true / true', 'Fixa no topo; fundo translúcido.'],
+        ]}
+      />
+      <PropsTable
+        title="FloatingButton"
+        rows={[
+          ['href', 'string', '', 'Destino (ex.: link do WhatsApp).'],
+          ['icon', ICON_PROP, '', 'Ícone do botão.'],
+          ['label', 'string', '', 'Rótulo acessível e tooltip.'],
+          ['tone', "Tone | 'whatsapp'", "'accent'", 'Cor de fundo.'],
+          ['position', "'bottom-right' | 'bottom-left'", "'bottom-right'", 'Canto da tela.'],
+          ['pulse', 'boolean', 'false', 'Anel pulsando (respeita reduced-motion).'],
+        ]}
+      />
+      <PropsTable
+        title="Steps / SectionHeader / Textarea"
+        rows={[
+          ['Steps.items', '{ title, description?, icon? }[]', '', 'Etapas; sem ícone mostra o número.'],
+          ['Steps.orientation', "'horizontal' | 'vertical'", "'horizontal'", 'Direção.'],
+          ['SectionHeader', 'eyebrow, title, description, align, size, titleId', '', 'Cabeçalho de seção.'],
+          ['Textarea', 'label, hint, error, success, showCount, resize', '', 'Mesmo visual e estados do Input.'],
+          ['Input.success / Button.href', 'boolean | ReactNode / string', '', 'Estado de sucesso; botão renderizado como link.'],
+        ]}
+      />
+    </>
+  );
+}
