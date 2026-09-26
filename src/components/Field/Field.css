@@ -19,6 +19,7 @@
   color: var(--nk-color-text-secondary);
 }
 .nk-field__message--error { color: var(--nk-color-danger-text); }
+.nk-field__message--success { color: var(--nk-color-success); }
 
 /* ---- Casca visual compartilhada de controles (input/select) ---- */
 .nk-control {
@@ -55,6 +56,11 @@
 .nk-control--invalid,
 .nk-control--invalid:hover { border-color: var(--nk-color-danger); }
 .nk-control--invalid:focus-within { box-shadow: var(--nk-focus-ring-danger); border-color: var(--nk-color-danger); }
+
+.nk-control--valid,
+.nk-control--valid:hover { border-color: var(--nk-color-success); }
+.nk-control--valid:focus-within { border-color: var(--nk-color-success); box-shadow: 0 0 0 3px var(--nk-color-success-soft); }
+.nk-control__valid-icon { color: var(--nk-color-success); display: inline-flex; flex-shrink: 0; }
 
 .nk-control--disabled {
   opacity: 0.5;

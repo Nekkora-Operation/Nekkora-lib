@@ -69,3 +69,7 @@
   border-color: var(--nk-color-danger-border);
 }
 .nk-button--danger:hover:not(:disabled) { background: var(--nk-color-danger); color: #fff; border-color: var(--nk-color-danger); }
+
+/* Botão renderizado como link */
+.nk-button--link { text-decoration: none; }
+.nk-button--disabled { opacity: 0.45; pointer-events: none; cursor: not-allowed; }

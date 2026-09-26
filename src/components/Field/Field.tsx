@@ -11,6 +11,8 @@ export interface FieldProps {
   hint?: ReactNode;
   /** Mensagem de erro (substitui o hint e pinta o campo de vermelho). */
   error?: ReactNode;
+  /** Mensagem de sucesso (usada quando não há erro). */
+  success?: ReactNode;
   required?: boolean;
   fullWidth?: boolean;
   className?: string;
@@ -18,8 +20,8 @@ export interface FieldProps {
 }
 
 /** Wrapper interno de label + hint/erro, compartilhado por Input e Select. */
-export function Field({ id, labelId, label, hint, error, required, fullWidth, className, children }: FieldProps) {
-  const message = error ?? hint;
+export function Field({ id, labelId, label, hint, error, success, required, fullWidth, className, children }: FieldProps) {
+  const message = error ?? (success != null && success !== true ? success : undefined) ?? hint;
   return (
     <div className={cx('nk-field', fullWidth && 'nk-field--full', className)}>
       {label != null && (
@@ -34,7 +36,11 @@ export function Field({ id, labelId, label, hint, error, required, fullWidth, cl
       )}
       {children}
       {message != null && message !== false && (
-        <span id={`${id}-message`} className={cx('nk-field__message', error != null && 'nk-field__message--error')}>
+        <span id={`${id}-message`} className={cx(
+            'nk-field__message',
+            error != null && 'nk-field__message--error',
+            error == null && success != null && success !== true && 'nk-field__message--success',
+          )}>
           {message}
         </span>
       )}

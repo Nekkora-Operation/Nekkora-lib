@@ -19,6 +19,8 @@ export interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 
   label?: ReactNode;
   hint?: ReactNode;
   error?: ReactNode;
+  /** Estado de sucesso: true só pinta o campo; um texto também aparece abaixo dele. */
+  success?: boolean | ReactNode;
   size?: Size;
   variant?: InputVariant;
   /** Ícone à esquerda (nome Nekkora ou ReactNode). */
@@ -56,6 +58,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
     label,
     hint,
     error,
+    success,
     size = 'md',
     variant = 'default',
     leftIcon,
@@ -104,7 +107,8 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
 
   const px = ICON_SIZE[size];
   const isPassword = type === 'password';
-  const describedBy = error != null || hint != null ? `${inputId}-message` : undefined;
+  const describedBy =
+    error != null || hint != null || (success != null && typeof success !== 'boolean') ? `${inputId}-message` : undefined;
 
   return (
     <Field
@@ -112,6 +116,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
       label={label}
       hint={hint}
       error={error}
+      success={success}
       required={required}
       fullWidth={fullWidth}
       className={wrapperClassName}
@@ -122,6 +127,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
           `nk-control--${size}`,
           `nk-control--${variant}`,
           error != null && 'nk-control--invalid',
+          error == null && success != null && success !== false && 'nk-control--valid',
           disabled && 'nk-control--disabled',
           className,
         )}
@@ -162,6 +168,11 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
         {suffix != null && <span className="nk-control__addon">{suffix}</span>}
         {shortcut && <kbd className="nk-control__kbd">{shortcut}</kbd>}
         {rightIcon != null && <span className="nk-control__addon">{renderIcon(rightIcon, px)}</span>}
+        {error == null && success != null && success !== false && (
+          <span className="nk-control__valid-icon">
+            <Icon name="check-circle" size={px} />
+          </span>
+        )}
       </div>
     </Field>
   );

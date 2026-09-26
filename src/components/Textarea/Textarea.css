@@ -1,0 +1,27 @@
+.nk-textarea {
+  height: auto;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  padding: 10px var(--nk-space-3) 8px;
+}
+.nk-textarea__native {
+  width: 100%;
+  min-height: 72px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--nk-color-text);
+  font-family: inherit;
+  font-size: var(--nk-font-size-md);
+  line-height: var(--nk-line-height-normal);
+}
+.nk-textarea__native::placeholder { color: var(--nk-color-text-muted); }
+.nk-textarea__native:disabled { cursor: not-allowed; }
+.nk-textarea__count {
+  align-self: flex-end;
+  font-size: var(--nk-font-size-2xs);
+  color: var(--nk-color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
