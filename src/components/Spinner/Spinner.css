@@ -1,0 +1,14 @@
+.nk-spinner { display: inline-flex; align-items: center; justify-content: center; --nk-spinner-size: 20px; }
+.nk-spinner--sm { --nk-spinner-size: 14px; }
+.nk-spinner--lg { --nk-spinner-size: 32px; }
+.nk-spinner__ring {
+  width: var(--nk-spinner-size);
+  height: var(--nk-spinner-size);
+  border-radius: 50%;
+  border: max(2px, calc(var(--nk-spinner-size) / 10)) solid var(--nk-color-accent-soft);
+  border-top-color: var(--nk-color-accent);
+  animation: nk-spin 0.8s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nk-spinner__ring { animation-duration: 2.4s; }
+}

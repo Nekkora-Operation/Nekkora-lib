@@ -36,11 +36,17 @@ export function Field({ id, labelId, label, hint, error, success, required, full
       )}
       {children}
       {message != null && message !== false && (
-        <span id={`${id}-message`} className={cx(
+        <span
+          id={`${id}-message`}
+          // erros são anunciados por leitores de tela assim que aparecem
+          aria-live={error != null ? 'polite' : undefined}
+          className={cx(
             'nk-field__message',
             error != null && 'nk-field__message--error',
             error == null && success != null && success !== true && 'nk-field__message--success',
-          )}>
+          )}
+        >
+          {error != null && <span className="nk-visually-hidden">Erro: </span>}
           {message}
         </span>
       )}

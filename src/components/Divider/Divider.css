@@ -1,0 +1,6 @@
+.nk-divider { height: 1px; background: var(--nk-color-border); border: 0; }
+.nk-divider--labeled {
+  display: flex; align-items: center; gap: var(--nk-space-3); height: auto; background: none;
+  font-size: var(--nk-font-size-xs); color: var(--nk-color-text-muted);
+}
+.nk-divider--labeled::before, .nk-divider--labeled::after { content: ''; flex: 1; height: 1px; background: var(--nk-color-border); }

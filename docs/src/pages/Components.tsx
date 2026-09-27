@@ -510,3 +510,81 @@ export function BlocksPage() {
     </>
   );
 }
+
+export function FeedbackPage() {
+  return (
+    <>
+      <PageHeader
+        title="Feedback"
+        description="Alert (mensagem em linha), StateView (carregando/sucesso/erro/vazio) e Spinner. Sempre ícone + texto, com anúncio para leitores de tela."
+      />
+      <Example name="feedback/Alerts" title="Alert" description="danger usa role=alert (anuncia imediatamente); os demais role=status." />
+      <Example name="feedback/States" title="StateView e Spinner" />
+      <PropsTable
+        title="Alert"
+        rows={[
+          ['tone', "'info' | 'success' | 'warning' | 'danger'", "'info'", 'Tom semântico (ícone e cor).'],
+          ['title', 'ReactNode', '', 'Título em destaque.'],
+          ['action', 'ReactNode', '', 'Ação abaixo da mensagem.'],
+          ['live', "'assertive' | 'polite' | 'off'", 'por tom', 'Como leitores de tela anunciam.'],
+        ]}
+      />
+      <PropsTable
+        title="StateView"
+        rows={[
+          ['status', "'loading' | 'success' | 'error' | 'warning' | 'info' | 'neutral'", '', 'Estado exibido.'],
+          ['title', 'ReactNode', '', 'Título.'],
+          ['description', 'ReactNode', '', 'Texto de apoio.'],
+          ['actions', 'ReactNode', '', 'Botões/links.'],
+          ['meta', 'ReactNode', '', 'Detalhe técnico discreto (ex.: código de correlação).'],
+        ]}
+      />
+    </>
+  );
+}
+
+export function CheckboxPage() {
+  return (
+    <>
+      <PageHeader
+        title="Checkbox & CodeInput"
+        description="Checkbox nativo com visual Nekkora. CodeInput: código de verificação (OTP) com casas visuais sobre um único input — colar, autocomplete one-time-code e leitores de tela funcionam."
+      />
+      <Example name="checkbox/Checkbox" title="Exemplos" />
+      <PropsTable
+        title="CodeInput"
+        rows={[
+          ['length', 'number', '', 'Quantidade de caracteres.'],
+          ['mode', "'numeric' | 'alphanumeric'", "'numeric'", 'Dígitos (teclado numérico) ou letras e dígitos em maiúsculas.'],
+          ['onValueChange', '(value) => void', '', 'Valor saneado.'],
+          ['onComplete', '(value) => void', '', 'Chamado ao atingir length.'],
+        ]}
+      />
+    </>
+  );
+}
+
+export function AuthPage() {
+  return (
+    <>
+      <PageHeader
+        title="AuthLayout & QrCode"
+        description="Estrutura única das telas de autenticação (marca, contexto da organização, card com título/descrição/conteúdo/ações, rodapé e painel institucional opcional). QrCode desenha o QR no navegador, sem serviço externo."
+      />
+      <Example name="auth/Login" title="Login" />
+      <PropsTable
+        title="AuthLayout"
+        rows={[
+          ['title', 'ReactNode', '', 'Título da etapa (h1).'],
+          ['description', 'ReactNode', '', 'Texto de apoio.'],
+          ['icon', 'IconName', '', 'Ícone da etapa.'],
+          ['context', 'ReactNode', '', 'Contexto não editável (use AuthContextBadge).'],
+          ['actions', 'ReactNode', '', 'Links secundários abaixo do conteúdo.'],
+          ['footer', 'ReactNode', '', 'Rodapé.'],
+          ['aside', 'ReactNode', '', 'Painel institucional (some abaixo de 900px).'],
+          ['focusTitle / stepKey', 'boolean / string', 'false', 'Move o foco para o título a cada etapa.'],
+        ]}
+      />
+    </>
+  );
+}

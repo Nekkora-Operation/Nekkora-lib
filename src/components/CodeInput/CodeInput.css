@@ -1,0 +1,44 @@
+.nk-code {
+  position: relative;
+  width: 100%;
+  max-width: calc(var(--nk-code-length) * 52px);
+}
+.nk-code__native {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border: 0;
+  font-size: 16px; /* evita zoom automático no iOS */
+  z-index: 1;
+  cursor: text;
+}
+.nk-code__native:disabled { cursor: not-allowed; }
+.nk-code__slots {
+  display: grid;
+  grid-template-columns: repeat(var(--nk-code-length), minmax(0, 1fr));
+  gap: var(--nk-space-2);
+}
+.nk-code__slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  border: 1px solid var(--nk-color-border-strong);
+  border-radius: var(--nk-radius-md);
+  background: var(--nk-color-surface-sunken);
+  color: var(--nk-color-text);
+  font-family: var(--nk-font-mono);
+  font-size: var(--nk-font-size-xl);
+  font-weight: var(--nk-font-weight-semibold);
+  transition: border-color var(--nk-transition), box-shadow var(--nk-transition);
+}
+.nk-code__slot--filled { border-color: var(--nk-color-accent-border-soft); }
+.nk-code__slot--active { border-color: var(--nk-color-accent); box-shadow: var(--nk-focus-ring); }
+.nk-code--invalid .nk-code__slot { border-color: var(--nk-color-danger); }
+.nk-code--invalid .nk-code__slot--active { box-shadow: var(--nk-focus-ring-danger); }
+.nk-code--disabled { opacity: 0.5; }
+@media (max-width: 380px) {
+  .nk-code__slot { height: 46px; font-size: var(--nk-font-size-lg); }
+}

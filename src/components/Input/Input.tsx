@@ -158,8 +158,12 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(function Input(
           <button
             type="button"
             className="nk-control__action"
+            // mantém o foco (e o cursor) no campo ao clicar com o mouse; pelo teclado o botão recebe foco normalmente
+            onMouseDown={(event) => event.preventDefault()}
             onClick={() => setShowPassword((s) => !s)}
             aria-label={showPassword ? 'Ocultar senha' : 'Mostrar senha'}
+            aria-pressed={showPassword}
+            aria-controls={inputId}
             disabled={disabled}
           >
             <Icon name={showPassword ? 'eye-off' : 'eye'} size={px} />

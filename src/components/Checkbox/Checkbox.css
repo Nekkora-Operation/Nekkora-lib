@@ -1,0 +1,29 @@
+.nk-checkbox { display: flex; align-items: flex-start; gap: var(--nk-space-3); font-family: var(--nk-font-family); }
+.nk-checkbox__box { position: relative; flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px; }
+.nk-checkbox__native {
+  position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer;
+}
+.nk-checkbox__mark {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%;
+  border: 1.5px solid var(--nk-color-border-strong);
+  border-radius: var(--nk-radius-sm);
+  background: var(--nk-color-surface-sunken);
+  color: transparent;
+  pointer-events: none;
+  transition: background var(--nk-transition), border-color var(--nk-transition), box-shadow var(--nk-transition);
+}
+.nk-checkbox__native:hover + .nk-checkbox__mark { border-color: var(--nk-color-accent-border); }
+.nk-checkbox__native:checked + .nk-checkbox__mark {
+  background: var(--nk-color-accent);
+  border-color: var(--nk-color-accent);
+  color: var(--nk-color-text-inverse);
+}
+.nk-checkbox__native:focus-visible + .nk-checkbox__mark { box-shadow: var(--nk-focus-ring); }
+.nk-checkbox--invalid .nk-checkbox__mark { border-color: var(--nk-color-danger); }
+.nk-checkbox__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.nk-checkbox__label { font-size: var(--nk-font-size-md); color: var(--nk-color-text); cursor: pointer; line-height: 1.45; }
+.nk-checkbox__message { font-size: var(--nk-font-size-xs); color: var(--nk-color-text-secondary); }
+.nk-checkbox__message--error { color: var(--nk-color-danger-text); }
+.nk-checkbox--disabled { opacity: 0.5; }
+.nk-checkbox--disabled .nk-checkbox__native, .nk-checkbox--disabled .nk-checkbox__label { cursor: not-allowed; }

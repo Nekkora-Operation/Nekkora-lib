@@ -14,7 +14,7 @@ export default defineConfig({
       cssFileName: 'nekkora-lib',
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: ['react', 'react-dom', 'react/jsx-runtime', 'qrcode'],
     },
     sourcemap: true,
   },
