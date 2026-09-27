@@ -6,13 +6,17 @@ export default function AuthExample() {
       <AuthLayout
         title="Bem-vinda de volta"
         description="Acesse sua conta para continuar."
-        context={<AuthContextBadge label="Acessando" value="Nekkora Demo" />}
+        context={<AuthContextBadge label="Organização" value="Nekkora Demo" />}
         actions={<Link href="#">Esqueci minha senha</Link>}
         footer="© Nekkora"
         aside={
-          <Text variant="h2" color="secondary">
-            Automação com clareza, operação com confiança.
-          </Text>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+            <Text variant="overline" color="accent">
+              Nekkora Platform
+            </Text>
+            <Text variant="display">Automação com clareza, operação com confiança.</Text>
+            <Text color="secondary">Painel institucional compacto; some abaixo de 900px.</Text>
+          </div>
         }
         style={{ minHeight: 760 }}
       >

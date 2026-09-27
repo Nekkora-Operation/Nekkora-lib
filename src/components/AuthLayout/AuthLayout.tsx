@@ -11,15 +11,18 @@ export interface AuthLayoutProps extends Omit<HTMLAttributes<HTMLDivElement>, 't
   description?: ReactNode;
   /** Ícone da etapa, acima do título (ex.: "shield" no MFA). */
   icon?: IconName;
-  /** Marca no topo. Padrão: logo Nekkora completo. */
+  /** Marca no cabeçalho do card. Padrão: logo Nekkora completo. */
   brand?: ReactNode;
-  /** Contexto discreto e não editável acima do card (ex.: organização em que a pessoa está entrando). */
+  /** Contexto discreto e não editável ao lado da marca (ex.: organização em que a pessoa está entrando). */
   context?: ReactNode;
   /** Links/ações secundárias abaixo do conteúdo do card. */
   actions?: ReactNode;
   /** Rodapé da página (fora do card). */
   footer?: ReactNode;
-  /** Painel institucional lateral (telas largas); some em telas estreitas. */
+  /**
+   * Painel institucional à esquerda do card, no mesmo quadro central (até ~1240px), sem divisória. Some abaixo de
+   * 900px — a marca e o contexto continuam no cabeçalho do card.
+   */
   aside?: ReactNode;
   /**
    * Move o foco para o título ao montar/trocar de etapa — leitores de tela anunciam a nova etapa.
@@ -32,8 +35,9 @@ export interface AuthLayoutProps extends Omit<HTMLAttributes<HTMLDivElement>, 't
 }
 
 /**
- * Estrutura única das telas de autenticação: marca, contexto, card (título, descrição, conteúdo, ações) e
- * rodapé, com painel institucional opcional. Responsiva de 320px a telas largas.
+ * Estrutura única das telas de autenticação. Marca, contexto e card formam uma unidade: o card abre com a marca
+ * e o contexto, seguidos de título, descrição, conteúdo e ações; o rodapé fica logo abaixo. Com `aside`, painel
+ * institucional e card dividem um quadro central limitado, lado a lado. Responsiva de 320px a telas largas.
  */
 export function AuthLayout({
   title,
@@ -60,16 +64,18 @@ export function AuthLayout({
 
   return (
     <div className={cx('nk-auth', aside != null && 'nk-auth--split', className)} {...rest}>
-      {aside != null && <aside className="nk-auth__aside">{aside}</aside>}
-      <main className="nk-auth__main">
-        <div className="nk-auth__column">
-          <header className="nk-auth__brand">{brand ?? <Logo variant="full" size={34} />}</header>
-          {context != null && <div className="nk-auth__context">{context}</div>}
+      <div className="nk-auth__frame">
+        {aside != null && <aside className="nk-auth__aside">{aside}</aside>}
+        <main className="nk-auth__main">
           <section
             className="nk-auth__card"
             aria-labelledby={titleId}
             aria-describedby={description != null ? descriptionId : undefined}
           >
+            <header className="nk-auth__masthead">
+              <div className="nk-auth__brand">{brand ?? <Logo variant="full" size={28} />}</div>
+              {context != null && <div className="nk-auth__context">{context}</div>}
+            </header>
             <div className="nk-auth__header">
               {icon != null && (
                 <span className="nk-auth__icon" aria-hidden>
@@ -89,8 +95,8 @@ export function AuthLayout({
             {actions != null && <div className="nk-auth__actions">{actions}</div>}
           </section>
           {footer != null && <footer className="nk-auth__footer">{footer}</footer>}
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   );
 }

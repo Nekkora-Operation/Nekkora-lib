@@ -1,52 +1,39 @@
 .nk-auth {
   position: relative;
-  display: grid;
+  display: flex;
   min-height: 100vh;
   min-height: 100dvh;
   background:
-    radial-gradient(1200px 600px at 85% -10%, color-mix(in srgb, var(--nk-color-accent) 9%, transparent), transparent 60%),
-    radial-gradient(900px 500px at -10% 110%, color-mix(in srgb, var(--nk-color-primary) 22%, transparent), transparent 60%),
+    radial-gradient(1100px 620px at 78% 0%, color-mix(in srgb, var(--nk-color-accent) 8%, transparent), transparent 62%),
+    radial-gradient(900px 560px at 12% 100%, color-mix(in srgb, var(--nk-color-primary) 20%, transparent), transparent 62%),
     var(--nk-color-bg);
   color: var(--nk-color-text);
   font-family: var(--nk-font-family);
 }
-.nk-auth--split { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+
+/* Quadro central: painel institucional e card na mesma unidade, sem divisória */
+.nk-auth__frame {
+  width: 100%;
+  max-width: 1240px;
+  margin: auto;
+  padding: var(--nk-space-10) var(--nk-space-6);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.nk-auth--split .nk-auth__frame {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 460px);
+  column-gap: clamp(var(--nk-space-10), 5vw, 88px);
+  justify-items: stretch;
+  padding-inline: clamp(var(--nk-space-6), 4vw, var(--nk-space-12));
+}
 
 /* Painel institucional */
-.nk-auth__aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: var(--nk-space-12) clamp(var(--nk-space-8), 6vw, 96px);
-  border-right: 1px solid var(--nk-color-border);
-  background: linear-gradient(160deg, color-mix(in srgb, var(--nk-color-card) 45%, transparent), transparent 70%);
-}
+.nk-auth__aside { display: flex; flex-direction: column; justify-content: center; min-width: 0; max-width: 520px; justify-self: end; }
 
-/* Coluna principal */
-.nk-auth__main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--nk-space-10) var(--nk-space-6);
-}
-.nk-auth__column { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: var(--nk-space-5); }
-.nk-auth__brand { display: flex; justify-content: center; margin-bottom: var(--nk-space-2); }
+/* Coluna do card */
+.nk-auth__main { width: 100%; max-width: 460px; display: flex; flex-direction: column; gap: var(--nk-space-4); }
 
-.nk-auth__context { display: flex; justify-content: center; }
-.nk-auth-context {
-  display: inline-flex; align-items: center; gap: var(--nk-space-3);
-  max-width: 100%;
-  padding: 6px var(--nk-space-4) 6px var(--nk-space-3);
-  border: 1px solid var(--nk-color-border);
-  border-radius: var(--nk-radius-full);
-  background: color-mix(in srgb, var(--nk-color-surface) 60%, transparent);
-}
-.nk-auth-context__icon { display: inline-flex; color: var(--nk-color-accent); }
-.nk-auth-context__text { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
-.nk-auth-context__label { font-size: var(--nk-font-size-2xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--nk-color-text-muted); }
-.nk-auth-context__value { font-size: var(--nk-font-size-sm); font-weight: var(--nk-font-weight-medium); color: var(--nk-color-text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-/* Card */
 .nk-auth__card {
   display: flex;
   flex-direction: column;
@@ -54,10 +41,38 @@
   padding: var(--nk-space-8);
   border: 1px solid var(--nk-color-border);
   border-radius: var(--nk-radius-xl);
-  background: color-mix(in srgb, var(--nk-color-surface) 88%, transparent);
+  background: color-mix(in srgb, var(--nk-color-surface) 90%, transparent);
   box-shadow: var(--nk-shadow-md);
   backdrop-filter: blur(6px);
 }
+
+/* Cabeçalho do card: marca + contexto */
+.nk-auth__masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--nk-space-3) var(--nk-space-4);
+  padding-bottom: var(--nk-space-5);
+  border-bottom: 1px solid var(--nk-color-border);
+}
+.nk-auth__brand { display: flex; align-items: center; }
+.nk-auth__context { display: flex; min-width: 0; max-width: 100%; }
+
+.nk-auth-context {
+  display: inline-flex; align-items: center; gap: var(--nk-space-2);
+  max-width: 100%;
+  min-width: 0;
+  padding: 5px var(--nk-space-3) 5px var(--nk-space-2);
+  border: 1px solid var(--nk-color-border);
+  border-radius: var(--nk-radius-full);
+  background: color-mix(in srgb, var(--nk-color-bg) 55%, transparent);
+}
+.nk-auth-context__icon { display: inline-flex; color: var(--nk-color-accent); }
+.nk-auth-context__text { display: flex; flex-direction: column; line-height: 1.25; min-width: 0; }
+.nk-auth-context__label { font-size: var(--nk-font-size-2xs); text-transform: uppercase; letter-spacing: 0.06em; color: var(--nk-color-text-secondary); }
+.nk-auth-context__value { font-size: var(--nk-font-size-sm); font-weight: var(--nk-font-weight-medium); color: var(--nk-color-text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
 .nk-auth__header { display: flex; flex-direction: column; gap: var(--nk-space-2); }
 .nk-auth__icon {
   display: inline-flex; align-items: center; justify-content: center;
@@ -88,11 +103,12 @@
 .nk-auth__footer { text-align: center; font-size: var(--nk-font-size-xs); color: var(--nk-color-text-muted); }
 
 @media (max-width: 900px) {
-  .nk-auth--split { grid-template-columns: 1fr; }
+  .nk-auth--split .nk-auth__frame { grid-template-columns: minmax(0, 460px); justify-content: center; }
   .nk-auth__aside { display: none; }
 }
 @media (max-width: 480px) {
-  .nk-auth__main { align-items: flex-start; padding: var(--nk-space-8) var(--nk-space-4); }
-  .nk-auth__card { padding: var(--nk-space-6) var(--nk-space-5); border-radius: var(--nk-radius-lg); }
+  .nk-auth__frame, .nk-auth--split .nk-auth__frame { margin-top: 0; padding: var(--nk-space-6) var(--nk-space-4); }
+  .nk-auth__card { padding: var(--nk-space-6) var(--nk-space-5); border-radius: var(--nk-radius-lg); gap: var(--nk-space-5); }
+  .nk-auth__masthead { padding-bottom: var(--nk-space-4); }
   .nk-auth__title { font-size: var(--nk-font-size-xl); }
 }
