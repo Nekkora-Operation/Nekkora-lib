@@ -19,8 +19,10 @@ export interface LinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   /** Abre em nova aba com rel seguro e ícone de link externo. */
   external?: boolean;
   disabled?: boolean;
-  /** Componente de roteamento (ex.: Link do react-router). Padrão: <a>. */
+  /** Componente de roteamento (ex.: Link do react-router) ou "button" para ações com aparência de link. Padrão: <a>. */
   as?: ElementType;
+  /** Destino repassado ao componente de roteamento de `as` (ex.: `<Link as={RouterLink} to="/login">`). */
+  to?: string;
 }
 
 const ICON_SIZE = { sm: 12, md: 14, lg: 16 } as const;

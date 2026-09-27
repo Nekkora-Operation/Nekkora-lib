@@ -11,6 +11,8 @@
   transition: color var(--nk-transition);
 }
 .nk-link:focus-visible { outline: none; box-shadow: var(--nk-focus-ring); }
+/* as="button": ação com aparência de link (ex.: "Usar código de recuperação") */
+button.nk-link { padding: 0; margin: 0; border: 0; background: none; line-height: inherit; text-align: inherit; }
 
 .nk-link--sm { font-size: var(--nk-font-size-xs); }
 .nk-link--md { font-size: var(--nk-font-size-sm); }
