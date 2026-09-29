@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 import { ThemeProvider, useTheme } from './ThemeProvider';
+import { ThemeToggle } from './ThemeToggle';
 
 function Toggle() {
   const { resolvedTheme, toggleTheme } = useTheme();
@@ -63,5 +64,21 @@ describe('ThemeProvider', () => {
   it('respeita o tema controlado', () => {
     const { container } = render(<ThemeProvider theme="light" />);
     expect(container.firstElementChild).toHaveAttribute('data-nk-theme', 'light');
+  });
+});
+
+describe('ThemeToggle', () => {
+  it('alterna entre o par escuro/claro e anuncia o destino', () => {
+    const { container } = render(
+      <ThemeProvider defaultTheme="midnight-blue" pair={{ dark: 'midnight-blue', light: 'sage-light' }}>
+        <ThemeToggle />
+      </ThemeProvider>,
+    );
+    const root = container.firstElementChild!;
+    expect(root).toHaveAttribute('data-nk-theme', 'midnight-blue');
+    fireEvent.click(screen.getByRole('button', { name: 'Mudar para o tema claro' }));
+    expect(root).toHaveAttribute('data-nk-theme', 'sage-light');
+    fireEvent.click(screen.getByRole('button', { name: 'Mudar para o tema escuro' }));
+    expect(root).toHaveAttribute('data-nk-theme', 'midnight-blue');
   });
 });

@@ -18,6 +18,11 @@ export interface NavbarProps extends Omit<HTMLAttributes<HTMLElement>, 'children
   activeHref?: string;
   /** Ações à direita (ex.: botão de contato). No mobile aparecem dentro do menu. */
   actions?: ReactNode;
+  /**
+   * Controles compactos sempre visíveis na barra (ex.: <ThemeToggle />): antes das ações no desktop e ao lado do
+   * botão de menu no mobile.
+   */
+  tools?: ReactNode;
   /** Fixa no topo ao rolar. Padrão: true. */
   sticky?: boolean;
   /** Fundo translúcido com blur. Padrão: true. */
@@ -35,6 +40,7 @@ export function Navbar({
   links = [],
   activeHref,
   actions,
+  tools,
   sticky = true,
   blur = true,
   maxWidth = 1200,
@@ -76,6 +82,7 @@ export function Navbar({
             </li>
           ))}
         </ul>
+        {tools != null && <div className="nk-navbar__tools">{tools}</div>}
         {actions != null && <div className="nk-navbar__actions">{actions}</div>}
         <Button
           className="nk-navbar__toggle"

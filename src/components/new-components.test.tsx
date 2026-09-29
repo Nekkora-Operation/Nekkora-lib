@@ -23,6 +23,13 @@ describe('Input success', () => {
 });
 
 describe('Navbar', () => {
+  it('mostra os controles de tools uma única vez, fora do menu mobile', () => {
+    render(<Navbar brand="Nekkora" tools={<button type="button">Tema</button>} actions={<a href="#c">Contato</a>} />);
+    expect(screen.getAllByRole('button', { name: 'Tema' })).toHaveLength(1);
+    expect(screen.getAllByRole('link', { name: 'Contato', hidden: true })).toHaveLength(2); // barra + menu mobile (fechado)
+    expect(screen.getAllByRole('button', { name: 'Tema', hidden: true })).toHaveLength(1);
+  });
+
   it('marca o link ativo e abre o menu mobile', () => {
     render(<Navbar brand="Nekkora" links={[{ label: 'Studio', href: '#studio' }]} activeHref="#studio" />);
     expect(screen.getAllByRole('link', { name: 'Studio' })[0]).toHaveAttribute('aria-current', 'true');

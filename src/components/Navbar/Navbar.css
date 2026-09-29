@@ -67,6 +67,7 @@
 }
 
 .nk-navbar__actions { display: flex; align-items: center; gap: var(--nk-space-2); flex-shrink: 0; }
+.nk-navbar__tools { display: flex; align-items: center; gap: var(--nk-space-1); flex-shrink: 0; }
 .nk-navbar__toggle { display: none !important; margin-left: auto; }
 
 .nk-navbar__mobile {
@@ -84,6 +85,8 @@
   .nk-navbar__links,
   .nk-navbar__actions { display: none; }
   .nk-navbar__toggle { display: inline-flex !important; }
+  .nk-navbar__tools { margin-left: auto; }
+  .nk-navbar__tools ~ .nk-navbar__toggle { margin-left: 0; }
   .nk-navbar__inner { padding: 0 var(--nk-space-4); height: 60px; }
 }
 @media (min-width: 961px) {

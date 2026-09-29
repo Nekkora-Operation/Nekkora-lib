@@ -80,6 +80,7 @@ export function Themes() {
       </Section>
 
       <Example name="themes/Hook" title="Hook useTheme" description="Lê e altera o tema atual — este seletor muda o tema desta documentação." />
+      <Example name="themes/Toggle" title="ThemeToggle" description="Botão de ícone para alternar entre os temas escuro e claro do par do ThemeProvider (sol no escuro, lua no claro)." />
       <Example name="themes/Nested" title="Temas aninhados" description="Um ThemeProvider dentro de outro aplica um tema só naquela área." />
 
       <PropsTable
