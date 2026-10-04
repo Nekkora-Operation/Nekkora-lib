@@ -9,4 +9,10 @@ export default defineConfig({
   resolve: {
     alias: { 'nekkora-lib': resolve(import.meta.dirname, '../src/index.ts') },
   },
+  build: {
+    rollupOptions: {
+      // frame.html: exemplos de página inteira (AppShell) dentro de iframe, com documento próprio
+      input: { main: resolve(import.meta.dirname, 'index.html'), frame: resolve(import.meta.dirname, 'frame.html') },
+    },
+  },
 });

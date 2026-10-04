@@ -3,6 +3,7 @@ import type { IconName } from 'nekkora-lib';
 import { GettingStarted } from './GettingStarted';
 import { Themes } from './Themes';
 import {
+  AppPage,
   AuthPage,
   BadgePage,
   CheckboxPage,
@@ -52,4 +53,5 @@ export const pages: DocPage[] = [
   { id: 'tabelas', title: 'Tabelas', group: 'Dados', icon: 'chart', Component: TablePage },
   { id: 'feedback', title: 'Feedback', group: 'Feedback', icon: 'alert', Component: FeedbackPage },
   { id: 'auth', title: 'AuthLayout & QrCode', group: 'Autenticação', icon: 'lock', Component: AuthPage },
+  { id: 'aplicacao', title: 'AppShell, LoadMore & DescriptionList', group: 'Aplicação', icon: 'layers', Component: AppPage },
 ];
