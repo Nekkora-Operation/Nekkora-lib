@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react';
-import { Button, Text } from 'nekkora-lib';
+import { Button, Text, useTheme } from 'nekkora-lib';
 import { CodeBlock, CopyButton } from './CodeBlock';
 import { examples } from './examples';
 
@@ -8,10 +8,18 @@ export interface ExampleProps {
   name: string;
   title?: string;
   description?: ReactNode;
+  /**
+   * Exemplo de página inteira: roda num iframe (frame.html), com documento próprio e largura real do quadro, em vez de
+   * ser montado dentro desta página (evita landmarks aninhados, como dois <main>).
+   */
+  frame?: { height: number; title: string };
 }
 
-export function Example({ name, title, description }: ExampleProps) {
+export function Example({ name, title, description, frame }: ExampleProps) {
   const [showCode, setShowCode] = useState(true);
+  const [width, setWidth] = useState<'desktop' | 'celular'>('desktop');
+  const { theme, mode } = useTheme();
+  const frameTheme = theme === 'system' ? (mode === 'light' ? 'light' : 'dark') : theme;
   const entry = examples[name];
   if (!entry) return <Text color="danger">Exemplo não encontrado: {name}</Text>;
   const { Component, source } = entry;
@@ -26,7 +34,26 @@ export function Example({ name, title, description }: ExampleProps) {
       )}
       <div className="doc-example__box">
         <div className="doc-example__preview">
-          <Component />
+          {frame ? (
+            <div className="doc-example__frame">
+              <div className="doc-example__frame-bar" role="group" aria-label="Largura do quadro">
+                <Button size="sm" variant={width === 'desktop' ? 'secondary' : 'ghost'} aria-pressed={width === 'desktop'} onClick={() => setWidth('desktop')}>
+                  Desktop
+                </Button>
+                <Button size="sm" variant={width === 'celular' ? 'secondary' : 'ghost'} aria-pressed={width === 'celular'} onClick={() => setWidth('celular')}>
+                  Celular (390 px)
+                </Button>
+              </div>
+              <iframe
+                className="doc-example__iframe"
+                title={frame.title}
+                src={`./frame.html?ex=${encodeURIComponent(name)}&theme=${encodeURIComponent(frameTheme)}`}
+                style={{ height: frame.height, width: width === 'celular' ? 390 : '100%' }}
+              />
+            </div>
+          ) : (
+            <Component />
+          )}
         </div>
         <div className="doc-code__bar doc-example__toolbar">
           <span className="doc-code__title">examples/{name}.tsx</span>

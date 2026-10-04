@@ -272,6 +272,25 @@ Usa a lista do sistema operacional — ideal para formulários simples e celular
 <Badge variant="solid" tone="success">Concluído</Badge>   // tag preenchida: fundo colorido + texto branco
 ```
 
+### Aplicação — `AppShell`, `LoadMore`, `DescriptionList`
+```tsx
+// Estrutura da área logada: menu lateral (região complementar rotulada; grupos; item ativo com aria-current), topo e
+// conteúdo. Até 900 px o menu vira painel modal: o foco entra no painel, Tab/Shift+Tab circulam nele e o resto fica
+// inert; Esc, "Fechar menu" ou o fundo devolvem o foco ao botão; escolher um item leva o foco ao <main>; se a largura
+// passar a desktop, o painel fecha (o foco fica onde está ou vai ao item ativo, se o elemento sumiu).
+<AppShell brand={<Logo />} linkAs={RouterLink} header={<Heading level={1}>Execuções</Heading>} actions={<ThemeToggle />}
+          nav={[{ id: 'produto', label: 'Produto', items: [{ id: 'exec', label: 'Execuções', href: '/execucoes', icon: 'executions', active: true }] }]}>
+  ...
+</AppShell>
+
+// "Carregar mais" para paginação por cursor (sem total): contagem anunciada, fim da lista, erro e cursor recusado.
+<LoadMore hasMore={hasMore} loading={loading} onLoadMore={loadMore} count={items.length} itemLabel="execuções"
+          error={erro} stale={cursorRecusado ? 'A lista mudou desde a última página.' : undefined} onRestart={reload} />
+
+// Detalhes chave–valor (<dl>); valor ausente vira "—" lido como "não informado".
+<DescriptionList columns={2} items={[{ term: 'Status', description: <Badge tone="success">Concluída</Badge> }, { term: 'Solicitante', description: null }]} />
+```
+
 ## Estrutura
 
 ```
@@ -279,7 +298,7 @@ src/
   tokens/        foundation.css (tipografia, espaço, raios), themes.css (modos + paletas) e tokens.ts (registro dos temas)
   utils/         máscaras, cx, renderIcon
   components/    ThemeProvider, Logo, Icon, IconBox, Navbar, SectionHeader, Steps, FloatingButton, Textarea, Typography, Button, Link, Badge, Field, Input, Select, SelectMenu,
-                 Container, Card, Layout (Stack/Grid), Fieldset, Table
+                 Container, Card, Layout (Stack/Grid), Fieldset, Table, AppShell, LoadMore, DescriptionList, ...
 brand/           SVGs da marca (símbolo, logotipo, assinatura, ícone de app)
 docs/            site de documentação (páginas, exemplos ao vivo e código)
 ```

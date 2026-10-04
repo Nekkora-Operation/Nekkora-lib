@@ -588,3 +588,50 @@ export function AuthPage() {
     </>
   );
 }
+
+export function AppPage() {
+  return (
+    <>
+      <PageHeader
+        title="Aplicação"
+        description="Estrutura da área logada (AppShell), paginação por cursor (LoadMore) e lista de detalhes (DescriptionList). Feitos para listas sem total e para telas de consulta da Nekkora Platform."
+      />
+      <Example name="app/AppShell" title="AppShell" frame={{ height: 560, title: 'Demonstração do AppShell em página inteira' }} description="Menu lateral com grupos e item ativo (aria-current), topo com título e ações e link para pular ao conteúdo. Até 900 px o menu vira painel modal: o foco entra no painel, Tab circula dentro dele e o resto fica inativo (inert); Esc, “Fechar menu” ou o fundo devolvem o foco ao botão; escolher um item leva o foco ao conteúdo. Roda num quadro próprio (página inteira, um único main); use “Celular” para ver o painel." />
+      <PropsTable
+        title="AppShell"
+        rows={[
+          ['nav', 'AppNavGroup[]', '', 'Grupos { id, label?, items: { id, label, href, icon?, active?, badge? }[] }. O menu mostra só o que receber: quem decide permissões é a aplicação/API.'],
+          ['linkAs', 'ElementType', '<a>', 'Componente de roteamento (ex.: Link do react-router); recebe `to`.'],
+          ['brand / brandHref', 'ReactNode / string', "'#'", 'Marca no topo do menu.'],
+          ['header', 'ReactNode', '', 'Título da página ou trilha, à esquerda do topo.'],
+          ['actions', 'ReactNode', '', 'Ações à direita do topo (ex.: ThemeToggle, conta).'],
+          ['sidebarFooter', 'ReactNode', '', 'Rodapé do menu (ex.: organização).'],
+          ['navLabel / menuLabel / skipLabel / mainId', 'string', '', 'Rótulo da navegação, do painel (diálogo no celular), texto do link de pular e id do <main>.'],
+        ]}
+      />
+      <Example name="app/LoadMore" title="LoadMore" description="Sem total e sem número de página: mostra quantos itens estão exibidos e o fim da lista. Em falha mantém a lista; com cursor recusado oferece recomeçar (nunca repete sozinho)." />
+      <PropsTable
+        title="LoadMore"
+        rows={[
+          ['hasMore', 'boolean', '', 'Há próxima página (nextCursor não nulo).'],
+          ['loading', 'boolean', 'false', 'Carregando a próxima página.'],
+          ['onLoadMore', '() => void', '', 'Pede a próxima página.'],
+          ['count / itemLabel', 'number / string', "— / 'itens'", 'Itens exibidos, anunciados em região viva.'],
+          ['error', 'ReactNode', '', 'Falha ao carregar mais; o botão vira "Tentar novamente".'],
+          ['stale / onRestart', 'ReactNode / () => void', '', 'Continuação inválida (cursor recusado): aviso e "Recomeçar a lista".'],
+          ['unavailable', 'ReactNode', '', 'Continuar indisponível agora (motivo do consumidor): mostra o motivo, sem botão.'],
+          ['endLabel / loadLabel', 'ReactNode / string', "'Fim da lista' / 'Carregar mais'", 'Textos.'],
+        ]}
+      />
+      <Example name="app/DescriptionList" title="DescriptionList" description="Pares termo–valor em <dl>. Valor ausente aparece como “—” (lido como “não informado”), para o campo nunca sumir." />
+      <PropsTable
+        title="DescriptionList"
+        rows={[
+          ['items', '{ key?, term, description?, wide? }[]', '', 'Pares; wide ocupa a linha inteira.'],
+          ['columns', '1 | 2 | 3', '2', 'Colunas no desktop (celular: 1).'],
+          ['emptyLabel', 'ReactNode', '—', 'Marcador de valor ausente.'],
+        ]}
+      />
+    </>
+  );
+}
