@@ -1,0 +1,74 @@
+.nk-dialog__layer {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--nk-space-4);
+}
+.nk-dialog__backdrop {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, #000 55%, transparent);
+}
+.nk-dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: calc(100vh - 2 * var(--nk-space-4));
+  overflow: auto;
+  background: var(--nk-color-surface-raised);
+  border: 1px solid var(--nk-color-border);
+  border-radius: var(--nk-radius-lg);
+  box-shadow: var(--nk-shadow-md);
+  font-family: var(--nk-font-family);
+  color: var(--nk-color-text);
+}
+.nk-dialog:focus { outline: none; }
+.nk-dialog:focus-visible { box-shadow: var(--nk-shadow-md), var(--nk-focus-ring); }
+.nk-dialog--sm { max-width: 400px; }
+.nk-dialog--md { max-width: 520px; }
+.nk-dialog--lg { max-width: 720px; }
+.nk-dialog__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--nk-space-3);
+  padding: var(--nk-space-5) var(--nk-space-5) var(--nk-space-3);
+}
+.nk-dialog__heading { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: var(--nk-space-1); }
+.nk-dialog__title {
+  margin: 0;
+  font-size: var(--nk-font-size-xl);
+  font-weight: var(--nk-font-weight-semibold);
+  line-height: 1.35;
+}
+.nk-dialog__description { margin: 0; font-size: var(--nk-font-size-md); color: var(--nk-color-text-secondary); }
+.nk-dialog__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nk-space-4);
+  padding: var(--nk-space-2) var(--nk-space-5) var(--nk-space-4);
+  font-size: var(--nk-font-size-md);
+}
+.nk-dialog__footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--nk-space-2);
+  padding: var(--nk-space-3) var(--nk-space-5) var(--nk-space-5);
+}
+@media (max-width: 480px) {
+  .nk-dialog__layer { align-items: flex-end; padding: 0; }
+  .nk-dialog { max-height: 92vh; border-radius: var(--nk-radius-lg) var(--nk-radius-lg) 0 0; }
+  .nk-dialog__footer { flex-direction: column-reverse; }
+  .nk-dialog__footer > * { width: 100%; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .nk-dialog { animation: nk-dialog-in var(--nk-transition); }
+}
+@keyframes nk-dialog-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}

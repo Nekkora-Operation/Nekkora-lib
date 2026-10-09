@@ -7,6 +7,7 @@ import {
   AuthPage,
   BadgePage,
   CheckboxPage,
+  DialogsPage,
   FeedbackPage,
   BlocksPage,
   ButtonPage,
@@ -53,5 +54,6 @@ export const pages: DocPage[] = [
   { id: 'tabelas', title: 'Tabelas', group: 'Dados', icon: 'chart', Component: TablePage },
   { id: 'feedback', title: 'Feedback', group: 'Feedback', icon: 'alert', Component: FeedbackPage },
   { id: 'auth', title: 'AuthLayout & QrCode', group: 'Autenticação', icon: 'lock', Component: AuthPage },
+  { id: 'dialogos', title: 'Diálogos, opções e anúncios', group: 'Aplicação', icon: 'layers', Component: DialogsPage },
   { id: 'aplicacao', title: 'AppShell, LoadMore & DescriptionList', group: 'Aplicação', icon: 'layers', Component: AppPage },
 ];

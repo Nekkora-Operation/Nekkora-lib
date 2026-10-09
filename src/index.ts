@@ -66,3 +66,6 @@ export * from './components/AuthLayout';
 export * from './components/AppShell';
 export * from './components/LoadMore';
 export * from './components/DescriptionList';
+export * from './components/Dialog';
+export * from './components/RadioGroup';
+export * from './components/StatusRegion';
