@@ -63,12 +63,14 @@
 }
 .nk-button--ghost:hover:not(:disabled) { background: var(--nk-color-surface-hover); color: var(--nk-color-text); }
 
+/* Perigo: rótulo em token próprio (--nk-button-danger-fg, por modo) e hover sólido — contraste ≥ 4,5:1 em todos os
+   temas e fundos (src/components/contraste-perigo.test.ts). O tom de destaque (--nk-color-danger) não serve para texto. */
 .nk-button--danger {
   background: var(--nk-color-danger-soft);
-  color: var(--nk-color-danger);
+  color: var(--nk-button-danger-fg);
   border-color: var(--nk-color-danger-border);
 }
-.nk-button--danger:hover:not(:disabled) { background: var(--nk-color-danger); color: #fff; border-color: var(--nk-color-danger); }
+.nk-button--danger:hover:not(:disabled) { background: var(--nk-solid-danger); color: #fff; border-color: var(--nk-solid-danger); }
 
 /* Botão renderizado como link */
 .nk-button--link { text-decoration: none; }
