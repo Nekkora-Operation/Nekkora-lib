@@ -1,0 +1,41 @@
+.nk-radio-group { border: 0; margin: 0; padding: 0; min-width: 0; font-family: var(--nk-font-family); }
+.nk-radio-group__legend {
+  padding: 0;
+  margin-bottom: var(--nk-space-2);
+  font-size: var(--nk-font-size-sm);
+  font-weight: var(--nk-font-weight-semibold);
+  color: var(--nk-color-text);
+}
+.nk-radio-group__required { color: var(--nk-color-danger-text); }
+.nk-radio-group__options { display: flex; flex-direction: column; gap: var(--nk-space-3); }
+.nk-radio-group--horizontal .nk-radio-group__options { flex-direction: row; flex-wrap: wrap; gap: var(--nk-space-4); }
+.nk-radio-group__message { margin: var(--nk-space-2) 0 0; font-size: var(--nk-font-size-xs); color: var(--nk-color-text-secondary); }
+.nk-radio-group__message--error { color: var(--nk-color-danger-text); }
+
+.nk-radio { display: flex; align-items: flex-start; gap: var(--nk-space-3); }
+.nk-radio__box { position: relative; flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px; }
+.nk-radio__native { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.nk-radio__mark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid var(--nk-color-border-strong);
+  border-radius: 50%;
+  background: var(--nk-color-surface-sunken);
+  pointer-events: none;
+  transition: border-color var(--nk-transition), box-shadow var(--nk-transition);
+}
+.nk-radio__native:hover + .nk-radio__mark { border-color: var(--nk-color-accent-border); }
+.nk-radio__native:checked + .nk-radio__mark {
+  border-color: var(--nk-color-accent);
+  box-shadow: inset 0 0 0 4px var(--nk-color-surface-sunken);
+  background: var(--nk-color-accent);
+}
+.nk-radio__native:focus-visible + .nk-radio__mark { box-shadow: var(--nk-focus-ring); }
+.nk-radio__native:checked:focus-visible + .nk-radio__mark { box-shadow: inset 0 0 0 4px var(--nk-color-surface-sunken), var(--nk-focus-ring); }
+.nk-radio-group--invalid .nk-radio__mark { border-color: var(--nk-color-danger); }
+.nk-radio__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.nk-radio__label { font-size: var(--nk-font-size-md); color: var(--nk-color-text); cursor: pointer; line-height: 1.45; }
+.nk-radio__description { font-size: var(--nk-font-size-xs); color: var(--nk-color-text-secondary); }
+.nk-radio--disabled { opacity: 0.5; }
+.nk-radio--disabled .nk-radio__native, .nk-radio--disabled .nk-radio__label { cursor: not-allowed; }

@@ -635,3 +635,69 @@ export function AppPage() {
     </>
   );
 }
+
+export function DialogsPage() {
+  return (
+    <>
+      <PageHeader
+        title="Diálogos, opções e anúncios"
+        description="Dialog e ConfirmDialog (modais com foco preso, página inert e regra única de fechamento durante o envio), RadioGroup (opções exclusivas com rádios nativos) e StatusRegion (região viva persistente para anunciar resultados)."
+      />
+      <Example name="dialog/ConfirmDialog" title="ConfirmDialog" description="Confirmação com consequências. O foco começa em Cancelar. Confirmar vale uma vez por confirmação (cliques repetidos são ignorados). Durante o envio (busy), Cancelar, Esc, “Fechar” e o fundo não têm efeito. Aqui o botão “Suspender” some depois da ação, então o foco volta para a linha (returnFocus/fallbackFocus), nunca para o body; o resultado é anunciado pela StatusRegion." />
+      <PropsTable
+        title="ConfirmDialog"
+        rows={[
+          ['open / title / children', 'boolean / ReactNode / ReactNode', '', 'Aberto, título e consequências da ação.'],
+          ['confirmLabel / cancelLabel', 'ReactNode', "— / 'Cancelar'", 'Textos dos botões.'],
+          ['tone', "'primary' | 'danger'", "'primary'", 'danger para ações destrutivas.'],
+          ['onConfirm', '() => void | Promise', '', 'Chamado uma vez por confirmação; com promessa, trava até ela terminar; busy true→false também libera.'],
+          ['onCancel', '(reason) => void', '', 'Cancelar, Esc, “Fechar” ou fundo. Nunca durante busy.'],
+          ['busy', 'boolean', 'false', 'Envio em curso: Confirmar carregando; todas as formas de fechar sem efeito.'],
+          ['confirmDisabled / error', 'boolean / ReactNode', '', 'Impede confirmar (ex.: resultado anterior incerto); erro dentro do diálogo, como alerta.'],
+          ['initialFocus / returnFocus / fallbackFocus', 'FocusTarget', 'Cancelar / quem abriu / <main>', 'Destinos de foco (elemento, ref ou função).'],
+        ]}
+      />
+      <Example name="dialog/Dialog" title="Dialog" description="Diálogo modal genérico, aqui em duas etapas (motivo e código). Renderizado em portal no body; o resto da página fica inert; Tab circula dentro; Esc, “Fechar” e o fundo pedem fechamento por onClose." />
+      <PropsTable
+        title="Dialog"
+        rows={[
+          ['open / onClose', 'boolean / (reason) => void', '', "Pedido de fechamento: 'escape' | 'close-button' | 'backdrop' | 'cancel'. Não é chamado durante busy."],
+          ['title / description', 'ReactNode', '', 'Rótulo (aria-labelledby) e descrição (aria-describedby).'],
+          ['footer / children', 'ReactNode', '', 'Ações e conteúdo.'],
+          ['busy', 'boolean', 'false', 'Bloqueia todas as formas de fechamento; aria-busy; se o controle com foco ficar desabilitado, o foco vai ao diálogo.'],
+          ['role', "'dialog' | 'alertdialog'", "'dialog'", 'alertdialog para confirmações.'],
+          ['initialFocus', 'FocusTarget', 'primeiro controle', 'Foco ao abrir.'],
+          ['returnFocus / fallbackFocus', 'FocusTarget', 'quem abriu / <main>', 'Foco ao fechar. Se o destino sumiu ou está inativo, vai ao fallback e depois ao <main> (focável só por programa) — nunca ao body.'],
+          ['closeOnBackdrop / showCloseButton / closeLabel', 'boolean / boolean / string', "true / true / 'Fechar'", 'Comportamento e texto do fechamento.'],
+          ['size', "'sm' | 'md' | 'lg'", "'md'", 'Largura máxima. No celular, o diálogo vira folha inferior.'],
+        ]}
+      />
+      <Example name="dialog/RadioGroup" title="RadioGroup" description="Opções exclusivas com rádios nativos: Tab entra no grupo, setas trocam a opção. A legenda rotula o grupo; descrição por opção; erro e dica associados ao grupo." />
+      <PropsTable
+        title="RadioGroup"
+        rows={[
+          ['legend', 'ReactNode', '', 'Pergunta do grupo (<legend>).'],
+          ['options', '{ value, label, description?, disabled? }[]', '', 'Opções.'],
+          ['value / onChange', 'string | null / (value) => void', '', 'Controlado; null = nenhuma marcada.'],
+          ['required / hint / error', 'boolean / ReactNode / ReactNode', '', 'Obrigatório (marca * visual), dica ou erro (aria-invalid nas opções).'],
+          ['orientation / disabled / name', "'vertical' | 'horizontal' / boolean / string", "'vertical'", 'Layout, desabilitar o grupo e nome no formulário.'],
+        ]}
+      />
+      <Section title="StatusRegion">
+        <Text color="secondary">
+          Região role=&quot;status&quot; (educada, atômica) que fica sempre no documento; só o conteúdo muda, para que o leitor de tela anuncie
+          o resultado sem mover o foco. Use announceKey para repetir uma mensagem igual e visuallyHidden quando o resultado já estiver
+          visível. Veja o uso no exemplo do ConfirmDialog acima.
+        </Text>
+      </Section>
+      <PropsTable
+        title="StatusRegion"
+        rows={[
+          ['message / title / tone', "ReactNode / ReactNode / AlertTone", "— / — / 'success'", 'Mensagem atual (vazia = região vazia, ainda presente).'],
+          ['announceKey', 'string | number', '', 'Muda a cada anúncio para repetir uma mensagem igual.'],
+          ['visuallyHidden', 'boolean', 'false', 'Só anuncia, sem mostrar.'],
+        ]}
+      />
+    </>
+  );
+}
