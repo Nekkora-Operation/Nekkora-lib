@@ -27,7 +27,8 @@
   --nk-color-border: color-mix(in srgb, var(--nk-color-text) 9%, transparent);
   --nk-color-border-strong: color-mix(in srgb, var(--nk-color-text) 18%, transparent);
   --nk-color-text-secondary: color-mix(in srgb, var(--nk-color-text) 64%, var(--nk-color-bg));
-  --nk-color-text-muted: color-mix(in srgb, var(--nk-color-text) 44%, var(--nk-color-bg));
+  /* 58%: placeholders, contadores e metadados com AA (4,5:1) sobre fundo, superfície e campo — P-LIB-02 */
+  --nk-color-text-muted: color-mix(in srgb, var(--nk-color-text) 58%, var(--nk-color-bg));
   --nk-color-text-inverse: var(--nk-color-bg);
   --nk-color-highlight-text: var(--nk-color-highlight);
 
@@ -46,7 +47,7 @@
   --nk-color-danger-soft: rgba(240, 80, 110, 0.16);
   --nk-color-danger-border: rgba(240, 80, 110, 0.35);
   --nk-color-danger-text: #ff7d95;
-  --nk-color-neutral-soft: color-mix(in srgb, var(--nk-color-text) 12%, transparent);
+  --nk-color-neutral-soft: color-mix(in srgb, var(--nk-color-text) 8%, transparent);
 
   --nk-color-icon-bg: color-mix(in srgb, var(--nk-color-primary) 55%, transparent);
   --nk-color-stripe: color-mix(in srgb, var(--nk-color-highlight) 2.5%, transparent);
@@ -94,6 +95,10 @@
   /* Logo */
   --nk-logo-lens: color-mix(in srgb, var(--nk-color-highlight) 22%, #ffffff);
   --nk-logo-pupil: var(--nk-color-bg);
+  /* Redeclarados aqui para um tema escuro aninhado num claro não herdar os valores do claro */
+  --nk-color-success-text: var(--nk-color-success);
+  --nk-color-warning-text: var(--nk-color-warning);
+  --nk-color-primary-soft: color-mix(in srgb, var(--nk-color-primary) 30%, transparent);
 
   color-scheme: dark;
 }
@@ -110,7 +115,8 @@
   --nk-color-border: color-mix(in srgb, var(--nk-color-text) 10%, transparent);
   --nk-color-border-strong: color-mix(in srgb, var(--nk-color-text) 20%, transparent);
   --nk-color-text-secondary: color-mix(in srgb, var(--nk-color-text) 68%, var(--nk-color-bg));
-  --nk-color-text-muted: color-mix(in srgb, var(--nk-color-text) 45%, var(--nk-color-bg));
+  /* 65%: placeholders, contadores e metadados com AA (4,5:1) sobre fundo e superfície — P-LIB-02 */
+  --nk-color-text-muted: color-mix(in srgb, var(--nk-color-text) 65%, var(--nk-color-bg));
   --nk-color-text-inverse: #ffffff;
   --nk-color-highlight-text: var(--nk-color-primary);
 
@@ -120,16 +126,21 @@
 
   --nk-color-success: #15803d;
   --nk-color-success-soft: rgba(21, 128, 61, 0.1);
+  /* Texto de status sobre o fundo suave (Badge soft/outline) com AA — P-LIB-07 */
+  --nk-color-success-text: #126f35;
   --nk-color-info: #5b5bd6;
   --nk-color-info-soft: rgba(91, 91, 214, 0.1);
   --nk-color-info-text: #4b4bc4;
   --nk-color-warning: #b45309;
   --nk-color-warning-soft: rgba(217, 119, 6, 0.12);
+  --nk-color-warning-text: #9a4708;
   --nk-color-danger: #d02c50;
   --nk-color-danger-soft: rgba(208, 44, 80, 0.09);
   --nk-color-danger-border: rgba(208, 44, 80, 0.35);
   --nk-color-danger-text: #c0264a;
-  --nk-color-neutral-soft: color-mix(in srgb, var(--nk-color-text) 8%, transparent);
+  --nk-color-neutral-soft: color-mix(in srgb, var(--nk-color-text) 6%, transparent);
+  /* Fundo do Badge primary soft: 30% escurecia o fundo claro a ponto de o rótulo ficar abaixo de AA */
+  --nk-color-primary-soft: color-mix(in srgb, var(--nk-color-primary) 12%, transparent);
 
   --nk-color-icon-bg: color-mix(in srgb, var(--nk-color-highlight) 55%, transparent);
   --nk-color-stripe: color-mix(in srgb, var(--nk-color-primary) 3%, transparent);
@@ -201,10 +212,10 @@
 
   /* Ajustes finos do dashboard original */
   --nk-color-text-secondary: #94a3b8;
-  --nk-color-text-muted: #7c6f7d;
+  --nk-color-text-muted: #918692; /* era #7c6f7d (3,33:1 na superfície) — P-LIB-02 */
   --nk-color-surface-raised: #1f1420;
   --nk-color-surface-sunken: #140a16;
-  --nk-color-neutral-soft: rgba(148, 163, 184, 0.14);
+  --nk-color-neutral-soft: rgba(148, 163, 184, 0.1);
   --nk-solid-accent: #c2466d; /* tag preenchida: branco com contraste AA */
 }
 
@@ -217,12 +228,14 @@
   --nk-color-secondary: #765067;
   --nk-color-highlight: #48213b;
   --nk-color-text: #2a1a28;
-  --nk-color-accent: #c2466d;
-  --nk-color-accent-hover: #ad3a5f;
-  --nk-color-accent-active: #983252;
+  /* Acento: era #c2466d (4,35:1 sobre o fundo, abaixo de AA para texto pequeno) — P-LIB-01. Mesmo matiz, 11% mais
+     escuro: AA sobre fundo, superfície, card e o próprio fundo suave (Badge accent soft). */
+  --nk-color-accent: #ad3e61;
+  --nk-color-accent-hover: #983252;
+  --nk-color-accent-active: #852c48;
 
   --nk-color-text-secondary: #64566a;
-  --nk-color-text-muted: #9a8b97;
+  --nk-color-text-muted: #786c76; /* era #9a8b97 (2,94:1 sobre o fundo) — P-LIB-02 */
   --nk-color-highlight-text: #48213b;
   --nk-color-icon-bg: rgba(194, 70, 109, 0.1);
   --nk-button-secondary-bg: #f3e6ec;

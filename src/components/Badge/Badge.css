@@ -19,13 +19,13 @@
 
 .nk-badge--primary {
   --nk-badge-color: var(--nk-color-highlight-text);
-  --nk-badge-soft: color-mix(in srgb, var(--nk-color-primary) 30%, transparent);
+  --nk-badge-soft: var(--nk-color-primary-soft, color-mix(in srgb, var(--nk-color-primary) 30%, transparent));
   --nk-badge-solid: var(--nk-solid-primary);
 }
 .nk-badge--accent { --nk-badge-color: var(--nk-color-accent); --nk-badge-soft: var(--nk-color-accent-soft); --nk-badge-solid: var(--nk-solid-accent); }
-.nk-badge--success { --nk-badge-color: var(--nk-color-success); --nk-badge-soft: var(--nk-color-success-soft); --nk-badge-solid: var(--nk-solid-success); }
+.nk-badge--success { --nk-badge-color: var(--nk-color-success-text, var(--nk-color-success)); --nk-badge-soft: var(--nk-color-success-soft); --nk-badge-solid: var(--nk-solid-success); }
 .nk-badge--info { --nk-badge-color: var(--nk-color-info-text); --nk-badge-soft: var(--nk-color-info-soft); --nk-badge-solid: var(--nk-solid-info); }
-.nk-badge--warning { --nk-badge-color: var(--nk-color-warning); --nk-badge-soft: var(--nk-color-warning-soft); --nk-badge-solid: var(--nk-solid-warning); }
+.nk-badge--warning { --nk-badge-color: var(--nk-color-warning-text, var(--nk-color-warning)); --nk-badge-soft: var(--nk-color-warning-soft); --nk-badge-solid: var(--nk-solid-warning); }
 .nk-badge--danger { --nk-badge-color: var(--nk-color-danger-text); --nk-badge-soft: var(--nk-color-danger-soft); --nk-badge-solid: var(--nk-solid-danger); }
 
 .nk-badge--soft { color: var(--nk-badge-color); background: var(--nk-badge-soft); }

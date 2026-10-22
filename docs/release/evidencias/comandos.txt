@@ -1,0 +1,64 @@
+# LIB-RELEASE-001 — bateria final 2026-10-22T13:52:11-03:00
+commit 638f0300a5351eff33f3600d537effe13c25a9ba · node v24.19.0 · npm 11.17.0 · MINGW64_NT-10.0-26200
+
+$ rm -rf node_modules dist docs/dist && npm ci
+added 135 packages, and audited 136 packages in 7s
+found 0 vulnerabilities
+exit=0
+
+$ npm run check
+ Test Files  11 passed (11)
+      Tests  112 passed (112)
+[32m✓ built in 129ms[39m
+fontes: 3 arquivos em dist/fonts, 2 @font-face em nekkora-lib.css
+[32m✓ built in 204ms[39m
+exit=0
+
+$ npm audit
+found 0 vulnerabilities
+
+$ npm run verificar:pacote
+OK  tarball gerado — nekkora-lib-0.2.0.tgz · 222198 bytes · sha256 1a2e614576f7c33ec98bbaf1dfe9f0eb6098637ca1075113c666aea6662526a6
+OK  integridade npm (sha512) registrada — sha512-LE1ZO5MkrPi38W5oKykk5/bT322ewlpcWgrZJ/MPHOmOtARreSQ4J0GNMst4T6rgdiTnikZOZTFVeoingIcT4A==
+OK  só dist/, package.json e README.md no pacote
+OK  sem sourcemaps no pacote
+OK  contém dist/nekkora-lib.js
+OK  contém dist/nekkora-lib.cjs
+OK  contém dist/nekkora-lib.css
+OK  contém dist/types/index.d.ts
+OK  contém dist/fonts/OFL-Inter.txt
+OK  sem testes compilados no pacote
+OK  CSS sem @import nem URL externa (P-LIB-03)
+OK  @font-face aponta para arquivos do pacote — ./fonts/inter-latin-ext-wght-normal.woff2, ./fonts/inter-latin-wght-normal.woff2
+OK  CSS sem fonte embutida em base64
+OK  React 18: instalação limpa do tarball — react 18.3.1
+OK  React 18: sem src/ nem node_modules/ da lib
+OK  React 18: ESM importa — 76 exportações
+OK  React 18: CommonJS = ESM
+OK  React 18: renderização no servidor — 3454 caracteres de HTML
+OK  React 18: styles.css e fontes resolvíveis — 2 fontes
+OK  React 18: TypeScript compila contra dist/types
+OK  React 19: instalação limpa do tarball — react 19.3.1
+OK  React 19: sem src/ nem node_modules/ da lib
+OK  React 19: ESM importa — 76 exportações
+OK  React 19: CommonJS = ESM
+OK  React 19: renderização no servidor — 3456 caracteres de HTML
+OK  React 19: styles.css e fontes resolvíveis — 2 fontes
+OK  React 19: TypeScript compila contra dist/types
+APROVADO: 27/27 verificações — C:\Users\nicol\nekkora\Nekkora-lib-release\artefatos\resultado.json
+
+$ sha256sum artefatos/*.tgz
+1a2e614576f7c33ec98bbaf1dfe9f0eb6098637ca1075113c666aea6662526a6 *artefatos/nekkora-lib-0.2.0.tgz
+(artefato do CI, run 39813175256: 1a2e614576f7c33ec98bbaf1dfe9f0eb6098637ca1075113c666aea6662526a6)
+
+$ node scripts/auditoria-a11y.mjs docs/dist (Playwright 1.63.0 / axe-core 4.13.0 de ../Nekkora-Platform-Web)
+dark: 0 nós com violação em 67 exemplos
+light: 0 nós com violação em 67 exemplos
+sakura-dark: 0 nós com violação em 67 exemplos
+midnight-blue: 0 nós com violação em 67 exemplos
+porcelain-light: 0 nós com violação em 67 exemplos
+sage-light: 0 nós com violação em 67 exemplos
+por regra: {}
+requisições externas: 0
+incompletos do axe: 174 · contraste medido por pixels: 150 nós, 0 abaixo do mínimo
+exit=0

@@ -1,0 +1,1721 @@
+{
+  "origem": "docs/dist",
+  "inicio": "2026-10-22T16:52:40.243Z",
+  "exemplos": 67,
+  "temas": [
+    "dark",
+    "light",
+    "sakura-dark",
+    "midnight-blue",
+    "porcelain-light",
+    "sage-light"
+  ],
+  "porTema": {
+    "dark": 0,
+    "light": 0,
+    "sakura-dark": 0,
+    "midnight-blue": 0,
+    "porcelain-light": 0,
+    "sage-light": 0
+  },
+  "violacoes": [],
+  "incompletos": 174,
+  "porPixels": [
+    {
+      "tema": "dark",
+      "exemplo": "app/AppShell",
+      "target": ".is-active > .nk-shell__item-label",
+      "required": 4.5,
+      "p10": 8.81,
+      "min": 8.51,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "auth/Login",
+      "target": ".nk-text--overline",
+      "required": 4.5,
+      "p10": 9.14,
+      "min": 9.07,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "auth/Login",
+      "target": ".nk-text--display",
+      "required": 3,
+      "p10": 14.88,
+      "min": 14.88,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "auth/Login",
+      "target": "p",
+      "required": 4.5,
+      "p10": 7.35,
+      "min": 7.32,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "auth/Login",
+      "target": ".nk-auth-context__label",
+      "required": 4.5,
+      "p10": 6.96,
+      "min": 6.96,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "auth/Login",
+      "target": ".nk-auth-context__value",
+      "required": 4.5,
+      "p10": 13.99,
+      "min": 13.99,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "auth/Login",
+      "target": "#_r_0_",
+      "required": 4.5,
+      "p10": 12.61,
+      "min": 12.61,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "auth/Login",
+      "target": "#_r_1_",
+      "required": 4.5,
+      "p10": 6.27,
+      "min": 6.27,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "auth/Login",
+      "target": "label[for=\"nk-input-_r_2_\"]",
+      "required": 4.5,
+      "p10": 12.61,
+      "min": 12.61,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "auth/Login",
+      "target": "label[for=\"nk-input-_r_3_\"]",
+      "required": 4.5,
+      "p10": 12.65,
+      "min": 12.65,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "auth/Login",
+      "target": ".nk-link__label",
+      "required": 4.5,
+      "p10": 7.77,
+      "min": 7.77,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "auth/Login",
+      "target": "footer",
+      "required": 4.5,
+      "p10": 7.39,
+      "min": 7.27,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "blocks/SectionHeaderEx",
+      "target": ".nk-section-header--center > h2",
+      "required": 3,
+      "p10": 14.88,
+      "min": 14.88,
+      "motivo": "elmPartiallyObscured",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "card/Variants",
+      "target": "h3",
+      "required": 4.5,
+      "p10": 13.14,
+      "min": 13,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "card/Variants",
+      "target": ".nk-card__subtitle",
+      "required": 4.5,
+      "p10": 6.71,
+      "min": 6.67,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "card/Variants",
+      "target": ".nk-text--weight-medium",
+      "required": 4.5,
+      "p10": 9.73,
+      "min": 9.26,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(1) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 5.45,
+      "min": 5.45,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(2) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 5.45,
+      "min": 5.45,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(3) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 5.45,
+      "min": 5.45,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(4) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 5.45,
+      "min": 5.45,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(5) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 5.45,
+      "min": 5.45,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(6) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 5.45,
+      "min": 5.45,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(7) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 5.45,
+      "min": 5.45,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "typography/Modifiers",
+      "target": "h2",
+      "required": 4.5,
+      "gradienteNoTexto": [
+        "rgb(242, 155, 178)",
+        "rgb(250, 220, 213)"
+      ],
+      "p10": 9.14,
+      "min": 9.14,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "dark",
+      "exemplo": "typography/Variants",
+      "target": ".nk-text--display",
+      "required": 3,
+      "p10": 14.88,
+      "min": 14.88,
+      "motivo": "elmPartiallyObscured",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "app/AppShell",
+      "target": ".is-active > .nk-shell__item-label",
+      "required": 4.5,
+      "p10": 14.23,
+      "min": 14.04,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "auth/Login",
+      "target": ".nk-text--overline",
+      "required": 4.5,
+      "p10": 5.26,
+      "min": 5.21,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "auth/Login",
+      "target": ".nk-text--display",
+      "required": 3,
+      "p10": 14.98,
+      "min": 14.98,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "auth/Login",
+      "target": "p",
+      "required": 4.5,
+      "p10": 6.05,
+      "min": 5.99,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "auth/Login",
+      "target": ".nk-auth-context__label",
+      "required": 4.5,
+      "p10": 6.42,
+      "min": 6.42,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "auth/Login",
+      "target": ".nk-auth-context__value",
+      "required": 4.5,
+      "p10": 15.5,
+      "min": 15.5,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "auth/Login",
+      "target": "#_r_0_",
+      "required": 4.5,
+      "p10": 16.21,
+      "min": 16.21,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "auth/Login",
+      "target": "#_r_1_",
+      "required": 4.5,
+      "p10": 6.76,
+      "min": 6.72,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "auth/Login",
+      "target": "label[for=\"nk-input-_r_2_\"]",
+      "required": 4.5,
+      "p10": 16.31,
+      "min": 16.31,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "auth/Login",
+      "target": "label[for=\"nk-input-_r_3_\"]",
+      "required": 4.5,
+      "p10": 16.34,
+      "min": 16.34,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "auth/Login",
+      "target": ".nk-link__label",
+      "required": 4.5,
+      "p10": 5.73,
+      "min": 5.73,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "auth/Login",
+      "target": "footer",
+      "required": 4.5,
+      "p10": 5.8,
+      "min": 5.58,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "blocks/SectionHeaderEx",
+      "target": ".nk-section-header--center > h2",
+      "required": 3,
+      "p10": 14.98,
+      "min": 14.98,
+      "motivo": "elmPartiallyObscured",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "card/Variants",
+      "target": "h3",
+      "required": 4.5,
+      "p10": 15.11,
+      "min": 15.11,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "card/Variants",
+      "target": ".nk-card__subtitle",
+      "required": 4.5,
+      "p10": 6.48,
+      "min": 6.43,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "card/Variants",
+      "target": ".nk-text--weight-medium",
+      "required": 4.5,
+      "p10": 12.81,
+      "min": 12.6,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(1) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.55,
+      "min": 4.55,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(2) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.55,
+      "min": 4.55,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(3) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.55,
+      "min": 4.55,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(4) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.55,
+      "min": 4.55,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(5) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.55,
+      "min": 4.55,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(6) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.55,
+      "min": 4.55,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(7) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.55,
+      "min": 4.55,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "typography/Modifiers",
+      "target": "h2",
+      "required": 4.5,
+      "gradienteNoTexto": [
+        "rgb(173, 62, 97)",
+        "rgb(72, 33, 59)"
+      ],
+      "p10": 5.26,
+      "min": 5.26,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "light",
+      "exemplo": "typography/Variants",
+      "target": ".nk-text--display",
+      "required": 3,
+      "p10": 14.98,
+      "min": 14.98,
+      "motivo": "elmPartiallyObscured",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "app/AppShell",
+      "target": ".is-active > .nk-shell__item-label",
+      "required": 4.5,
+      "p10": 9.42,
+      "min": 9.04,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "auth/Login",
+      "target": ".nk-text--overline",
+      "required": 4.5,
+      "p10": 9.55,
+      "min": 9.47,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "auth/Login",
+      "target": ".nk-text--display",
+      "required": 3,
+      "p10": 17.09,
+      "min": 17.09,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "auth/Login",
+      "target": "p",
+      "required": 4.5,
+      "p10": 7.29,
+      "min": 7.29,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "auth/Login",
+      "target": ".nk-auth-context__label",
+      "required": 4.5,
+      "p10": 6.85,
+      "min": 6.85,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "auth/Login",
+      "target": ".nk-auth-context__value",
+      "required": 4.5,
+      "p10": 15.88,
+      "min": 15.88,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "auth/Login",
+      "target": "#_r_0_",
+      "required": 4.5,
+      "p10": 14.08,
+      "min": 14.08,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "auth/Login",
+      "target": "#_r_1_",
+      "required": 4.5,
+      "p10": 6.07,
+      "min": 6.07,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "auth/Login",
+      "target": "label[for=\"nk-input-_r_2_\"]",
+      "required": 4.5,
+      "p10": 14.08,
+      "min": 14.08,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "auth/Login",
+      "target": "label[for=\"nk-input-_r_3_\"]",
+      "required": 4.5,
+      "p10": 14.15,
+      "min": 14.1,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "auth/Login",
+      "target": ".nk-link__label",
+      "required": 4.5,
+      "p10": 7.9,
+      "min": 7.9,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "auth/Login",
+      "target": "footer",
+      "required": 4.5,
+      "p10": 7.35,
+      "min": 7.23,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "blocks/SectionHeaderEx",
+      "target": ".nk-section-header--center > h2",
+      "required": 3,
+      "p10": 17.09,
+      "min": 17.09,
+      "motivo": "elmPartiallyObscured",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "card/Variants",
+      "target": "h3",
+      "required": 4.5,
+      "p10": 14.34,
+      "min": 14.27,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "card/Variants",
+      "target": ".nk-card__subtitle",
+      "required": 4.5,
+      "p10": 6.13,
+      "min": 6.13,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "card/Variants",
+      "target": ".nk-text--weight-medium",
+      "required": 4.5,
+      "p10": 10.55,
+      "min": 9.98,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(1) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 6.23,
+      "min": 6.23,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(2) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 6.23,
+      "min": 6.23,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(3) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 6.23,
+      "min": 6.23,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(4) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 6.23,
+      "min": 6.23,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(5) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 6.23,
+      "min": 6.23,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(6) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 6.23,
+      "min": 6.23,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(7) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 6.23,
+      "min": 6.23,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "typography/Modifiers",
+      "target": "h2",
+      "required": 4.5,
+      "gradienteNoTexto": [
+        "rgb(240, 163, 184)",
+        "rgb(250, 220, 213)"
+      ],
+      "p10": 9.55,
+      "min": 9.55,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "typography/Variants",
+      "target": ".nk-text--display",
+      "required": 3,
+      "p10": 17.09,
+      "min": 17.09,
+      "motivo": "elmPartiallyObscured",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "app/AppShell",
+      "target": ".is-active > .nk-shell__item-label",
+      "required": 4.5,
+      "p10": 8.27,
+      "min": 7.59,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "auth/Login",
+      "target": ".nk-text--overline",
+      "required": 4.5,
+      "p10": 8.62,
+      "min": 8.55,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "auth/Login",
+      "target": ".nk-text--display",
+      "required": 3,
+      "p10": 17.3,
+      "min": 17.3,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "auth/Login",
+      "target": "p",
+      "required": 4.5,
+      "p10": 7.35,
+      "min": 7.34,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "auth/Login",
+      "target": ".nk-auth-context__label",
+      "required": 4.5,
+      "p10": 7.27,
+      "min": 7.27,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "auth/Login",
+      "target": ".nk-auth-context__value",
+      "required": 4.5,
+      "p10": 16.85,
+      "min": 16.85,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "auth/Login",
+      "target": "#_r_0_",
+      "required": 4.5,
+      "p10": 15.96,
+      "min": 15.96,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "auth/Login",
+      "target": "#_r_1_",
+      "required": 4.5,
+      "p10": 6.88,
+      "min": 6.88,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "auth/Login",
+      "target": "label[for=\"nk-input-_r_2_\"]",
+      "required": 4.5,
+      "p10": 15.97,
+      "min": 15.97,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "auth/Login",
+      "target": "label[for=\"nk-input-_r_3_\"]",
+      "required": 4.5,
+      "p10": 16.09,
+      "min": 16.09,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "auth/Login",
+      "target": ".nk-link__label",
+      "required": 4.5,
+      "p10": 8.02,
+      "min": 8.02,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "auth/Login",
+      "target": "footer",
+      "required": 4.5,
+      "p10": 7.4,
+      "min": 7.22,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "blocks/SectionHeaderEx",
+      "target": ".nk-section-header--center > h2",
+      "required": 3,
+      "p10": 17.3,
+      "min": 17.3,
+      "motivo": "elmPartiallyObscured",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "card/Variants",
+      "target": "h3",
+      "required": 4.5,
+      "p10": 15.49,
+      "min": 15.48,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "card/Variants",
+      "target": ".nk-card__subtitle",
+      "required": 4.5,
+      "p10": 6.76,
+      "min": 6.74,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "card/Variants",
+      "target": ".nk-text--weight-medium",
+      "required": 4.5,
+      "p10": 8.17,
+      "min": 7.63,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(1) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 6.3,
+      "min": 6.3,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(2) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 6.3,
+      "min": 6.3,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(3) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 6.3,
+      "min": 6.3,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(4) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 6.3,
+      "min": 6.3,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(5) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 6.3,
+      "min": 6.3,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(6) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 6.3,
+      "min": 6.3,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(7) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 6.3,
+      "min": 6.3,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "typography/Modifiers",
+      "target": "h2",
+      "required": 4.5,
+      "gradienteNoTexto": [
+        "rgb(143, 176, 234)",
+        "rgb(175, 200, 242)"
+      ],
+      "p10": 8.62,
+      "min": 8.62,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "typography/Variants",
+      "target": ".nk-text--display",
+      "required": 3,
+      "p10": 17.3,
+      "min": 17.3,
+      "motivo": "elmPartiallyObscured",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "app/AppShell",
+      "target": ".is-active > .nk-shell__item-label",
+      "required": 4.5,
+      "p10": 13.13,
+      "min": 12.93,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "auth/Login",
+      "target": ".nk-text--overline",
+      "required": 4.5,
+      "p10": 6.15,
+      "min": 6.1,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "auth/Login",
+      "target": ".nk-text--display",
+      "required": 3,
+      "p10": 14.02,
+      "min": 14.02,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "auth/Login",
+      "target": "p",
+      "required": 4.5,
+      "p10": 4.99,
+      "min": 4.94,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "auth/Login",
+      "target": ".nk-auth-context__label",
+      "required": 4.5,
+      "p10": 5.3,
+      "min": 5.3,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "auth/Login",
+      "target": ".nk-auth-context__value",
+      "required": 4.5,
+      "p10": 14.52,
+      "min": 14.52,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "auth/Login",
+      "target": "#_r_0_",
+      "required": 4.5,
+      "p10": 15.01,
+      "min": 15.01,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "auth/Login",
+      "target": "#_r_1_",
+      "required": 4.5,
+      "p10": 5.48,
+      "min": 5.48,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "auth/Login",
+      "target": "label[for=\"nk-input-_r_2_\"]",
+      "required": 4.5,
+      "p10": 15.01,
+      "min": 15.01,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "auth/Login",
+      "target": "label[for=\"nk-input-_r_3_\"]",
+      "required": 4.5,
+      "p10": 15.01,
+      "min": 15.01,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "auth/Login",
+      "target": ".nk-link__label",
+      "required": 4.5,
+      "p10": 6.6,
+      "min": 6.6,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "auth/Login",
+      "target": "footer",
+      "required": 4.5,
+      "p10": 4.81,
+      "min": 4.63,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "blocks/SectionHeaderEx",
+      "target": ".nk-section-header--center > h2",
+      "required": 3,
+      "p10": 14.02,
+      "min": 14.02,
+      "motivo": "elmPartiallyObscured",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "card/Variants",
+      "target": "h3",
+      "required": 4.5,
+      "p10": 14.11,
+      "min": 14.03,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "card/Variants",
+      "target": ".nk-card__subtitle",
+      "required": 4.5,
+      "p10": 5.29,
+      "min": 5.25,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "card/Variants",
+      "target": ".nk-text--weight-medium",
+      "required": 4.5,
+      "p10": 12.08,
+      "min": 11.89,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(1) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.67,
+      "min": 4.67,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(2) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.67,
+      "min": 4.67,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(3) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.67,
+      "min": 4.67,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(4) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.67,
+      "min": 4.67,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(5) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.67,
+      "min": 4.67,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(6) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.67,
+      "min": 4.67,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(7) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.67,
+      "min": 4.67,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "typography/Modifiers",
+      "target": "h2",
+      "required": 4.5,
+      "gradienteNoTexto": [
+        "rgb(78, 93, 120)",
+        "rgb(78, 93, 120)"
+      ],
+      "p10": 6.15,
+      "min": 6.15,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "typography/Variants",
+      "target": ".nk-text--display",
+      "required": 3,
+      "p10": 14.02,
+      "min": 14.02,
+      "motivo": "elmPartiallyObscured",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "app/AppShell",
+      "target": ".is-active > .nk-shell__item-label",
+      "required": 4.5,
+      "p10": 13.3,
+      "min": 13.18,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "auth/Login",
+      "target": ".nk-text--overline",
+      "required": 4.5,
+      "p10": 5.33,
+      "min": 5.28,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "auth/Login",
+      "target": ".nk-text--display",
+      "required": 3,
+      "p10": 14.01,
+      "min": 14.01,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "auth/Login",
+      "target": "p",
+      "required": 4.5,
+      "p10": 5,
+      "min": 4.99,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "auth/Login",
+      "target": ".nk-auth-context__label",
+      "required": 4.5,
+      "p10": 5.33,
+      "min": 5.33,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "auth/Login",
+      "target": ".nk-auth-context__value",
+      "required": 4.5,
+      "p10": 14.55,
+      "min": 14.55,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "auth/Login",
+      "target": "#_r_0_",
+      "required": 4.5,
+      "p10": 15.11,
+      "min": 15.11,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "auth/Login",
+      "target": "#_r_1_",
+      "required": 4.5,
+      "p10": 5.53,
+      "min": 5.53,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "auth/Login",
+      "target": "label[for=\"nk-input-_r_2_\"]",
+      "required": 4.5,
+      "p10": 15.12,
+      "min": 15.12,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "auth/Login",
+      "target": "label[for=\"nk-input-_r_3_\"]",
+      "required": 4.5,
+      "p10": 15.12,
+      "min": 15.12,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "auth/Login",
+      "target": ".nk-link__label",
+      "required": 4.5,
+      "p10": 5.75,
+      "min": 5.75,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "auth/Login",
+      "target": "footer",
+      "required": 4.5,
+      "p10": 4.86,
+      "min": 4.64,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "blocks/SectionHeaderEx",
+      "target": ".nk-section-header--center > h2",
+      "required": 3,
+      "p10": 14.01,
+      "min": 14.01,
+      "motivo": "elmPartiallyObscured",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "card/Variants",
+      "target": "h3",
+      "required": 4.5,
+      "p10": 14.15,
+      "min": 14.06,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "card/Variants",
+      "target": ".nk-card__subtitle",
+      "required": 4.5,
+      "p10": 5.33,
+      "min": 5.29,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "card/Variants",
+      "target": ".nk-text--weight-medium",
+      "required": 4.5,
+      "p10": 12.16,
+      "min": 12.05,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(1) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.68,
+      "min": 4.68,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(2) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.68,
+      "min": 4.68,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(3) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.68,
+      "min": 4.68,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(4) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.68,
+      "min": 4.68,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(5) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.68,
+      "min": 4.68,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(6) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.68,
+      "min": 4.68,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "masks/Functions",
+      "target": "p:nth-child(7) > .nk-text--color-muted",
+      "required": 4.5,
+      "p10": 4.68,
+      "min": 4.68,
+      "motivo": "nonBmp",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "typography/Modifiers",
+      "target": "h2",
+      "required": 4.5,
+      "gradienteNoTexto": [
+        "rgb(80, 107, 98)",
+        "rgb(80, 107, 98)"
+      ],
+      "p10": 5.33,
+      "min": 5.33,
+      "motivo": "bgGradient",
+      "ok": true
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "typography/Variants",
+      "target": ".nk-text--display",
+      "required": 3,
+      "p10": 14.01,
+      "min": 14.01,
+      "motivo": "elmPartiallyObscured",
+      "ok": true
+    }
+  ],
+  "externas": [],
+  "outrosIncompletos": [
+    {
+      "tema": "dark",
+      "exemplo": "blocks/FormEx",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "dark",
+      "exemplo": "feedback/Alerts",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "dark",
+      "exemplo": "link/Icons",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "dark",
+      "exemplo": "link/Variants",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "blocks/FormEx",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "feedback/Alerts",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "link/Icons",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "link/Variants",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "blocks/FormEx",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "feedback/Alerts",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "link/Icons",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "link/Variants",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "blocks/FormEx",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "feedback/Alerts",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "link/Icons",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "link/Variants",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "blocks/FormEx",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "feedback/Alerts",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "link/Icons",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "link/Variants",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "blocks/FormEx",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "feedback/Alerts",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "link/Icons",
+      "regras": [
+        "bypass(1)"
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "link/Variants",
+      "regras": [
+        "bypass(1)"
+      ]
+    }
+  ],
+  "fim": "2026-10-22T16:57:23.346Z"
+}

@@ -3,6 +3,7 @@
   overflow: auto;
   font-family: var(--nk-font-family);
 }
+.nk-table-wrapper:focus-visible { outline: none; box-shadow: var(--nk-focus-ring); }
 .nk-table-wrapper--bordered {
   border: 1px solid var(--nk-color-border);
   border-radius: var(--nk-radius-lg);
@@ -47,6 +48,8 @@
 }
 .nk-table__row:last-child > .nk-table__td { border-bottom: 0; }
 .nk-table__td--muted { color: var(--nk-color-text-secondary); }
+/* Na linha selecionada o fundo de acento escurece o secundário abaixo de AA (Sakura Dark: 4,43:1) */
+.nk-table__row--selected > .nk-table__td--muted { color: var(--nk-color-text); }
 
 .nk-table__cell--left { text-align: left; }
 .nk-table__cell--center { text-align: center; }

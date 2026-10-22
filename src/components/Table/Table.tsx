@@ -146,10 +146,13 @@ export const TableRoot = forwardRef<HTMLTableElement, TableRootProps>(function T
   { size = 'md', striped, hoverable = true, stickyHeader, maxHeight, bordered, className, ...rest },
   ref,
 ) {
+  // Com altura máxima o quadro rola: precisa receber foco para rolar pelo teclado (WCAG 2.1.1), com nome acessível.
+  const scrollable = maxHeight != null;
   return (
     <div
       className={cx('nk-table-wrapper', bordered && 'nk-table-wrapper--bordered')}
       style={{ maxHeight }}
+      {...(scrollable && { tabIndex: 0, role: 'region', 'aria-label': rest['aria-label'] ?? 'Tabela com rolagem' })}
     >
       <table
         ref={ref}

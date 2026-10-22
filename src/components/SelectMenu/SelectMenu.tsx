@@ -371,7 +371,8 @@ export const SelectMenu = forwardRef<HTMLDivElement, SelectMenuProps>(function S
           tabIndex={disabled ? -1 : 0}
           aria-haspopup="listbox"
           aria-expanded={open}
-          aria-controls={listId}
+          // A lista só existe no DOM aberta: aria-controls não pode apontar para um id inexistente.
+          aria-controls={open ? listId : undefined}
           aria-labelledby={label != null ? labelId : undefined}
           aria-label={label == null ? props['aria-label'] : undefined}
           aria-activedescendant={open && !searchable && active >= 0 ? optionId(active) : undefined}
