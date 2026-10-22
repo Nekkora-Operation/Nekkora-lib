@@ -2,7 +2,7 @@
    Nekkora — Fundação (independente de tema): tipografia, espaço, raios, controles.
    As cores ficam em themes.css.
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* A fonte Inter fica em ../fonts/fonts.css (hospedada junto com a lib; veja o comentário de lá). */
 
 :root {
   /* Tipografia */

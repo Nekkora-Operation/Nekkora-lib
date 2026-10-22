@@ -235,8 +235,11 @@ describe('DescriptionList', () => {
     expect(terms).toEqual(['Status', 'Duração', 'Motivo', 'Descrição']);
     const defs = screen.getAllByRole('definition');
     expect(defs[0]).toHaveTextContent('Concluída');
-    expect(within(defs[1]).getByLabelText('não informado')).toHaveTextContent('—');
-    expect(within(defs[2]).getByLabelText('não informado')).toBeInTheDocument();
+    // o traço é visual (aria-hidden); o leitor de tela lê "não informado" — sem aria-label em <span> (papel genérico)
+    expect(defs[1]).toHaveTextContent('—não informado');
+    expect(within(defs[1]).getByText('—')).toHaveAttribute('aria-hidden', 'true');
+    expect(within(defs[1]).getByText('não informado')).toHaveClass('nk-visually-hidden');
+    expect(within(defs[2]).getByText('não informado')).toBeInTheDocument();
     expect(defs[3].parentElement).toHaveClass('nk-dl__item--wide');
   });
 

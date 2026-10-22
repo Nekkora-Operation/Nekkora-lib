@@ -18,6 +18,8 @@
 .nk-alert__icon { display: inline-flex; color: var(--nk-alert-color); flex-shrink: 0; margin-top: 1px; }
 .nk-alert__content { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .nk-alert__title { margin: 0; font-weight: var(--nk-font-weight-semibold); }
-.nk-alert__body { color: var(--nk-color-text-secondary); overflow-wrap: anywhere; }
+/* Corpo: o text-secondary ficava entre 4,07 e 4,49:1 sobre o fundo translúcido do alerta em alguns temas
+   (P-LIB-04, P-LIB-05); 80% do texto mantém a hierarquia em relação ao título com AA em todos. */
+.nk-alert__body { color: color-mix(in srgb, var(--nk-color-text) 80%, var(--nk-color-bg)); overflow-wrap: anywhere; }
 .nk-alert__body p { margin: 0; }
 .nk-alert__action { margin-top: var(--nk-space-1); }

@@ -62,7 +62,7 @@ export const themes: Record<ThemeName, ThemeDefinition> = {
       secondary: '#765067',
       highlight: '#48213B',
       text: '#2A1A28',
-      accent: '#C2466D',
+      accent: '#AD3E61',
     },
   },
   'sakura-dark': {

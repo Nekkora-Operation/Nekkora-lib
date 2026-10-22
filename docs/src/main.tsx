@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'nekkora-lib';
+import '../../src/fonts/fonts.css';
 import { App } from './App';
 import './docs.css';
 
