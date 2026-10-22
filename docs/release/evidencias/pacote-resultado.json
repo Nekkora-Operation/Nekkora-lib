@@ -1,0 +1,246 @@
+{
+  "pacote": "nekkora-lib@0.2.0",
+  "tarball": "nekkora-lib-0.2.0.tgz",
+  "bytes": 222198,
+  "sha256": "1a2e614576f7c33ec98bbaf1dfe9f0eb6098637ca1075113c666aea6662526a6",
+  "integrity": "sha512-LE1ZO5MkrPi38W5oKykk5/bT322ewlpcWgrZJ/MPHOmOtARreSQ4J0GNMst4T6rgdiTnikZOZTFVeoingIcT4A==",
+  "arquivos": [
+    "README.md",
+    "dist/fonts/OFL-Inter.txt",
+    "dist/fonts/inter-latin-ext-wght-normal.woff2",
+    "dist/fonts/inter-latin-wght-normal.woff2",
+    "dist/nekkora-lib.cjs",
+    "dist/nekkora-lib.css",
+    "dist/nekkora-lib.js",
+    "dist/types/components/Alert/Alert.d.ts",
+    "dist/types/components/Alert/index.d.ts",
+    "dist/types/components/AppShell/AppShell.d.ts",
+    "dist/types/components/AppShell/index.d.ts",
+    "dist/types/components/AuthLayout/AuthLayout.d.ts",
+    "dist/types/components/AuthLayout/index.d.ts",
+    "dist/types/components/Badge/Badge.d.ts",
+    "dist/types/components/Badge/index.d.ts",
+    "dist/types/components/Button/Button.d.ts",
+    "dist/types/components/Button/index.d.ts",
+    "dist/types/components/Card/Card.d.ts",
+    "dist/types/components/Card/index.d.ts",
+    "dist/types/components/Checkbox/Checkbox.d.ts",
+    "dist/types/components/Checkbox/index.d.ts",
+    "dist/types/components/CodeInput/CodeInput.d.ts",
+    "dist/types/components/CodeInput/index.d.ts",
+    "dist/types/components/Container/Container.d.ts",
+    "dist/types/components/Container/index.d.ts",
+    "dist/types/components/DescriptionList/DescriptionList.d.ts",
+    "dist/types/components/DescriptionList/index.d.ts",
+    "dist/types/components/Dialog/ConfirmDialog.d.ts",
+    "dist/types/components/Dialog/Dialog.d.ts",
+    "dist/types/components/Dialog/index.d.ts",
+    "dist/types/components/Divider/Divider.d.ts",
+    "dist/types/components/Divider/index.d.ts",
+    "dist/types/components/Field/Field.d.ts",
+    "dist/types/components/Field/index.d.ts",
+    "dist/types/components/Fieldset/Fieldset.d.ts",
+    "dist/types/components/Fieldset/index.d.ts",
+    "dist/types/components/FloatingButton/FloatingButton.d.ts",
+    "dist/types/components/FloatingButton/index.d.ts",
+    "dist/types/components/Icon/Icon.d.ts",
+    "dist/types/components/Icon/icons.d.ts",
+    "dist/types/components/Icon/index.d.ts",
+    "dist/types/components/IconBox/IconBox.d.ts",
+    "dist/types/components/IconBox/index.d.ts",
+    "dist/types/components/Input/Input.d.ts",
+    "dist/types/components/Input/index.d.ts",
+    "dist/types/components/Layout/Layout.d.ts",
+    "dist/types/components/Layout/index.d.ts",
+    "dist/types/components/Link/Link.d.ts",
+    "dist/types/components/Link/index.d.ts",
+    "dist/types/components/LoadMore/LoadMore.d.ts",
+    "dist/types/components/LoadMore/index.d.ts",
+    "dist/types/components/Logo/Logo.d.ts",
+    "dist/types/components/Logo/index.d.ts",
+    "dist/types/components/Navbar/Navbar.d.ts",
+    "dist/types/components/Navbar/index.d.ts",
+    "dist/types/components/QrCode/QrCode.d.ts",
+    "dist/types/components/QrCode/index.d.ts",
+    "dist/types/components/RadioGroup/RadioGroup.d.ts",
+    "dist/types/components/RadioGroup/index.d.ts",
+    "dist/types/components/SectionHeader/SectionHeader.d.ts",
+    "dist/types/components/SectionHeader/index.d.ts",
+    "dist/types/components/Select/Select.d.ts",
+    "dist/types/components/Select/index.d.ts",
+    "dist/types/components/SelectMenu/SelectMenu.d.ts",
+    "dist/types/components/SelectMenu/index.d.ts",
+    "dist/types/components/Spinner/Spinner.d.ts",
+    "dist/types/components/Spinner/index.d.ts",
+    "dist/types/components/StateView/StateView.d.ts",
+    "dist/types/components/StateView/index.d.ts",
+    "dist/types/components/StatusRegion/StatusRegion.d.ts",
+    "dist/types/components/StatusRegion/index.d.ts",
+    "dist/types/components/Steps/Steps.d.ts",
+    "dist/types/components/Steps/index.d.ts",
+    "dist/types/components/Table/Table.d.ts",
+    "dist/types/components/Table/index.d.ts",
+    "dist/types/components/Textarea/Textarea.d.ts",
+    "dist/types/components/Textarea/index.d.ts",
+    "dist/types/components/ThemeProvider/ThemeProvider.d.ts",
+    "dist/types/components/ThemeProvider/ThemeToggle.d.ts",
+    "dist/types/components/ThemeProvider/index.d.ts",
+    "dist/types/components/Typography/Typography.d.ts",
+    "dist/types/components/Typography/index.d.ts",
+    "dist/types/index.d.ts",
+    "dist/types/tokens/tokens.d.ts",
+    "dist/types/utils/cx.d.ts",
+    "dist/types/utils/masks.d.ts",
+    "dist/types/utils/renderIcon.d.ts",
+    "package.json"
+  ],
+  "node": "v24.19.0",
+  "react": {
+    "18": {
+      "react": "18.3.1",
+      "exports": 76
+    },
+    "19": {
+      "react": "19.3.1",
+      "exports": 76
+    }
+  },
+  "verificacoes": [
+    {
+      "name": "tarball gerado",
+      "ok": true,
+      "detail": "nekkora-lib-0.2.0.tgz · 222198 bytes · sha256 1a2e614576f7c33ec98bbaf1dfe9f0eb6098637ca1075113c666aea6662526a6"
+    },
+    {
+      "name": "integridade npm (sha512) registrada",
+      "ok": true,
+      "detail": "sha512-LE1ZO5MkrPi38W5oKykk5/bT322ewlpcWgrZJ/MPHOmOtARreSQ4J0GNMst4T6rgdiTnikZOZTFVeoingIcT4A=="
+    },
+    {
+      "name": "só dist/, package.json e README.md no pacote",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "sem sourcemaps no pacote",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "contém dist/nekkora-lib.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "contém dist/nekkora-lib.cjs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "contém dist/nekkora-lib.css",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "contém dist/types/index.d.ts",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "contém dist/fonts/OFL-Inter.txt",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "sem testes compilados no pacote",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "CSS sem @import nem URL externa (P-LIB-03)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "@font-face aponta para arquivos do pacote",
+      "ok": true,
+      "detail": "./fonts/inter-latin-ext-wght-normal.woff2, ./fonts/inter-latin-wght-normal.woff2"
+    },
+    {
+      "name": "CSS sem fonte embutida em base64",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "React 18: instalação limpa do tarball",
+      "ok": true,
+      "detail": "react 18.3.1"
+    },
+    {
+      "name": "React 18: sem src/ nem node_modules/ da lib",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "React 18: ESM importa",
+      "ok": true,
+      "detail": "76 exportações"
+    },
+    {
+      "name": "React 18: CommonJS = ESM",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "React 18: renderização no servidor",
+      "ok": true,
+      "detail": "3454 caracteres de HTML"
+    },
+    {
+      "name": "React 18: styles.css e fontes resolvíveis",
+      "ok": true,
+      "detail": "2 fontes"
+    },
+    {
+      "name": "React 18: TypeScript compila contra dist/types",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "React 19: instalação limpa do tarball",
+      "ok": true,
+      "detail": "react 19.3.1"
+    },
+    {
+      "name": "React 19: sem src/ nem node_modules/ da lib",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "React 19: ESM importa",
+      "ok": true,
+      "detail": "76 exportações"
+    },
+    {
+      "name": "React 19: CommonJS = ESM",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "React 19: renderização no servidor",
+      "ok": true,
+      "detail": "3456 caracteres de HTML"
+    },
+    {
+      "name": "React 19: styles.css e fontes resolvíveis",
+      "ok": true,
+      "detail": "2 fontes"
+    },
+    {
+      "name": "React 19: TypeScript compila contra dist/types",
+      "ok": true,
+      "detail": ""
+    }
+  ],
+  "resultado": "APROVADO"
+}
