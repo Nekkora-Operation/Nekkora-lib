@@ -41,7 +41,7 @@ jobs:
         run: |
           set -euo pipefail
           esperado=$(node -p "require('./artefatos/resultado.json').sha256")
-          rm -rf /tmp/repro && mkdir -p /tmp/repro
+          rm -rf /tmp/repro /tmp/repro-out && mkdir -p /tmp/repro /tmp/repro-out
           git archive "$GITHUB_SHA" | tar -x -C /tmp/repro
           cd /tmp/repro
           npm ci --ignore-scripts --no-audit --no-fund
