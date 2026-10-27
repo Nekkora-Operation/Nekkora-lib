@@ -1,0 +1,1384 @@
+{
+  "origem": "docs/dist",
+  "inicio": "2026-10-22T15:43:08.955Z",
+  "exemplos": 67,
+  "temas": [
+    "dark",
+    "light",
+    "sakura-dark",
+    "midnight-blue",
+    "porcelain-light",
+    "sage-light"
+  ],
+  "porTema": {
+    "dark": 16,
+    "light": 47,
+    "sakura-dark": 17,
+    "midnight-blue": 16,
+    "porcelain-light": 26,
+    "sage-light": 23
+  },
+  "violacoes": [
+    {
+      "tema": "dark",
+      "exemplo": "blocks/FormEx",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-textarea__count",
+          "summary": "Element has insufficient color contrast of 4.08 (foreground color: #7c6f7d, background color: #140a16, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "dark",
+      "exemplo": "feedback/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-state__meta",
+          "summary": "Element has insufficient color contrast of 4 (foreground color: #7c6f7d, background color: #180c1a, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "dark",
+      "exemplo": "fieldset/Default",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_4_",
+          "summary": "Element has insufficient color contrast of 4.08 (foreground color: #7c6f7d, background color: #140a16, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "dark",
+      "exemplo": "select/Children",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_0_",
+          "summary": "Element has insufficient color contrast of 4.08 (foreground color: #7c6f7d, background color: #140a16, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "dark",
+      "exemplo": "select/Options",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_1_",
+          "summary": "Element has insufficient color contrast of 4.08 (foreground color: #7c6f7d, background color: #140a16, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "dark",
+      "exemplo": "select/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_3_",
+          "summary": "Element has insufficient color contrast of 4.08 (foreground color: #7c6f7d, background color: #140a16, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "dark",
+      "exemplo": "selectmenu/Groups",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.08 (foreground color: #7c6f7d, background color: #140a16, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "dark",
+      "exemplo": "selectmenu/Icons",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.08 (foreground color: #7c6f7d, background color: #140a16, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "dark",
+      "exemplo": "selectmenu/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-selectmenu-_r_0_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.08 (foreground color: #7c6f7d, background color: #140a16, font size: 8.5pt (11.375px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_1_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.08 (foreground color: #7c6f7d, background color: #140a16, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_2_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.08 (foreground color: #7c6f7d, background color: #140a16, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_3_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.08 (foreground color: #7c6f7d, background color: #140a16, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_5_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 3.75 (foreground color: #7c6f7d, background color: #1f1420, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "dark",
+      "exemplo": "table/Options",
+      "regra": "scrollable-region-focusable",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-table-wrapper",
+          "summary": "Element should have focusable content"
+        }
+      ]
+    },
+    {
+      "tema": "dark",
+      "exemplo": "themes/Nested",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "div[data-nk-theme=\"sage-light\"] > section > .nk-stack > .nk-badge.nk-badge--success.nk-badge--soft",
+          "summary": "Element has insufficient color contrast of 4.38 (foreground color: #15803d, background color: #e8f2ec, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "dark",
+      "exemplo": "typography/Colors",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-text--color-muted",
+          "summary": "Element has insufficient color contrast of 4 (foreground color: #7c6f7d, background color: #180c1a, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "app/AppShell",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge",
+          "summary": "Element has insufficient color contrast of 4.02 (foreground color: #15803d, background color: #e1e8e3, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "app/DescriptionList",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge",
+          "summary": "Element has insufficient color contrast of 4.02 (foreground color: #15803d, background color: #e1e8e3, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "badge/Tones",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge--success",
+          "summary": "Element has insufficient color contrast of 4.02 (foreground color: #15803d, background color: #e1e8e3, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".nk-badge--warning",
+          "summary": "Element has insufficient color contrast of 4.04 (foreground color: #b45309, background color: #f4e4d8, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".nk-badge--accent",
+          "summary": "Element has insufficient color contrast of 3.83 (foreground color: #c2466d, background color: #f3e2e7, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "badge/Variants",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge--accent",
+          "summary": "Element has insufficient color contrast of 3.83 (foreground color: #c2466d, background color: #f3e2e7, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".nk-badge--sm",
+          "summary": "Element has insufficient color contrast of 4.02 (foreground color: #15803d, background color: #e1e8e3, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "blocks/FormEx",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-textarea__count",
+          "summary": "Element has insufficient color contrast of 3.22 (foreground color: #9a8b97, background color: #ffffff, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "blocks/SectionHeaderEx",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-section-header--left > span",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".nk-section-header--center > span",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "blocks/StepsEx",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "li:nth-child(1) > .nk-steps__content > .nk-steps__index",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "li:nth-child(2) > .nk-steps__content > .nk-steps__index",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "li:nth-child(3) > .nk-steps__content > .nk-steps__index",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "li:nth-child(4) > .nk-steps__content > .nk-steps__index",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "button/Icons",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-button--outline > span",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "button/Variants",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-button--outline > span",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "dialog/ConfirmDialog",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge",
+          "summary": "Element has insufficient color contrast of 4.02 (foreground color: #15803d, background color: #e1e8e3, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "feedback/Alerts",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-link__label",
+          "summary": "Element has insufficient color contrast of 3.81 (foreground color: #c2466d, background color: #f4e1e6, font size: 8.5pt (11.375px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "feedback/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-state__meta",
+          "summary": "Element has insufficient color contrast of 2.93 (foreground color: #9a8b97, background color: #f8f3f5, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "fieldset/Default",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_4_",
+          "summary": "Element has insufficient color contrast of 3.22 (foreground color: #9a8b97, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "link/Icons",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-link--md.nk-link--accent[href=\"#\"] > span",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 8.5pt (11.375px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "a[target=\"_blank\"] > span",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 8.5pt (11.375px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".nk-link--sm > span",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".nk-link--lg > span",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "link/Variants",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-link--accent.nk-link--underline-hover:nth-child(1) > span",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 8.5pt (11.375px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".nk-link--underline-always > span",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 8.5pt (11.375px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "masks/Functions",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "p:nth-child(1) > .nk-text--color-accent.nk-text--weight-medium",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "p:nth-child(2) > .nk-text--color-accent.nk-text--weight-medium",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "p:nth-child(3) > .nk-text--color-accent.nk-text--weight-medium",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "p:nth-child(4) > .nk-text--color-accent.nk-text--weight-medium",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "p:nth-child(5) > .nk-text--color-accent.nk-text--weight-medium",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "p:nth-child(6) > .nk-text--color-accent.nk-text--weight-medium",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "p:nth-child(7) > .nk-text--color-accent.nk-text--weight-medium",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "select/Children",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_0_",
+          "summary": "Element has insufficient color contrast of 3.22 (foreground color: #9a8b97, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "select/Options",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_1_",
+          "summary": "Element has insufficient color contrast of 3.22 (foreground color: #9a8b97, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "select/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_3_",
+          "summary": "Element has insufficient color contrast of 3.22 (foreground color: #9a8b97, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "selectmenu/Groups",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 3.22 (foreground color: #9a8b97, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "selectmenu/Icons",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 3.22 (foreground color: #9a8b97, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "selectmenu/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-selectmenu-_r_0_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 3.22 (foreground color: #9a8b97, background color: #ffffff, font size: 8.5pt (11.375px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_1_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 3.22 (foreground color: #9a8b97, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_2_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 3.22 (foreground color: #9a8b97, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_3_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 3.22 (foreground color: #9a8b97, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_5_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 3.22 (foreground color: #9a8b97, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "table/Options",
+      "regra": "scrollable-region-focusable",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-table-wrapper",
+          "summary": "Element should have focusable content"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "themes/Nested",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "div[data-nk-theme=\"sage-light\"] > section > .nk-stack > .nk-badge.nk-badge--success.nk-badge--soft",
+          "summary": "Element has insufficient color contrast of 4.38 (foreground color: #15803d, background color: #e8f2ec, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "light",
+      "exemplo": "typography/Colors",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-text--color-muted",
+          "summary": "Element has insufficient color contrast of 2.93 (foreground color: #9a8b97, background color: #f8f3f5, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".nk-text--color-accent",
+          "summary": "Element has insufficient color contrast of 4.35 (foreground color: #c2466d, background color: #f8f3f5, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "blocks/FormEx",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-textarea__count",
+          "summary": "Element has insufficient color contrast of 4.17 (foreground color: #7c717b, background color: #140914, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "feedback/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-state__meta",
+          "summary": "Element has insufficient color contrast of 4.04 (foreground color: #7c717b, background color: #1b0c1a, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "fieldset/Default",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_4_",
+          "summary": "Element has insufficient color contrast of 4.17 (foreground color: #7c717b, background color: #140914, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "select/Children",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_0_",
+          "summary": "Element has insufficient color contrast of 4.17 (foreground color: #7c717b, background color: #140914, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "select/Options",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_1_",
+          "summary": "Element has insufficient color contrast of 4.17 (foreground color: #7c717b, background color: #140914, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "select/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_3_",
+          "summary": "Element has insufficient color contrast of 4.17 (foreground color: #7c717b, background color: #140914, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "selectmenu/Groups",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.17 (foreground color: #7c717b, background color: #140914, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "selectmenu/Icons",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.17 (foreground color: #7c717b, background color: #140914, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "selectmenu/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-selectmenu-_r_0_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.17 (foreground color: #7c717b, background color: #140914, font size: 8.5pt (11.375px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_1_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.17 (foreground color: #7c717b, background color: #140914, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_2_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.17 (foreground color: #7c717b, background color: #140914, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_3_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.17 (foreground color: #7c717b, background color: #140914, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_5_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 3.26 (foreground color: #7c717b, background color: #2d222f, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "table/Options",
+      "regra": "scrollable-region-focusable",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-table-wrapper",
+          "summary": "Element should have focusable content"
+        }
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "table/Primitives",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-table__row--selected > .nk-table__td--muted.nk-table__cell--right",
+          "summary": "Element has insufficient color contrast of 4.43 (foreground color: #a89fa7, background color: #483442, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "themes/Nested",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "div[data-nk-theme=\"sage-light\"] > section > .nk-stack > .nk-badge.nk-badge--success.nk-badge--soft",
+          "summary": "Element has insufficient color contrast of 4.38 (foreground color: #15803d, background color: #e8f2ec, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sakura-dark",
+      "exemplo": "typography/Colors",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-text--color-muted",
+          "summary": "Element has insufficient color contrast of 4.04 (foreground color: #7c717b, background color: #1b0c1a, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "blocks/FormEx",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-textarea__count",
+          "summary": "Element has insufficient color contrast of 4.21 (foreground color: #72757a, background color: #0a0d11, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "feedback/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-state__meta",
+          "summary": "Element has insufficient color contrast of 4.09 (foreground color: #72757a, background color: #0d1117, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "fieldset/Default",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_4_",
+          "summary": "Element has insufficient color contrast of 4.21 (foreground color: #72757a, background color: #0a0d11, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "select/Children",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_0_",
+          "summary": "Element has insufficient color contrast of 4.21 (foreground color: #72757a, background color: #0a0d11, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "select/Options",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_1_",
+          "summary": "Element has insufficient color contrast of 4.21 (foreground color: #72757a, background color: #0a0d11, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "select/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_3_",
+          "summary": "Element has insufficient color contrast of 4.21 (foreground color: #72757a, background color: #0a0d11, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "selectmenu/Groups",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.21 (foreground color: #72757a, background color: #0a0d11, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "selectmenu/Icons",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.21 (foreground color: #72757a, background color: #0a0d11, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "selectmenu/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-selectmenu-_r_0_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.21 (foreground color: #72757a, background color: #0a0d11, font size: 8.5pt (11.375px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_1_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.21 (foreground color: #72757a, background color: #0a0d11, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_2_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.21 (foreground color: #72757a, background color: #0a0d11, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_3_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 4.21 (foreground color: #72757a, background color: #0a0d11, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_5_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 3.74 (foreground color: #72757a, background color: #161b22, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "table/Options",
+      "regra": "scrollable-region-focusable",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-table-wrapper",
+          "summary": "Element should have focusable content"
+        }
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "themes/Nested",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "div[data-nk-theme=\"sage-light\"] > section > .nk-stack > .nk-badge.nk-badge--success.nk-badge--soft",
+          "summary": "Element has insufficient color contrast of 4.38 (foreground color: #15803d, background color: #e8f2ec, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "midnight-blue",
+      "exemplo": "typography/Colors",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-text--color-muted",
+          "summary": "Element has insufficient color contrast of 4.09 (foreground color: #72757a, background color: #0d1117, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "app/AppShell",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge",
+          "summary": "Element has insufficient color contrast of 4.06 (foreground color: #15803d, background color: #e0eae2, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "app/DescriptionList",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge",
+          "summary": "Element has insufficient color contrast of 4.06 (foreground color: #15803d, background color: #e0eae2, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "badge/Tones",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge--success",
+          "summary": "Element has insufficient color contrast of 4.06 (foreground color: #15803d, background color: #e0eae2, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".nk-badge--warning",
+          "summary": "Element has insufficient color contrast of 4.11 (foreground color: #b45309, background color: #f3e7d7, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".nk-badge--neutral",
+          "summary": "Element has insufficient color contrast of 4.36 (foreground color: #68696b, background color: #e6e5e4, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "badge/Variants",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge--sm",
+          "summary": "Element has insufficient color contrast of 4.06 (foreground color: #15803d, background color: #e0eae2, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "blocks/FormEx",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-textarea__count",
+          "summary": "Element has insufficient color contrast of 2.87 (foreground color: #98989a, background color: #ffffff, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "dialog/ConfirmDialog",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge",
+          "summary": "Element has insufficient color contrast of 4.06 (foreground color: #15803d, background color: #e0eae2, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "feedback/Alerts",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-alert--info > .nk-alert__content > .nk-alert__body",
+          "summary": "Element has insufficient color contrast of 4.47 (foreground color: #68696b, background color: #e7e7f1, font size: 8.5pt (11.375px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".nk-alert--success > .nk-alert__content > .nk-alert__body",
+          "summary": "Element has insufficient color contrast of 4.45 (foreground color: #68696b, background color: #e0eae2, font size: 8.5pt (11.375px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".nk-alert--danger > .nk-alert__content > .nk-alert__body",
+          "summary": "Element has insufficient color contrast of 4.45 (foreground color: #68696b, background color: #f3e4e5, font size: 8.5pt (11.375px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "feedback/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-state__meta",
+          "summary": "Element has insufficient color contrast of 2.66 (foreground color: #98989a, background color: #f7f6f4, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "fieldset/Default",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_4_",
+          "summary": "Element has insufficient color contrast of 2.87 (foreground color: #98989a, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "select/Children",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_0_",
+          "summary": "Element has insufficient color contrast of 2.87 (foreground color: #98989a, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "select/Options",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_1_",
+          "summary": "Element has insufficient color contrast of 2.87 (foreground color: #98989a, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "select/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_3_",
+          "summary": "Element has insufficient color contrast of 2.87 (foreground color: #98989a, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "selectmenu/Groups",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 2.87 (foreground color: #98989a, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "selectmenu/Icons",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 2.87 (foreground color: #98989a, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "selectmenu/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-selectmenu-_r_0_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 2.87 (foreground color: #98989a, background color: #ffffff, font size: 8.5pt (11.375px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_1_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 2.87 (foreground color: #98989a, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_2_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 2.87 (foreground color: #98989a, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_3_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 2.87 (foreground color: #98989a, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_5_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 2.87 (foreground color: #98989a, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "table/Options",
+      "regra": "scrollable-region-focusable",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-table-wrapper",
+          "summary": "Element should have focusable content"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "themes/Nested",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "div[data-nk-theme=\"sage-light\"] > section > .nk-stack > .nk-badge.nk-badge--success.nk-badge--soft",
+          "summary": "Element has insufficient color contrast of 4.38 (foreground color: #15803d, background color: #e8f2ec, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "porcelain-light",
+      "exemplo": "typography/Colors",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-text--color-muted",
+          "summary": "Element has insufficient color contrast of 2.66 (foreground color: #98989a, background color: #f7f6f4, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "app/AppShell",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge",
+          "summary": "Element has insufficient color contrast of 4.04 (foreground color: #15803d, background color: #deeadf, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "app/DescriptionList",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge",
+          "summary": "Element has insufficient color contrast of 4.04 (foreground color: #15803d, background color: #deeadf, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "badge/Tones",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge--success",
+          "summary": "Element has insufficient color contrast of 4.04 (foreground color: #15803d, background color: #deeadf, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".nk-badge--warning",
+          "summary": "Element has insufficient color contrast of 4.09 (foreground color: #b45309, background color: #f1e7d5, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": ".nk-badge--neutral",
+          "summary": "Element has insufficient color contrast of 4.41 (foreground color: #646966, background color: #e3e5e1, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "badge/Variants",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge--sm",
+          "summary": "Element has insufficient color contrast of 4.04 (foreground color: #15803d, background color: #deeadf, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "blocks/FormEx",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-textarea__count",
+          "summary": "Element has insufficient color contrast of 2.88 (foreground color: #959995, background color: #ffffff, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "dialog/ConfirmDialog",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-badge",
+          "summary": "Element has insufficient color contrast of 4.04 (foreground color: #15803d, background color: #deeadf, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "feedback/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-state__meta",
+          "summary": "Element has insufficient color contrast of 2.65 (foreground color: #959995, background color: #f4f6f1, font size: 7.2pt (9.625px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "fieldset/Default",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_4_",
+          "summary": "Element has insufficient color contrast of 2.88 (foreground color: #959995, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "select/Children",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_0_",
+          "summary": "Element has insufficient color contrast of 2.88 (foreground color: #959995, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "select/Options",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_1_",
+          "summary": "Element has insufficient color contrast of 2.88 (foreground color: #959995, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "select/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-select-_r_3_",
+          "summary": "Element has insufficient color contrast of 2.88 (foreground color: #959995, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "selectmenu/Groups",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 2.88 (foreground color: #959995, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "selectmenu/Icons",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 2.88 (foreground color: #959995, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "selectmenu/States",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": "#nk-selectmenu-_r_0_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 2.88 (foreground color: #959995, background color: #ffffff, font size: 8.5pt (11.375px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_1_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 2.88 (foreground color: #959995, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_2_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 2.88 (foreground color: #959995, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_3_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 2.88 (foreground color: #959995, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        },
+        {
+          "target": "#nk-selectmenu-_r_5_ > .nk-selectmenu__value > .nk-selectmenu__placeholder",
+          "summary": "Element has insufficient color contrast of 2.88 (foreground color: #959995, background color: #ffffff, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "table/Options",
+      "regra": "scrollable-region-focusable",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-table-wrapper",
+          "summary": "Element should have focusable content"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "themes/Nested",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-root[data-nk-theme=\"sage-light\"][data-nk-mode=\"light\"] > section > .nk-stack > .nk-badge.nk-badge--success.nk-badge--soft",
+          "summary": "Element has insufficient color contrast of 4.38 (foreground color: #15803d, background color: #e8f2ec, font size: 7.9pt (10.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    },
+    {
+      "tema": "sage-light",
+      "exemplo": "typography/Colors",
+      "regra": "color-contrast",
+      "impacto": "serious",
+      "nos": [
+        {
+          "target": ".nk-text--color-muted",
+          "summary": "Element has insufficient color contrast of 2.65 (foreground color: #959995, background color: #f4f6f1, font size: 9.2pt (12.25px), font weight: normal). Expected contrast ratio of 4.5:1"
+        }
+      ]
+    }
+  ],
+  "incompletos": 258,
+  "externas": [
+    "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+  ],
+  "fim": "2026-10-22T15:47:30.924Z"
+}

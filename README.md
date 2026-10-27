@@ -13,7 +13,7 @@ Foco em componentes visuais configuráveis por props: tamanho, variante, ícones
 | `--nk-color-highlight` | `#FADCD5` | `#48213B` | Destaque |
 | `--nk-color-text` | `#E8E2E7` | `#2A1A28` | Texto |
 | `--nk-color-text-secondary` | `#94A3B8` | `#64566A` | Texto secundário |
-| `--nk-color-accent` | `#F29BB2` | `#C2466D` | CTA / gráficos |
+| `--nk-color-accent` | `#F29BB2` | `#AD3E61` | CTA / gráficos |
 
 No tema claro o acento rosa é mais profundo para manter contraste AA sobre fundo branco.
 
@@ -77,12 +77,35 @@ import { Button, Input } from 'nekkora-lib';
 <Button leftIcon="plus">Nova automação</Button>
 ```
 
+### Versões distribuídas (sem npm)
+
+A lib **não é publicada no npm**. Cada versão é um tarball gerado pelo CI (`.github/workflows/ci.yml`): o job
+valida tudo, gera o pacote, confirma que um segundo build em pasta limpa produz o **mesmo sha256** e, numa tag `v*`,
+anexa `nekkora-lib-<versão>.tgz` + `SHA256SUMS` + `resultado.json` a uma GitHub Release. Quem consome guarda o
+tarball no próprio repositório (ex.: `vendor/nekkora-lib-0.2.0.tgz`) e o instala por `file:` — o `package-lock.json`
+registra a integridade (sha512), então a instalação é determinística e não depende de nenhuma pasta desta máquina.
+
+```bash
+npm run build && npm run verificar:pacote   # gera artefatos/nekkora-lib-<versão>.tgz e o confere em projetos vazios
+```
+
+O `verificar:pacote` instala o tarball fora daqui com React 18 e 19 e confere: ESM e CommonJS com as mesmas
+exportações, renderização no servidor, `styles.css` com as fontes do próprio pacote e compilação TypeScript contra
+`dist/types`.
+
+### Fonte
+
+A Inter vem **dentro do pacote** (`dist/fonts/`, SIL Open Font License 1.1 — `dist/fonts/OFL-Inter.txt`): nenhuma
+requisição ao Google Fonts. É a versão variável (pesos 100–900) em dois subconjuntos, `latin` e `latin-ext`; o
+navegador só baixa o segundo se a página usar algum caractere dele. O bundler do app resolve `./fonts/...` a partir
+do `styles.css` como qualquer outro asset.
+
 ## Temas e templates de cor
 
 | Tema (`data-nk-theme`) | Modo | Perfil | bg · surface · card | primary · secondary | highlight · text | accent |
 |---|---|---|---|---|---|---|
 | `dark` (padrão) | escuro | Nekkora — principal | `#180C1A` `#20222F` `#48213B` | `#603C52` `#765067` | `#FADCD5` `#E8E2E7` | `#F29BB2` |
-| `light` | claro | Nekkora sobre fundo claro | `#F8F3F5` `#FFFFFF` `#F6E9EE` | `#603C52` `#765067` | `#48213B` `#2A1A28` | `#C2466D` |
+| `light` | claro | Nekkora sobre fundo claro | `#F8F3F5` `#FFFFFF` `#F6E9EE` | `#603C52` `#765067` | `#48213B` `#2A1A28` | `#AD3E61` |
 | `sakura-dark` | escuro | Identidade/autoral, rosa elegante | `#1B0C1A` `#2D222F` `#4B2138` | `#6D3C52` `#765D67` | `#FADCD5` `#F8F2F7` | `#F0A3B8` |
 | `midnight-blue` | escuro | Técnico/profissional | `#0D1117` `#161B22` `#212936` | `#526D9E` `#7189B5` | `#AFC8F2` `#F2F5F8` | `#8FB0EA` |
 | `porcelain-light` | claro | Neutro/institucional | `#F7F6F4` `#FFFFFF` `#ECEAE6` | `#4E5D78` `#76839A` | `#D7CBBF` `#24262B` | `#4E5D78` |
@@ -129,6 +152,11 @@ npm test                 # testes (vitest)
 npm run typecheck
 npm run build            # gera dist/ (ESM + CJS + CSS + tipos)
 npm run check            # validação completa antes de juntar uma branch: tipos, testes e builds
+npm run verificar:pacote # pacote instalável em projetos vazios (React 18 e 19) — veja "Versões distribuídas"
+
+# acessibilidade em navegador real: cada exemplo da documentação × 6 temas, axe-core + contraste por pixels
+# (Playwright e axe-core não são dependências: aponte para uma pasta node_modules que os tenha)
+npm run build:docs && NEKKORA_PW_MODULES=../Nekkora-Platform-Web/node_modules node scripts/auditoria-a11y.mjs
 ```
 
 ## Componentes

@@ -33,7 +33,8 @@ export function DescriptionList({ items, columns = 2, emptyLabel, className, ...
           <div key={item.key ?? i} className={cx('nk-dl__item', item.wide && 'nk-dl__item--wide')}>
             <dt className="nk-dl__term">{item.term}</dt>
             <dd className={cx('nk-dl__desc', empty && 'nk-dl__desc--empty')}>
-              {empty ? (emptyLabel ?? <span aria-label="não informado">—</span>) : item.description}
+              {/* aria-label não vale em <span> (papel genérico): o traço fica oculto e o texto vai só para o leitor de tela */}
+              {empty ? (emptyLabel ?? <><span aria-hidden="true">—</span><span className="nk-visually-hidden">não informado</span></>) : item.description}
             </dd>
           </div>
         );

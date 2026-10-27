@@ -100,7 +100,8 @@
   font-size: var(--nk-font-size-sm);
   text-align: center;
 }
-.nk-auth__footer { text-align: center; font-size: var(--nk-font-size-xs); color: var(--nk-color-text-muted); }
+/* secondary, não muted: o rodapé fica sobre o gradiente do painel (muted chegava a 4,25:1 nos temas claros) */
+.nk-auth__footer { text-align: center; font-size: var(--nk-font-size-xs); color: var(--nk-color-text-secondary); }
 
 @media (max-width: 900px) {
   .nk-auth--split .nk-auth__frame { grid-template-columns: minmax(0, 500px); justify-content: center; }

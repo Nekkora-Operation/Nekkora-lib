@@ -1,0 +1,81 @@
+# Validação da nekkora-lib (LIB-RELEASE-001): testes, build, pacote instalável em ambiente limpo e build reproduzível.
+# Em tag v* publica o tarball como asset de uma GitHub Release (distribuição interna; nada vai para o npm).
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validar:
+    name: Validar e empacotar
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Instalar dependências (lockfile)
+        run: npm ci
+
+      - name: Typecheck, testes, build e build da documentação
+        run: npm run check
+
+      - name: Pacote em ambiente limpo (React 18 e 19)
+        run: npm run verificar:pacote
+
+      - name: Build reproduzível (segundo build em pasta limpa, mesmo sha256)
+        run: |
+          set -euo pipefail
+          esperado=$(node -p "require('./artefatos/resultado.json').sha256")
+          rm -rf /tmp/repro /tmp/repro-out && mkdir -p /tmp/repro /tmp/repro-out
+          git archive "$GITHUB_SHA" | tar -x -C /tmp/repro
+          cd /tmp/repro
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build
+          npm pack --ignore-scripts --pack-destination /tmp/repro-out >/dev/null
+          obtido=$(sha256sum /tmp/repro-out/*.tgz | cut -d' ' -f1)
+          echo "esperado=$esperado obtido=$obtido"
+          test "$esperado" = "$obtido"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nekkora-lib-${{ github.sha }}
+          path: artefatos/
+          retention-days: 90
+
+  release:
+    name: Release interna (tag)
+    needs: validar
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: nekkora-lib-${{ github.sha }}
+          path: artefatos
+      - name: Publicar tarball na GitHub Release da tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cd artefatos
+          sha256sum *.tgz > SHA256SUMS
+          gh release create "$GITHUB_REF_NAME" *.tgz SHA256SUMS resultado.json \
+            --repo "$GITHUB_REPOSITORY" --title "nekkora-lib $GITHUB_REF_NAME" \
+            --notes "Distribuição interna (não publicada no npm). Integridade e verificações em resultado.json."
