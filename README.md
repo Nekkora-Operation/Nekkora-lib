@@ -315,7 +315,8 @@ Usa a lista do sistema operacional — ideal para formulários simples e celular
 // expande ao passar o mouse ou com foco de teclado (dê `icon` a todos os itens). No celular é o mesmo painel.
 // UserMenu: círculo com a foto ou as iniciais; ao clicar, abre o nome, o nível da conta e o botão de sair.
 <AppShell layout="header" brand={<Logo />} nav={nav} header={<Heading level={1}>Início</Heading>}
-          actions={<UserMenu name="Ana Souza" avatarSrc={fotoUrl} accountLevel="Administrador" onSignOut={sair} />}>
+          actions={<UserMenu name="Ana Souza" avatarSrc={fotoUrl} accountLevel="Administrador" onSignOut={sair} />}
+          sidebarFooter="Nekkora Platform 2.2.1" sidebarFooterCompact="v2.2.1">
   ...
 </AppShell>
 

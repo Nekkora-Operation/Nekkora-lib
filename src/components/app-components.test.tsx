@@ -188,6 +188,27 @@ describe('AppShell layout="header"', () => {
     expect(screen.getByRole('heading', { name: 'Execuções' }).parentElement).not.toHaveClass('nk-shell__header--divided');
   });
 
+  it('rodapé curto do trilho (sidebarFooterCompact): só com layout="header", ao lado do rodapé completo', () => {
+    const { container, unmount } = render(
+      <AppShell layout="header" nav={nav} sidebarFooter="Nekkora Platform 2.2.1" sidebarFooterCompact="v2.2.1"><p>x</p></AppShell>,
+    );
+    expect(container.querySelector('.nk-shell__sidebar-compact')).toHaveTextContent('v2.2.1');
+    // o CSS mostra um ou outro (recolhido / expandido); os dois ficam no menu
+    expect(screen.getByText('Nekkora Platform 2.2.1')).toHaveClass('nk-shell__sidebar-footer--swap');
+    unmount();
+    const padrao = render(<AppShell nav={nav} sidebarFooter="Nekkora Platform 2.2.1" sidebarFooterCompact="v2.2.1"><p>x</p></AppShell>);
+    expect(padrao.container.querySelector('.nk-shell__sidebar-compact')).toBeNull();
+    expect(screen.getByText('Nekkora Platform 2.2.1')).not.toHaveClass('nk-shell__sidebar-footer--swap');
+  });
+
+  it('header: ícones do menu um passo maiores (20 px) que no layout padrão (16 px)', () => {
+    const header = render(<AppShell layout="header" nav={nav}><p>x</p></AppShell>);
+    expect(header.container.querySelector('.nk-shell__item .nk-icon')).toHaveAttribute('width', '20');
+    header.unmount();
+    const padrao = render(<AppShell nav={nav}><p>x</p></AppShell>);
+    expect(padrao.container.querySelector('.nk-shell__item .nk-icon')).toHaveAttribute('width', '16');
+  });
+
   it('header no celular: o painel abre como no layout padrão e o foco entra na marca do painel', () => {
     render(<AppShell layout="header" brand="Nekkora" nav={nav}><p>x</p></AppShell>);
     fireEvent.click(screen.getByRole('button', { name: 'Abrir menu' }));
