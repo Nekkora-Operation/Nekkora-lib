@@ -27,7 +27,8 @@ export default function AppShellHeaderExample() {
       nav={nav}
       header={<Text variant="h4" as="h1">Início</Text>}
       actions={<UserMenu name="Ana Souza" accountLevel="Administrador" onSignOut={() => {}} />}
-      sidebarFooter={<Text variant="body-sm" color="secondary">Nekkora Platform 2.2.1</Text>}
+      sidebarFooter={<Text variant="body-sm" color="secondary">Nekkora Platform 2.2.1 · © 2026 Nekkora</Text>}
+      sidebarFooterCompact={<>v2.2.1<br />© 2026</>}
     >
       <Text>Passe o mouse sobre o menu (ou navegue com Tab) para ver os rótulos. Clique no círculo para abrir a conta.</Text>
     </AppShell>

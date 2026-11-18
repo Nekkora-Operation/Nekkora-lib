@@ -600,13 +600,14 @@ export function AppPage() {
       <PropsTable
         title="AppShell"
         rows={[
-          ['layout', "'sidebar' | 'header'", "'sidebar'", 'Disposição no desktop. header: topo de largura total com a marca e menu abaixo dele, recolhido num trilho de ícones que expande ao passar o mouse ou com foco de teclado (dê icon a todos os itens). No celular os dois são iguais.'],
+          ['layout', "'sidebar' | 'header'", "'sidebar'", 'Disposição no desktop. header: topo de largura total com a marca e menu abaixo dele, recolhido num trilho de ícones que expande ao passar o mouse ou com foco de teclado (dê icon a todos os itens); ícones e rótulos do menu ficam um passo maiores (20 px e 14 px). No celular os dois são iguais.'],
           ['nav', 'AppNavGroup[]', '', 'Grupos { id, label?, items: { id, label, href, icon?, active?, badge? }[] }. O menu mostra só o que receber: quem decide permissões é a aplicação/API.'],
           ['linkAs', 'ElementType', '<a>', 'Componente de roteamento (ex.: Link do react-router); recebe `to`.'],
           ['brand / brandHref', 'ReactNode / string', "'#'", 'Marca no topo do menu ou, com layout="header", à esquerda do topo.'],
           ['header', 'ReactNode', '', 'Título da página ou trilha, à esquerda do topo.'],
           ['actions', 'ReactNode', '', 'Ações à direita do topo (ex.: ThemeToggle, conta).'],
           ['sidebarFooter', 'ReactNode', '', 'Rodapé do menu (ex.: organização). Com layout="header" só aparece com o menu expandido.'],
+          ['sidebarFooterCompact', 'ReactNode', '', 'Só com layout="header": rodapé curto do trilho recolhido (ex.: versão); ao expandir, dá lugar ao sidebarFooter.'],
           ['navLabel / menuLabel / skipLabel / mainId', 'string', '', 'Rótulo da navegação, do painel (diálogo no celular), texto do link de pular e id do <main>.'],
         ]}
       />
