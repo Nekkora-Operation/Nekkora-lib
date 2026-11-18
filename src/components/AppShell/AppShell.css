@@ -158,6 +158,81 @@
   .nk-shell__main { padding: var(--nk-space-6) var(--nk-space-4); }
 }
 
+/*
+ * layout="header" (só no desktop; até 900 px vale o painel acima): o topo ocupa a largura inteira e leva a marca; o
+ * menu fica abaixo dele, recolhido num trilho de ícones, e expande por cima do conteúdo ao passar o mouse ou com foco
+ * de teclado. Os rótulos continuam no DOM (nome acessível dos links); só ficam invisíveis no trilho.
+ */
+.nk-shell__topbar-brand { display: none; }
+
+@media (min-width: 901px) {
+  .nk-shell--header {
+    --nk-shell-rail: 72px;
+    --nk-shell-topbar: 64px;
+    grid-template-columns: var(--nk-shell-rail) minmax(0, 1fr);
+  }
+  .nk-shell--header .nk-shell__body { grid-column: 2; }
+
+  .nk-shell--header .nk-shell__topbar {
+    /* o topo cobre também a coluna do trilho */
+    margin-left: calc(-1 * var(--nk-shell-rail));
+    height: var(--nk-shell-topbar);
+    padding: 0 var(--nk-space-6) 0 var(--nk-space-4);
+    background: var(--nk-color-surface);
+    backdrop-filter: none;
+  }
+  .nk-shell--header .nk-shell__topbar-brand { display: inline-flex; flex-shrink: 0; }
+  .nk-shell--header .nk-shell__header--divided {
+    align-self: stretch;
+    margin: var(--nk-space-4) 0;
+    padding-left: var(--nk-space-4);
+    border-left: 1px solid var(--nk-color-border-strong);
+  }
+
+  .nk-shell--header .nk-shell__sidebar-head { display: none; }
+  .nk-shell--header .nk-shell__sidebar {
+    /* segue na coluna do trilho (abaixo do topo); ao expandir, passa da coluna e cobre o conteúdo, sem empurrá-lo */
+    z-index: 9;
+    top: var(--nk-shell-topbar);
+    justify-self: start;
+    width: var(--nk-shell-rail);
+    height: calc(100vh - var(--nk-shell-topbar));
+    margin-top: var(--nk-shell-topbar);
+    overflow-x: hidden;
+    padding-inline: var(--nk-space-3);
+    transition: width var(--nk-transition), box-shadow var(--nk-transition);
+  }
+  .nk-shell--header .nk-shell__sidebar:hover,
+  .nk-shell--header .nk-shell__sidebar:has(:focus-visible) {
+    width: var(--nk-shell-sidebar);
+    box-shadow: var(--nk-shadow-md);
+  }
+
+  .nk-shell--header .nk-shell__item {
+    /* ícone (16 px) centralizado no trilho; a mesma medida vale aberto, para o ícone não se mexer */
+    padding-inline: calc((var(--nk-shell-rail) - 1px - 2 * var(--nk-space-3) - 2px - 16px) / 2);
+  }
+  .nk-shell--header .nk-shell__item .nk-icon { flex-shrink: 0; }
+  .nk-shell--header .nk-shell__group-label { overflow: hidden; white-space: nowrap; }
+  .nk-shell--header .nk-shell__sidebar-footer {
+    flex-shrink: 0;
+    width: calc(var(--nk-shell-sidebar) - 2 * var(--nk-space-3) - 1px);
+  }
+  .nk-shell--header .nk-shell__group-label,
+  .nk-shell--header .nk-shell__item-label,
+  .nk-shell--header .nk-shell__item-badge,
+  .nk-shell--header .nk-shell__sidebar-footer {
+    opacity: 0;
+    transition: opacity var(--nk-transition);
+  }
+  .nk-shell--header .nk-shell__sidebar:hover :is(.nk-shell__group-label, .nk-shell__item-label, .nk-shell__item-badge, .nk-shell__sidebar-footer),
+  .nk-shell--header .nk-shell__sidebar:has(:focus-visible) :is(.nk-shell__group-label, .nk-shell__item-label, .nk-shell__item-badge, .nk-shell__sidebar-footer) {
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .nk-shell__sidebar, .nk-shell__item { transition: none; }
+  .nk-shell__sidebar, .nk-shell__item,
+  .nk-shell--header .nk-shell__group-label, .nk-shell--header .nk-shell__item-label,
+  .nk-shell--header .nk-shell__item-badge, .nk-shell--header .nk-shell__sidebar-footer { transition: none; }
 }

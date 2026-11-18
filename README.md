@@ -300,7 +300,7 @@ Usa a lista do sistema operacional — ideal para formulários simples e celular
 <Badge variant="solid" tone="success">Concluído</Badge>   // tag preenchida: fundo colorido + texto branco
 ```
 
-### Aplicação — `AppShell`, `LoadMore`, `DescriptionList`
+### Aplicação — `AppShell`, `Avatar`, `UserMenu`, `LoadMore`, `DescriptionList`
 ```tsx
 // Estrutura da área logada: menu lateral (região complementar rotulada; grupos; item ativo com aria-current), topo e
 // conteúdo. Até 900 px o menu vira painel modal: o foco entra no painel, Tab/Shift+Tab circulam nele e o resto fica
@@ -308,6 +308,14 @@ Usa a lista do sistema operacional — ideal para formulários simples e celular
 // passar a desktop, o painel fecha (o foco fica onde está ou vai ao item ativo, se o elemento sumiu).
 <AppShell brand={<Logo />} linkAs={RouterLink} header={<Heading level={1}>Execuções</Heading>} actions={<ThemeToggle />}
           nav={[{ id: 'produto', label: 'Produto', items: [{ id: 'exec', label: 'Execuções', href: '/execucoes', icon: 'executions', active: true }] }]}>
+  ...
+</AppShell>
+
+// layout="header": topo de largura total com a marca; o menu fica abaixo dele, recolhido num trilho de ícones, e
+// expande ao passar o mouse ou com foco de teclado (dê `icon` a todos os itens). No celular é o mesmo painel.
+// UserMenu: círculo com a foto ou as iniciais; ao clicar, abre o nome, o nível da conta e o botão de sair.
+<AppShell layout="header" brand={<Logo />} nav={nav} header={<Heading level={1}>Início</Heading>}
+          actions={<UserMenu name="Ana Souza" avatarSrc={fotoUrl} accountLevel="Administrador" onSignOut={sair} />}>
   ...
 </AppShell>
 
@@ -326,7 +334,7 @@ src/
   tokens/        foundation.css (tipografia, espaço, raios), themes.css (modos + paletas) e tokens.ts (registro dos temas)
   utils/         máscaras, cx, renderIcon
   components/    ThemeProvider, Logo, Icon, IconBox, Navbar, SectionHeader, Steps, FloatingButton, Textarea, Typography, Button, Link, Badge, Field, Input, Select, SelectMenu,
-                 Container, Card, Layout (Stack/Grid), Fieldset, Table, AppShell, LoadMore, DescriptionList, ...
+                 Container, Card, Layout (Stack/Grid), Fieldset, Table, AppShell, Avatar, UserMenu, LoadMore, DescriptionList, ...
 brand/           SVGs da marca (símbolo, logotipo, assinatura, ícone de app)
 docs/            site de documentação (páginas, exemplos ao vivo e código)
 ```

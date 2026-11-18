@@ -24,8 +24,18 @@ export interface AppNavGroup {
   items: AppNavItem[];
 }
 
+/** sidebar = marca e menu na lateral · header = topo de largura total com a marca e menu recolhido abaixo dele. */
+export type AppShellLayout = 'sidebar' | 'header';
+
 export interface AppShellProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
-  /** Marca no topo do menu lateral (ex.: <Logo />). Dê nome acessível ao conteúdo (o Logo já tem). */
+  /**
+   * Disposição no desktop (acima de 900 px). `sidebar` (padrão): a marca fica no topo do menu lateral, sempre aberto.
+   * `header`: o topo ocupa a largura inteira e leva a marca; o menu fica abaixo dele, recolhido num trilho só de
+   * ícones, e expande por cima do conteúdo ao passar o mouse ou ao receber foco pelo teclado. Dê `icon` a todos os
+   * itens. No celular os dois são iguais (painel recolhível).
+   */
+  layout?: AppShellLayout;
+  /** Marca (ex.: <Logo />): no topo do menu lateral ou, com `layout="header"`, à esquerda do topo. Dê nome acessível ao conteúdo (o Logo já tem). */
   brand?: ReactNode;
   /** Link da marca. */
   brandHref?: string;
@@ -65,10 +75,12 @@ const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1
  * - se a largura passar a desktop com o painel aberto, ele fecha e o conteúdo volta a ficar ativo; o foco continua
  *   onde estava (o menu segue visível como menu lateral), salvo se o elemento sumiu ("Fechar menu" só existe no
  *   celular): aí vai ao item ativo do menu.
- * No desktop, o menu é uma região complementar rotulada (`menuLabel`) com a navegação dentro.
+ * No desktop, o menu é uma região complementar rotulada (`menuLabel`) com a navegação dentro. Com `layout="header"`,
+ * ele fica abaixo do topo, recolhido num trilho de ícones que expande ao passar o mouse ou com foco de teclado.
  * O menu não decide permissões: mostra só os itens recebidos.
  */
 export function AppShell({
+  layout = 'sidebar',
   brand,
   brandHref = '#',
   nav,
@@ -97,6 +109,7 @@ export function AppShell({
    */
   const pendingFocus = useRef<'toggle' | 'main' | 'keep' | null>(null);
   const Tag = linkAs ?? 'a';
+  const brandInTopbar = layout === 'header' && brand != null;
 
   const close = (focusTo: 'toggle' | 'main' | 'keep') => {
     pendingFocus.current = focusTo;
@@ -162,7 +175,7 @@ export function AppShell({
   const linkProps = (href: string) => (linkAs ? { to: href } : { href });
 
   return (
-    <div className={cx('nk-shell', open && 'nk-shell--open', className)} {...rest}>
+    <div className={cx('nk-shell', layout === 'header' && 'nk-shell--header', open && 'nk-shell--open', className)} {...rest}>
       <a className="nk-shell__skip" href={`#${contentId}`} inert={open || undefined}>
         {skipLabel}
       </a>
@@ -236,7 +249,13 @@ export function AppShell({
             aria-controls={sidebarId}
             onClick={() => setOpen(true)}
           />
-          <div className="nk-shell__header">{header}</div>
+          {brandInTopbar && (
+            // no celular some (a marca fica no painel do menu); no desktop é a do painel que some
+            <Tag className="nk-shell__brand nk-shell__topbar-brand" {...linkProps(brandHref)}>
+              {brand}
+            </Tag>
+          )}
+          <div className={cx('nk-shell__header', brandInTopbar && 'nk-shell__header--divided')}>{header}</div>
           {actions != null && <div className="nk-shell__actions">{actions}</div>}
         </header>
         <main id={contentId} ref={mainRef} className="nk-shell__main" tabIndex={-1}>

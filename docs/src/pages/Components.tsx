@@ -600,13 +600,38 @@ export function AppPage() {
       <PropsTable
         title="AppShell"
         rows={[
+          ['layout', "'sidebar' | 'header'", "'sidebar'", 'Disposição no desktop. header: topo de largura total com a marca e menu abaixo dele, recolhido num trilho de ícones que expande ao passar o mouse ou com foco de teclado (dê icon a todos os itens). No celular os dois são iguais.'],
           ['nav', 'AppNavGroup[]', '', 'Grupos { id, label?, items: { id, label, href, icon?, active?, badge? }[] }. O menu mostra só o que receber: quem decide permissões é a aplicação/API.'],
           ['linkAs', 'ElementType', '<a>', 'Componente de roteamento (ex.: Link do react-router); recebe `to`.'],
-          ['brand / brandHref', 'ReactNode / string', "'#'", 'Marca no topo do menu.'],
+          ['brand / brandHref', 'ReactNode / string', "'#'", 'Marca no topo do menu ou, com layout="header", à esquerda do topo.'],
           ['header', 'ReactNode', '', 'Título da página ou trilha, à esquerda do topo.'],
           ['actions', 'ReactNode', '', 'Ações à direita do topo (ex.: ThemeToggle, conta).'],
-          ['sidebarFooter', 'ReactNode', '', 'Rodapé do menu (ex.: organização).'],
+          ['sidebarFooter', 'ReactNode', '', 'Rodapé do menu (ex.: organização). Com layout="header" só aparece com o menu expandido.'],
           ['navLabel / menuLabel / skipLabel / mainId', 'string', '', 'Rótulo da navegação, do painel (diálogo no celular), texto do link de pular e id do <main>.'],
+        ]}
+      />
+      <Example name="app/AppShellHeader" title="AppShell com cabeçalho (layout=&quot;header&quot;)" frame={{ height: 560, title: 'Demonstração do AppShell com cabeçalho de largura total' }} description="O topo ocupa a largura inteira e leva a marca; o menu fica abaixo dele, recolhido num trilho só de ícones, e expande por cima do conteúdo ao passar o mouse ou ao receber foco pelo teclado. Os rótulos continuam no DOM, então os links mantêm o nome acessível. Até 900 px vale o mesmo painel modal do layout padrão." />
+      <Example name="app/UserMenu" title="Avatar e UserMenu" description="Avatar: círculo com a foto ou, sem foto (ou se ela falhar), as iniciais do nome. UserMenu: o círculo vira um botão que abre o painel da conta, com o nome, o nível da conta e o botão de sair. Fecha com Esc (o foco volta ao círculo), ao clicar fora ou quando o foco sai." />
+      <PropsTable
+        title="Avatar"
+        rows={[
+          ['name', 'string', '', 'Nome da pessoa: nome acessível e origem das iniciais.'],
+          ['src', 'string', '', 'Foto. Sem foto, ou se falhar ao carregar, mostra as iniciais.'],
+          ['initials', 'string', '', 'Iniciais a mostrar (padrão: primeira letra do primeiro e do último nome).'],
+          ['size', "'sm' | 'md' | 'lg'", "'md'", '32, 40 ou 48 px.'],
+        ]}
+      />
+      <PropsTable
+        title="UserMenu"
+        rows={[
+          ['name', 'string', '', 'Nome da pessoa: aparece no painel e dá as iniciais.'],
+          ['avatarSrc / initials', 'string', '', 'Foto do círculo, ou iniciais no lugar das calculadas.'],
+          ['accountLevel / accountLevelLabel', 'ReactNode / string', "— / 'Nível da conta'", 'Nível da conta (ex.: Administrador, Convidado, Desenvolvedor). Só informa: quem decide o acesso é a API.'],
+          ['onSignOut / signOutLabel', '() => void / string', "— / 'Sair'", 'Botão de sair; sem onSignOut ele não aparece.'],
+          ['children', 'ReactNode', '', 'Conteúdo extra do painel, antes do botão de sair.'],
+          ['label', 'string', "'Menu da conta'", 'Rótulo do botão (seguido do nome) e do painel.'],
+          ['size', "'sm' | 'md' | 'lg'", "'md'", 'Tamanho do círculo.'],
+          ['defaultOpen / onOpenChange', 'boolean / (open) => void', 'false', 'Começa aberto; avisa quando abre ou fecha.'],
         ]}
       />
       <Example name="app/LoadMore" title="LoadMore" description="Sem total e sem número de página: mostra quantos itens estão exibidos e o fim da lista. Em falha mantém a lista; com cursor recusado oferece recomeçar (nunca repete sozinho)." />
