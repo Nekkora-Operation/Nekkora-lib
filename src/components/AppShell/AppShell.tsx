@@ -46,8 +46,10 @@ export interface AppShellProps extends Omit<HTMLAttributes<HTMLDivElement>, 'tit
   header?: ReactNode;
   /** Ações à direita do topo (ex.: <ThemeToggle />, conta). */
   actions?: ReactNode;
-  /** Rodapé do menu lateral (ex.: organização, conta). */
+  /** Rodapé do menu lateral (ex.: organização, conta). Com `layout="header"` só aparece com o menu expandido. */
   sidebarFooter?: ReactNode;
+  /** Só com `layout="header"`: rodapé curto do trilho recolhido (ex.: versão). Ao expandir, dá lugar ao `sidebarFooter`. */
+  sidebarFooterCompact?: ReactNode;
   /** Rótulo da navegação principal. */
   navLabel?: string;
   /** Rótulo do painel do menu no celular (diálogo). */
@@ -76,7 +78,8 @@ const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1
  *   onde estava (o menu segue visível como menu lateral), salvo se o elemento sumiu ("Fechar menu" só existe no
  *   celular): aí vai ao item ativo do menu.
  * No desktop, o menu é uma região complementar rotulada (`menuLabel`) com a navegação dentro. Com `layout="header"`,
- * ele fica abaixo do topo, recolhido num trilho de ícones que expande ao passar o mouse ou com foco de teclado.
+ * ele fica abaixo do topo, recolhido num trilho de ícones que expande ao passar o mouse ou com foco de teclado; ícones
+ * e rótulos ficam um passo maiores (20 px e 14 px) e os itens têm 44 px de altura.
  * O menu não decide permissões: mostra só os itens recebidos.
  */
 export function AppShell({
@@ -88,6 +91,7 @@ export function AppShell({
   header,
   actions,
   sidebarFooter,
+  sidebarFooterCompact,
   navLabel = 'Navegação principal',
   menuLabel = 'Menu',
   skipLabel = 'Pular para o conteúdo',
@@ -109,7 +113,9 @@ export function AppShell({
    */
   const pendingFocus = useRef<'toggle' | 'main' | 'keep' | null>(null);
   const Tag = linkAs ?? 'a';
-  const brandInTopbar = layout === 'header' && brand != null;
+  const isHeader = layout === 'header';
+  const brandInTopbar = isHeader && brand != null;
+  const compactFooter = isHeader && sidebarFooterCompact != null;
 
   const close = (focusTo: 'toggle' | 'main' | 'keep') => {
     pendingFocus.current = focusTo;
@@ -175,7 +181,7 @@ export function AppShell({
   const linkProps = (href: string) => (linkAs ? { to: href } : { href });
 
   return (
-    <div className={cx('nk-shell', layout === 'header' && 'nk-shell--header', open && 'nk-shell--open', className)} {...rest}>
+    <div className={cx('nk-shell', isHeader && 'nk-shell--header', open && 'nk-shell--open', className)} {...rest}>
       <a className="nk-shell__skip" href={`#${contentId}`} inert={open || undefined}>
         {skipLabel}
       </a>
@@ -218,7 +224,7 @@ export function AppShell({
                       }}
                       {...linkProps(item.href)}
                     >
-                      {item.icon && <Icon name={item.icon} size="sm" />}
+                      {item.icon && <Icon name={item.icon} size={isHeader ? 'md' : 'sm'} />}
                       <span className="nk-shell__item-label">{item.label}</span>
                       {item.badge != null && (
                         <>
@@ -233,7 +239,10 @@ export function AppShell({
             </div>
           ))}
         </nav>
-        {sidebarFooter != null && <div className="nk-shell__sidebar-footer">{sidebarFooter}</div>}
+        {compactFooter && <div className="nk-shell__sidebar-compact">{sidebarFooterCompact}</div>}
+        {sidebarFooter != null && (
+          <div className={cx('nk-shell__sidebar-footer', compactFooter && 'nk-shell__sidebar-footer--swap')}>{sidebarFooter}</div>
+        )}
       </div>
       {open && <div className="nk-shell__scrim" aria-hidden="true" onClick={() => close('toggle')} />}
       <div className="nk-shell__body" inert={open || undefined}>

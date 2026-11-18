@@ -164,6 +164,7 @@
  * de teclado. Os rótulos continuam no DOM (nome acessível dos links); só ficam invisíveis no trilho.
  */
 .nk-shell__topbar-brand { display: none; }
+.nk-shell__sidebar-compact { display: none; }
 
 @media (min-width: 901px) {
   .nk-shell--header {
@@ -209,9 +210,12 @@
   }
 
   .nk-shell--header .nk-shell__item {
-    /* ícone (16 px) centralizado no trilho; a mesma medida vale aberto, para o ícone não se mexer */
-    padding-inline: calc((var(--nk-shell-rail) - 1px - 2 * var(--nk-space-3) - 2px - 16px) / 2);
+    /* ícone (20 px) centralizado no trilho; a mesma medida vale aberto, para o ícone não se mexer */
+    min-height: 44px;
+    padding-inline: calc((var(--nk-shell-rail) - 1px - 2 * var(--nk-space-3) - 2px - 20px) / 2);
+    font-size: var(--nk-font-size-md);
   }
+  .nk-shell--header .nk-shell__list { gap: var(--nk-space-1); }
   .nk-shell--header .nk-shell__item .nk-icon { flex-shrink: 0; }
   .nk-shell--header .nk-shell__group-label { overflow: hidden; white-space: nowrap; }
   .nk-shell--header .nk-shell__sidebar-footer {
@@ -229,6 +233,22 @@
   .nk-shell--header .nk-shell__sidebar:has(:focus-visible) :is(.nk-shell__group-label, .nk-shell__item-label, .nk-shell__item-badge, .nk-shell__sidebar-footer) {
     opacity: 1;
   }
+
+  /* rodapé curto do trilho: troca de lugar com o rodapé completo ao expandir */
+  .nk-shell--header .nk-shell__sidebar-compact {
+    display: block;
+    margin-top: auto;
+    padding-top: var(--nk-space-4);
+    border-top: 1px solid var(--nk-color-border);
+    font-size: var(--nk-font-size-xs);
+    color: var(--nk-color-text-secondary);
+    text-align: center;
+  }
+  .nk-shell--header .nk-shell__sidebar-footer--swap { display: none; }
+  .nk-shell--header .nk-shell__sidebar:hover .nk-shell__sidebar-compact,
+  .nk-shell--header .nk-shell__sidebar:has(:focus-visible) .nk-shell__sidebar-compact { display: none; }
+  .nk-shell--header .nk-shell__sidebar:hover .nk-shell__sidebar-footer--swap,
+  .nk-shell--header .nk-shell__sidebar:has(:focus-visible) .nk-shell__sidebar-footer--swap { display: block; }
 }
 
 @media (prefers-reduced-motion: reduce) {
