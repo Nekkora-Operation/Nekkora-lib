@@ -1,0 +1,24 @@
+.nk-avatar {
+  --nk-avatar-size: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--nk-avatar-size);
+  height: var(--nk-avatar-size);
+  overflow: hidden;
+  border-radius: var(--nk-radius-full);
+  /* mesmo par do botão secundário: contraste AA em todos os temas */
+  background: var(--nk-button-secondary-bg);
+  color: var(--nk-button-secondary-fg);
+  font-family: var(--nk-font-family);
+  font-size: var(--nk-font-size-md);
+  font-weight: var(--nk-font-weight-semibold);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  user-select: none;
+}
+.nk-avatar--sm { --nk-avatar-size: 32px; font-size: var(--nk-font-size-xs); }
+.nk-avatar--lg { --nk-avatar-size: 48px; font-size: var(--nk-font-size-lg); }
+
+.nk-avatar__img { width: 100%; height: 100%; object-fit: cover; display: block; }

@@ -63,6 +63,8 @@ export * from './components/QrCode';
 export * from './components/StateView';
 export * from './components/Divider';
 export * from './components/AuthLayout';
+export * from './components/Avatar';
+export * from './components/UserMenu';
 export * from './components/AppShell';
 export * from './components/LoadMore';
 export * from './components/DescriptionList';

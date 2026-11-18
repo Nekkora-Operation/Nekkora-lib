@@ -155,6 +155,47 @@ describe('AppShell', () => {
   });
 });
 
+describe('AppShell layout="header"', () => {
+  it('padrão (sidebar): a marca fica só no menu lateral e o topo não ganha a marca', () => {
+    const { container } = render(<AppShell brand="Nekkora" nav={nav} header={<h1>Execuções</h1>}><p>x</p></AppShell>);
+    expect(container.firstElementChild).not.toHaveClass('nk-shell--header');
+    expect(container.querySelector('.nk-shell__topbar-brand')).toBeNull();
+    expect(within(screen.getByRole('banner')).queryByRole('link', { name: 'Nekkora' })).toBeNull();
+  });
+
+  it('header: o topo leva a marca (com o link dela) antes do título, e o menu continua região complementar com a navegação', () => {
+    const { container } = render(
+      <AppShell layout="header" brand="Nekkora" brandHref="/inicio" nav={nav} header={<h1>Execuções</h1>} actions={<button>Conta</button>}>
+        <p>conteúdo</p>
+      </AppShell>,
+    );
+    expect(container.firstElementChild).toHaveClass('nk-shell--header');
+    const banner = screen.getByRole('banner');
+    const brand = within(banner).getByRole('link', { name: 'Nekkora' });
+    expect(brand).toHaveClass('nk-shell__topbar-brand');
+    expect(brand).toHaveAttribute('href', '/inicio');
+    const title = within(banner).getByRole('heading', { name: 'Execuções' });
+    expect(brand.compareDocumentPosition(title) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    expect(title.parentElement).toHaveClass('nk-shell__header--divided');
+    // os rótulos seguem no DOM mesmo com o trilho recolhido (o CSS só os deixa invisíveis): os links mantêm o nome
+    const navEl = screen.getByRole('navigation', { name: 'Navegação principal' });
+    expect(screen.getByRole('complementary', { name: 'Menu' })).toContainElement(navEl);
+    expect(within(navEl).getByRole('link', { name: 'Execuções' })).toHaveAttribute('aria-current', 'page');
+  });
+
+  it('header sem marca: o título não ganha o divisor', () => {
+    render(<AppShell layout="header" nav={nav} header={<h1>Execuções</h1>}><p>x</p></AppShell>);
+    expect(screen.getByRole('heading', { name: 'Execuções' }).parentElement).not.toHaveClass('nk-shell__header--divided');
+  });
+
+  it('header no celular: o painel abre como no layout padrão e o foco entra na marca do painel', () => {
+    render(<AppShell layout="header" brand="Nekkora" nav={nav}><p>x</p></AppShell>);
+    fireEvent.click(screen.getByRole('button', { name: 'Abrir menu' }));
+    const dialog = screen.getByRole('dialog', { name: 'Menu' });
+    expect(document.activeElement).toBe(within(dialog).getByRole('link', { name: 'Nekkora' }));
+  });
+});
+
 describe('LoadMore', () => {
   it('com próxima página: botão "Carregar mais" e contagem sem total', () => {
     const onLoadMore = vi.fn();
